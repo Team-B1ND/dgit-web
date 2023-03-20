@@ -28,6 +28,9 @@ export const THeadContainer = styled.div`
   background-color: #1e1e1e;
   height: 50px;
   margin-bottom: 20px;
+  position: sticky;
+  z-index: 3;
+  top: 0px;
 `;
 
 export const ThContainer = styled.div`

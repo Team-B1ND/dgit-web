@@ -22,4 +22,5 @@ export const Wrap = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  z-index: 2;
 `;

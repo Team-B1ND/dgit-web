@@ -5,11 +5,14 @@ const CommitRankingPage = () => {
   return (
     <div
       style={{
+        width: "100%",
+        height: "100vh",
         backgroundColor: "#252525",
         padding: 40,
+        boxSizing: "border-box",
       }}
     >
-      <RankingList customStyle={{ width: 1470 }}>
+      <RankingList>
         <RankingList.Hero>asddad</RankingList.Hero>
         <RankingList.Table>
           <RankingList.Table.THead>
@@ -43,6 +46,102 @@ const CommitRankingPage = () => {
               <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
               <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
             </tr>
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
+            <tr>
+              <RankingList.Table.TBody.Td>
+                <Medal rank={4}>4</Medal>
+              </RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
+            </tr>{" "}
             <tr>
               <RankingList.Table.TBody.Td>
                 <Medal rank={4}>4</Medal>
