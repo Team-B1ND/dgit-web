@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RegisterInputContainer = styled.input`
+export const TextInputContainer = styled.input`
   width: 331px;
   height: 40px;
 

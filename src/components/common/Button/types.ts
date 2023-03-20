@@ -1,11 +1,12 @@
-import { CSSProperties } from "react";
+import React, { CSSProperties } from "react";
 
-export interface ButtonType {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void;
   disabled?: boolean;
-  label: string;
+  children: string;
   style?: CSSProperties;
-  color: ColorType;
+  buttonType: ButtonType;
 }
 
-export type ColorType = "submit" | "cancel";
+export type ButtonType = "submit" | "cancel";

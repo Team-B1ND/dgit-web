@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { ColorType } from "./types";
+import { ButtonType } from "./types";
 
 export const ButtonContainer = styled.button<{
-  color: ColorType;
+  color: ButtonType;
 }>`
   width: 100px;
   height: 40px;
@@ -12,10 +12,10 @@ export const ButtonContainer = styled.button<{
   font-weight: 600;
   font-size: 16px;
 
-  ${({ color }) => colorStyle[color]}
+  ${({ color }) => colorSet[color]}
 `;
 
-const colorStyle = {
+const colorSet = {
   submit: css`
     background: #6c93f8;
     color: #2d2d2d;
