@@ -11,5 +11,55 @@ export const HeroText = styled.p`
   margin-bottom: 40px;
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  column-gap: 10px;
+  line-height: 43px;
+  margin-bottom: 40px;
+`;
+
+export const TableContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const THeadContainer = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  height: 50px;
+  margin-bottom: 20px;
+`;
+
+export const ThContainer = styled.div`
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
+export const TBodyContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  tr {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: #2d2d2d;
+  }
+`;
+
+export const TdContainer = styled.div`
+  width: 100%;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 `;
