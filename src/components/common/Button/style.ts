@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { ButtonType } from "./types";
 
 export const ButtonContainer = styled.button<{
-  color: ButtonType;
+  buttonType: ButtonType;
 }>`
   width: 100px;
   height: 40px;
@@ -12,7 +12,7 @@ export const ButtonContainer = styled.button<{
   font-weight: 600;
   font-size: 16px;
 
-  ${({ color }) => colorSet[color]}
+  ${({ buttonType }) => colorSet[buttonType]}
 `;
 
 const colorSet = {
