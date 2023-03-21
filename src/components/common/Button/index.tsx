@@ -1,9 +1,9 @@
 import { ButtonContainer } from "./style";
 import { ButtonProps } from "./types";
 
-const Button = ({ onClick, children, style, buttonType }: ButtonProps) => {
+const Button = ({ children, style, buttonType, ...attr }: ButtonProps) => {
   return (
-    <ButtonContainer color={buttonType} style={style} onClick={onClick}>
+    <ButtonContainer {...attr} color={buttonType} style={style}>
       {children}
     </ButtonContainer>
   );

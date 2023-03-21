@@ -1,7 +1,8 @@
 import { TextInputContainer } from "./style";
+import { TextInputProps } from "./types";
 
-const TextInput = () => {
-  return <TextInputContainer />;
+const TextInput = ({ ...attr }: TextInputProps) => {
+  return <TextInputContainer {...attr} />;
 };
 
 export default TextInput;
