@@ -34,14 +34,14 @@ export const ProfileInfo = styled.div`
     font-size:13px;
 `;
 
-export const Container = styled.div`
+export const HexagonContainer = styled.div`
   width: 50px;
   height: 50px;
   clip-path: polygon(50% 0, 95% 25%, 95% 76%, 50% 100%, 5% 75%, 5% 25%);
   position: relative;
 `;
 
-export const Wrap = styled.img`
+export const HexagonProfile = styled.img`
   width: 42px;
   height: 42px;
   clip-path: polygon(50% 0, 95% 25%, 95% 76%, 50% 100%, 5% 75%, 5% 25%);

@@ -9,13 +9,13 @@ export default function Profile() {
         <S.GithubName>Sanghyun0505</S.GithubName>
         <S.ProfileInfo>2408 박상현</S.ProfileInfo>
       </S.ProfileAbleContainer>
-      <S.Container>
-        <S.Wrap
+      <S.HexagonContainer>
+        <S.HexagonProfile
           src={data}
           onClick={()=>
             window.open("https://github.com/","_blank")}
         />
-      </S.Container>
+      </S.HexagonContainer>
     </S.ProfileContainer>
   );
 }
