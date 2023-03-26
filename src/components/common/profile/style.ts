@@ -42,8 +42,8 @@ export const HexagonContainer = styled.div`
 `;
 
 export const HexagonProfile = styled.img`
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   clip-path: polygon(50% 0, 95% 25%, 95% 76%, 50% 100%, 5% 75%, 5% 25%);
   position: absolute;
   top: 50%;
