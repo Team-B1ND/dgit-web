@@ -16,6 +16,7 @@ export const ProfileAbleContainer = styled.div`
     display:flex;
     flex-direction:column;
     width:420px;
+    margin-right:5px;
     
     text-align:right;
     align-items:right;
