@@ -9,9 +9,12 @@ const GitInfo = () => {
         <S.GithubName>Sanghyun0505</S.GithubName>
         <S.StudentInfo>2408 박상현</S.StudentInfo>
       </S.GitInfoAbleContainer>
-      <S.AvatarContainer>
-        <Avatar src={data} />
-      </S.AvatarContainer>
+      <S.HexagonContainer>
+        <S.HexagonProfile
+          src={data}
+          onClick={() => window.open("https://github.com/", "_blank")}
+        />
+      </S.HexagonContainer>
     </S.GitInfoContainer>
   );
 };
