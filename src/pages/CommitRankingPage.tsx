@@ -1,3 +1,4 @@
+import Avatar from "../components/common/Avatar";
 import Medal from "../components/common/Medal";
 import RankingList from "../components/common/RankingList";
 

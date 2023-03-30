@@ -1,3 +1,4 @@
+import GitInfo from "../GitInfo";
 import * as S from "./style";
 
 interface Props {
@@ -5,7 +6,12 @@ interface Props {
 }
 
 const Layout = ({ children }: Props) => {
-  return <S.Container>{children}</S.Container>;
+  return (
+    <>
+      <GitInfo />
+      <S.Container>{children}</S.Container>
+    </>
+  );
 };
 
 export default Layout;
