@@ -8,5 +8,4 @@ const Button = ({ children, style, buttonType, ...attr }: ButtonProps) => {
     </ButtonContainer>
   );
 };
-
 export default Button;
