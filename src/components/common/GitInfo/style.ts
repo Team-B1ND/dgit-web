@@ -8,14 +8,15 @@ export const GitInfoContainer = styled.div`
   margin: 30px 30px 0 0;
   justify-content: space-between;
 
-  width: 465px;
+  width: 250px;
   height: 52px;
 `;
 
 export const GitInfoAbleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 420px;
+
+  width: 205px;
   margin-right: 5px;
 
   text-align: right;
@@ -27,6 +28,8 @@ export const GithubName = styled.div`
   color: #ffffff;
   font-weight: bold;
   font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const StudentInfo = styled.div`
