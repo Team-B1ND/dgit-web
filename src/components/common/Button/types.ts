@@ -5,6 +5,7 @@ export interface ButtonProps
   children: React.ReactNode;
   style?: CSSProperties;
   buttonType: ButtonType;
+  className?: string;
 }
 
 export type ButtonType = "submit" | "cancel";

@@ -1,27 +1,32 @@
-import React from "react";
-import styled from "styled-components";
-import { useRecoilState } from "recoil";
-import { modalAtom } from "../../../../store/modalAtom";
+import React, { useState } from "react";
 import * as M from "../style";
+import UserInputPage from "../../TextInput/UserInputPage";
+import RepositoryInput from "../../TextInput/RepositoryInput";
 
 const ModalContainer = ({ onClose }: any) => {
-  const [modal, setModal] = useRecoilState(modalAtom);
-  const modalCloes = () => {
-    setModal(false);
-  };
+  const [component, setComponent] = useState(true);
 
   return (
-    <M.Background>
+    <M.ModalContainer>
       <M.Content>
+        <M.ModalHeader>
+          <M.ModalTextBox>
+            <div className="ModalText">REGISTER</div>
+          </M.ModalTextBox>
+          <M.ModalButton>
+            <button onClick={() => setComponent(true)} className="user">
+              USER
+            </button>
+            <button onClick={() => setComponent(false)} className="repository">
+              REPOSITORY
+            </button>
+          </M.ModalButton>
+        </M.ModalHeader>
         <div>
-          <div>REGISTER</div>
-          <button>user</button>
-          <button>REPOSITORY</button>
+          <div>{component ? <UserInputPage /> : <RepositoryInput />}</div>
         </div>
-        <div></div>
-        <button onClick={modalCloes}>에에에</button>
       </M.Content>
-    </M.Background>
+    </M.ModalContainer>
   );
 };
 

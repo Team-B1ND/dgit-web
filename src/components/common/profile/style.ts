@@ -1,37 +1,37 @@
 import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
-    display:flex;
-    flex-direction:row;
+  display: flex;
+  flex-direction: row;
 
-    float:right;
-    margin: 30px 30px 0 0;
-    justify-content:space-between;
-    background-color:black;
+  float: right;
+  margin: 30px 30px 0 0;
+  justify-content: space-between;
+  background-color: black;
 
-    width:460px;
-    height:52px;
+  width: 460px;
+  height: 52px;
 `;
 
 export const ProfileAbleContainer = styled.div`
-    display:flex;
-    flex-direction:column;
-    width:420px;
-    
-    text-align:right;
-    align-items:right;
-    justify-content:center;
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+
+  text-align: right;
+  align-items: right;
+  justify-content: center;
 `;
 
 export const GithubName = styled.div`
-    color:#FFFFFF;
-    font-weight:bold;
-    font-size:18px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
 `;
 
 export const ProfileInfo = styled.div`
-    color:#9E9E9E;
-    font-size:13px;
+  color: #9e9e9e;
+  font-size: 13px;
 `;
 
 export const HexagonContainer = styled.div`
