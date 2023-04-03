@@ -1,4 +1,5 @@
 import {
+  HeaderBottomImg,
   HeaderCategoryBox,
   HeaderContainer,
   HeaderMidWrap,
@@ -10,7 +11,14 @@ import Logo from "../../../asset/Logo/Logo.svg";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { AiOutlineStar, AiOutlinePlusSquare } from "react-icons/ai";
 import { BiGitPullRequest } from "react-icons/bi";
+import Rectangle1 from "../../../asset/Common/Rectangle1.svg";
+import Rectangle2 from "../../../asset/Common/Rectangle2.svg";
+import Rectangle3 from "../../../asset/Common/Rectangle3.svg";
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <HeaderContainer>
       <HeaderTopWrap>
@@ -19,15 +27,15 @@ const Header = () => {
       </HeaderTopWrap>
       <HeaderMidWrap>
         순위
-        <HeaderCategoryBox>
+        <HeaderCategoryBox onClick={() => navigate("/")}>
           <HiOutlinePencilAlt size={20} />
           COMMIT
         </HeaderCategoryBox>
-        <HeaderCategoryBox>
+        <HeaderCategoryBox onClick={() => navigate("/pr-ranking")}>
           <AiOutlineStar size={20} />
           REPOSITORY
         </HeaderCategoryBox>
-        <HeaderCategoryBox>
+        <HeaderCategoryBox onClick={() => navigate("/pr-ranking")}>
           <BiGitPullRequest size={20} />
           PULL-REQUEST
         </HeaderCategoryBox>
@@ -39,6 +47,9 @@ const Header = () => {
           REGISTER
         </HeaderCategoryBox>
       </HeaderMidWrap>
+      <HeaderBottomImg src={Rectangle1} />
+      <HeaderBottomImg src={Rectangle2} />
+      <HeaderBottomImg src={Rectangle3} />
     </HeaderContainer>
   );
 };

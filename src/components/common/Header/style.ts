@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
+  position: relative;
   width: 250px;
   height: 100vh;
 
@@ -44,4 +45,12 @@ export const HeaderMidWrap = styled.div`
 export const HeaderCategoryBox = styled.div`
   display: flex;
   column-gap: 14px;
+
+  font-size: 16px;
+`;
+
+export const HeaderBottomImg = styled.img`
+  position: absolute;
+
+  bottom: 0;
 `;

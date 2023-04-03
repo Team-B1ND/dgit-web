@@ -7,7 +7,7 @@ const CommitRankingPage = () => {
     <div
       style={{
         width: "100%",
-        height: "100vh",
+        minHeight: "100vh",
         backgroundColor: "#252525",
         padding: 40,
         boxSizing: "border-box",
