@@ -1,5 +1,5 @@
 import { HiOutlinePencilAlt } from "react-icons/hi";
-import { AiOutlinePlusSquare } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 import { BiGitPullRequest } from "react-icons/bi";
 
 export const HEADER_ITEM = [
@@ -11,11 +11,11 @@ export const HEADER_ITEM = [
   {
     title: "REPOSITORY",
     link: "/repository",
-    icon: BiGitPullRequest,
+    icon: AiOutlineStar,
   },
   {
     title: "PULL-REQUEST",
     link: "/pr-ranking",
-    icon: AiOutlinePlusSquare,
+    icon: BiGitPullRequest,
   },
 ];
