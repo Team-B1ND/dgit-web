@@ -8,12 +8,10 @@ import {
   HeaderTopWrap,
 } from "./style";
 import Logo from "../../../asset/Logo/Logo.svg";
-import { HiOutlinePencilAlt } from "react-icons/hi";
-import { AiOutlineStar, AiOutlinePlusSquare } from "react-icons/ai";
-import { BiGitPullRequest } from "react-icons/bi";
-import Rectangle1 from "../../../asset/Common/Rectangle1.svg";
-import Rectangle2 from "../../../asset/Common/Rectangle2.svg";
-import Rectangle3 from "../../../asset/Common/Rectangle3.svg";
+import { AiOutlinePlusSquare } from "react-icons/ai";
+import gradation1 from "../../../asset/Common/Header/gradation1.svg";
+import gradation2 from "../../../asset/Common/Header/gradation2.svg";
+import gradation3 from "../../../asset/Common/Header/gradation3.svg";
 import { useNavigate } from "react-router-dom";
 import { HEADER_ITEM } from "../../../constants/header/header.constant";
 
@@ -29,13 +27,12 @@ const Header = () => {
       <HeaderMidWrap>
         순위
         {HEADER_ITEM.map((item) => {
-          const Icon = item.icon;
           return (
             <HeaderCategoryBox
               key={item.link}
-              onClick={() => navigate(`${item.link}`)}
+              onClick={() => navigate(item.link)}
             >
-              <Icon size={20} />
+              <item.icon size={20} />
               {item.title}
             </HeaderCategoryBox>
           );
@@ -48,9 +45,9 @@ const Header = () => {
           REGISTER
         </HeaderCategoryBox>
       </HeaderMidWrap>
-      <HeaderBottomImg src={Rectangle1} />
-      <HeaderBottomImg src={Rectangle2} />
-      <HeaderBottomImg src={Rectangle3} />
+      <HeaderBottomImg src={gradation1} />
+      <HeaderBottomImg src={gradation2} />
+      <HeaderBottomImg src={gradation3} />
     </HeaderContainer>
   );
 };
