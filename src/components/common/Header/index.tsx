@@ -15,6 +15,7 @@ import Rectangle1 from "../../../asset/Common/Rectangle1.svg";
 import Rectangle2 from "../../../asset/Common/Rectangle2.svg";
 import Rectangle3 from "../../../asset/Common/Rectangle3.svg";
 import { useNavigate } from "react-router-dom";
+import { HEADER_ITEM } from "../../../constants/header/header.constant";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -27,18 +28,18 @@ const Header = () => {
       </HeaderTopWrap>
       <HeaderMidWrap>
         순위
-        <HeaderCategoryBox onClick={() => navigate("/")}>
-          <HiOutlinePencilAlt size={20} />
-          COMMIT
-        </HeaderCategoryBox>
-        <HeaderCategoryBox onClick={() => navigate("/pr-ranking")}>
-          <AiOutlineStar size={20} />
-          REPOSITORY
-        </HeaderCategoryBox>
-        <HeaderCategoryBox onClick={() => navigate("/pr-ranking")}>
-          <BiGitPullRequest size={20} />
-          PULL-REQUEST
-        </HeaderCategoryBox>
+        {HEADER_ITEM.map((item) => {
+          const Icon = item.icon;
+          return (
+            <HeaderCategoryBox
+              key={item.link}
+              onClick={() => navigate(`${item.link}`)}
+            >
+              <Icon size={20} />
+              {item.title}
+            </HeaderCategoryBox>
+          );
+        })}
       </HeaderMidWrap>
       <HeaderMidWrap>
         등록

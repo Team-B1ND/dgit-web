@@ -2,15 +2,16 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   position: relative;
+
   width: 250px;
   height: 100vh;
-
-  background-color: #1e1e1e;
-  color: #f6f6f6;
 
   display: flex;
   flex-direction: column;
   row-gap: 100px;
+
+  background-color: #1e1e1e;
+  color: #f6f6f6;
 
   cursor: pointer;
 `;
@@ -38,15 +39,16 @@ export const HeaderMidWrap = styled.div`
   flex-direction: column;
 
   row-gap: 25px;
-  font-size: 22px;
   padding-left: 46px;
+  font-size: 22px;
 `;
 
 export const HeaderCategoryBox = styled.div`
   display: flex;
-  column-gap: 14px;
+  align-items: center;
 
   font-size: 16px;
+  column-gap: 14px;
 `;
 
 export const HeaderBottomImg = styled.img`
