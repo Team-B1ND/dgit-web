@@ -1,24 +1,17 @@
-import { useState } from "react";
-import { useRecoilState } from "recoil";
-import styled from "styled-components";
-import { modalAtom } from "../../../store/modalAtom";
-import ModalContainer from "./ModalContainer";
-import ModalPortal from "./Portal";
+import { Portal } from "../Protal";
+import { ModalProps } from "./modal.type";
+import * as M from "./style";
 
-const Modal = (props: any) => {
-  const [modal, setModal] = useRecoilState(modalAtom);
-  const modalOpen = () => {
-    setModal(!modal);
-    console.log("hi");
-  };
-
+const Modal = ({ isOpen, onClose, customStyle, children }: ModalProps) => {
   return (
-    <div>
-      <button onClick={modalOpen}>눌러보셈</button>
-      <ModalPortal>
-        {modal && <ModalContainer onClose={modalOpen} />}
-      </ModalPortal>
-    </div>
+    <>
+      {isOpen && (
+        <Portal selector="#modal">
+          <M.ModalContainer onClick={onClose}></M.ModalContainer>
+          <M.Content style={customStyle}>{children}</M.Content>
+        </Portal>
+      )}
+    </>
   );
 };
 
