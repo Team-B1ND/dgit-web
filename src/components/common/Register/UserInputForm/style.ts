@@ -19,3 +19,13 @@ export const UserId = styled.div`
   margin-left: 8%;
   color: white;
 `;
+
+export const UserButton = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 55px;
+  margin-right: 15px;
+  .cancelButton {
+    margin-right: 8px;
+  }
+`;

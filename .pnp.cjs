@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@b1nd/b1nd-design-core", "npm:1.0.4"],\
+            ["@b1nd/b1nd-react-util", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.2"],\
             ["@b1nd/b1nd-styled-components-util", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.1"],\
             ["@b1nd/b1nd-toastify", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.3"],\
             ["@tanstack/react-query", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.28.0"],\
@@ -110,6 +111,35 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@b1nd/b1nd-design-core", "npm:1.0.4"],\
             ["@yarnpkg/esbuild-plugin-pnp", "virtual:cdb1301550fa4df4f1a67bccd66a112018e3d1c6867bee681353262b4d781eed33e21d973692614d0b75b9456f0ad64cc29455c6a9d021b1769e058b9f3dc447#npm:3.0.0-rc.15"],\
             ["esbuild", "npm:0.16.17"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@b1nd/b1nd-react-util", [\
+        ["npm:1.0.2", {\
+          "packageLocation": "./.yarn/cache/@b1nd-b1nd-react-util-npm-1.0.2-0c8c2911ab-97c1038705.zip/node_modules/@b1nd/b1nd-react-util/",\
+          "packageDependencies": [\
+            ["@b1nd/b1nd-react-util", "npm:1.0.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/@b1nd-b1nd-react-util-virtual-cc599f2150/0/cache/@b1nd-b1nd-react-util-npm-1.0.2-0c8c2911ab-97c1038705.zip/node_modules/@b1nd/b1nd-react-util/",\
+          "packageDependencies": [\
+            ["@b1nd/b1nd-react-util", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.2"],\
+            ["@types/lodash", null],\
+            ["@types/react", "npm:18.0.33"],\
+            ["@types/react-dom", "npm:18.0.11"],\
+            ["lodash", "npm:4.17.21"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/lodash",\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8060,6 +8090,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["dgitv3", "workspace:."],\
             ["@b1nd/b1nd-design-core", "npm:1.0.4"],\
+            ["@b1nd/b1nd-react-util", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.2"],\
             ["@b1nd/b1nd-styled-components-util", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.1"],\
             ["@b1nd/b1nd-toastify", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:1.0.3"],\
             ["@tanstack/react-query", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.28.0"],\

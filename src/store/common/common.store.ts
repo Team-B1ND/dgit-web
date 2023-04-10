@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const modalAtom = atom<boolean>({
+export const RegisterModalOpenAtom = atom<boolean>({
   key: "modalAtom",
   default: false,
 });

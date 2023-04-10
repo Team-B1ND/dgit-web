@@ -45,6 +45,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@b1nd/b1nd-react-util@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@b1nd/b1nd-react-util@npm:1.0.2"
+  dependencies:
+    lodash: ^4.17.21
+  peerDependencies:
+    lodash: ^4
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  checksum: 97c10387054e3683501b6ff3d92da72d3f0dc4a9c9f2790510d41d1332adb765c0c947809eb9c7cdccb79e0340b2a9f7bbe31b37071f1dde8ec7d91b8ad7cea1
+  languageName: node
+  linkType: hard
+
 "@b1nd/b1nd-styled-components-util@npm:^1.0.1":
   version: 1.0.1
   resolution: "@b1nd/b1nd-styled-components-util@npm:1.0.1"
@@ -5471,6 +5484,7 @@ __metadata:
   resolution: "dgitv3@workspace:."
   dependencies:
     "@b1nd/b1nd-design-core": ^1.0.4
+    "@b1nd/b1nd-react-util": ^1.0.2
     "@b1nd/b1nd-styled-components-util": ^1.0.1
     "@b1nd/b1nd-toastify": ^1.0.3
     "@tanstack/react-query": ^4.24.10

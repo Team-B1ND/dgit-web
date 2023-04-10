@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-// interface UserConainer {
-//   isActive: boolean;
-//   props: any;
-// }
-
 export const ModalContainer = styled.div`
   height: 100%;
   width: 100%;
