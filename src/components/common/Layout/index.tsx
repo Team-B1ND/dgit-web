@@ -1,5 +1,6 @@
 import GitInfo from "../GitInfo";
 import * as S from "./style";
+import Header from "../Header";
 
 interface Props {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <GitInfo />
+      <Header />
       <S.Container>{children}</S.Container>
     </>
   );
