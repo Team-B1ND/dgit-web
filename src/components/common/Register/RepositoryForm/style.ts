@@ -28,7 +28,7 @@ export const RepositoryID = styled.div`
 export const RepositoryButton = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 18px;
+  /* margin-top: 10px; */
   margin-right: 15px;
   .cancelButton {
     margin-right: 8px;

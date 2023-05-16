@@ -69,14 +69,3 @@ export const ModalTextBox = styled.div`
 `;
 
 export const ModalPortal = styled.div``;
-
-export const UserButton = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 60px;
-  margin-right: 15px;
-  gap: 3px;
-  .cancelButton {
-    margin-right: 8px;
-  }
-`;

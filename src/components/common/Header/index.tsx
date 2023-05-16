@@ -52,7 +52,7 @@ const Header = () => {
       <Register />
       <HeaderBottomImg src={gradation1} />
       <HeaderBottomImg src={gradation2} />
-      /* <HeaderBottomImg src={gradation3} />
+      <HeaderBottomImg src={gradation3} />
     </HeaderContainer>
   );
 };

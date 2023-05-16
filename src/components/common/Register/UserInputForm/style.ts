@@ -23,7 +23,7 @@ export const UserId = styled.div`
 export const UserButton = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 55px;
+  margin-top: 37px;
   margin-right: 15px;
   .cancelButton {
     margin-right: 8px;
