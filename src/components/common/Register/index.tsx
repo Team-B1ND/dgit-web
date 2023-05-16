@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { RegisterModalOpenAtom } from "../../../store/common/common.store";
-import ModalBox from "../Modal";
+import Modal from "../Modal";
 import * as M from "./style";
 import UserForm from "./UserInputForm/index";
 import RepositoryFrom from "./RepositoryForm/index";
@@ -18,8 +18,8 @@ const Register = () => {
 
   return (
     <div>
-      <button onClick={() => setIsOpen(true)}>Open Modal</button>
-      <ModalBox isOpen={isOpen} onClose={onClose}>
+      {/* <button onClick={() => setIsOpen(true)}>Open Modal</button> */}
+      <Modal isOpen={isOpen} onClose={onClose}>
         <M.ModalContainer>
           <M.Content>
             <M.ModalHeader>
@@ -52,7 +52,7 @@ const Register = () => {
             </div>
           </M.Content>
         </M.ModalContainer>
-      </ModalBox>
+      </Modal>
     </div>
   );
 };
