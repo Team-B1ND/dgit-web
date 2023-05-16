@@ -9,28 +9,15 @@ interface Props {
   children: React.ReactNode;
 }
 
-const queryClient: QueryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      retryOnMount: false,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false,
-    },
-  },
-});
-
 const Providers = ({ children }: Props) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <RecoilRoot>
-        <B1ndToastContainer />
-        <GlobalStyle />
-        <BrowserRouter>
-          <Layout>{children}</Layout>
-        </BrowserRouter>
-      </RecoilRoot>
-    </QueryClientProvider>
+    <RecoilRoot>
+      <B1ndToastContainer />
+      <GlobalStyle />
+      <BrowserRouter>
+        <Layout>{children}</Layout>
+      </BrowserRouter>
+    </RecoilRoot>
   );
 };
 

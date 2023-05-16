@@ -6,6 +6,11 @@ export const ListContainer = styled.div`
   flex-direction: column;
 `;
 
+export const HerorTextBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const HeroText = styled.p`
   font-size: 36px;
   margin-bottom: 40px;
@@ -14,6 +19,10 @@ export const HeroText = styled.p`
   column-gap: 10px;
   line-height: 43px;
   margin-bottom: 40px;
+`;
+
+export const HeroLoginText = styled.p`
+  color: white;
 `;
 
 export const TableContainer = styled.div`

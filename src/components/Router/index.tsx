@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import AuthLoadingPage from "../../pages/AuthLoadingPage";
 import CommitRankingPage from "../../pages/CommitRankingPage";
 import PullRequestRankingPage from "../../pages/PullRequestRankingPage";
 import RepoStarsRankingPage from "../../pages/RepoStarsRankingPage";
@@ -8,6 +9,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<CommitRankingPage />} />
+      <Route path="/callback" element={<AuthLoadingPage />} />
       <Route path="/pr-ranking" element={<PullRequestRankingPage />} />
       <Route path="/repostars-ranking" element={<RepoStarsRankingPage />} />
       <Route path="/modal" element={<Modal />} />

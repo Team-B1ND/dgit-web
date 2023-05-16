@@ -9,7 +9,7 @@ import {
 } from "./types";
 import * as S from "./style";
 import { palette } from "../../../styles/palette";
-
+import config from "../../../config/config.json";
 const RankingList = ({ children, customStyle }: RankingListProps) => {
   return (
     <S.ListContainer style={{ ...customStyle }}>{children}</S.ListContainer>
@@ -17,14 +17,20 @@ const RankingList = ({ children, customStyle }: RankingListProps) => {
 };
 
 const RankingHero = ({ children }: RankingHeroProps) => {
+  const authUrl = `https://dauth.b1nd.com/login?client_id=${config.clientId}&redirect_uri=http://localhost:3000/callback`;
   return (
-    <S.HeroText>
-      <span style={{ color: "white" }}>Ranking</span>
-      <span style={{ color: "#A8A8A8" }}>for</span>
-      <span style={{ fontWeight: "bold", color: palette.main }}>
-        {children}
-      </span>
-    </S.HeroText>
+    <S.HerorTextBox>
+      <S.HeroText>
+        <span style={{ color: "white" }}>Ranking</span>
+        <span style={{ color: "#A8A8A8" }}>for</span>
+        <span style={{ fontWeight: "bold", color: palette.main }}>
+          {children}
+        </span>
+      </S.HeroText>
+      <S.HeroLoginText onClick={() => (window.location.href = authUrl)}>
+        도담도담 계정으로 로그인
+      </S.HeroLoginText>
+    </S.HerorTextBox>
   );
 };
 
