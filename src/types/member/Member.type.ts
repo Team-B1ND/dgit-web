@@ -3,5 +3,6 @@ export interface MemberResponse {
     email: string;
     name: string;
     githubId: string;
+    userImage: string;
   };
 }

@@ -1,5 +1,6 @@
 import { customAxios } from "../../lib/axios/customAxios";
 import {
+  PRRankResponse,
   RankResponse,
   RepositoryResponse,
 } from "../../types/github/github.type";
@@ -55,7 +56,7 @@ class GithubRepositoryImpl implements GithubRepository {
     return data;
   }
 
-  public async getPullRequestRank(): Promise<RankResponse> {
+  public async getPullRequestRank(): Promise<PRRankResponse> {
     const { data } = await customAxios.get("/github/pull-request");
     return data;
   }

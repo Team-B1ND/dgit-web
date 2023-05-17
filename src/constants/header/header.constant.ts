@@ -10,7 +10,7 @@ export const HEADER_ITEM = [
   },
   {
     title: "REPOSITORY",
-    link: "/repository",
+    link: "/repostars-ranking",
     icon: AiOutlineStar,
   },
   {

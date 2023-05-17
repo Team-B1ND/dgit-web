@@ -1,4 +1,5 @@
 import {
+  PRRankResponse,
   RankResponse,
   RepositoryResponse,
 } from "../../types/github/github.type";
@@ -20,7 +21,7 @@ export interface GithubRepository {
 
   getTotalRank(): Promise<RankResponse>;
 
-  getPullRequestRank(): Promise<RankResponse>;
+  getPullRequestRank(): Promise<PRRankResponse>;
 }
 
 export interface GithubUserParam {
