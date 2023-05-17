@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useRecoilState } from "recoil";
 import { RegisterModalOpenAtom } from "../../../store/common/common.store";
 import Modal from "../Modal";
@@ -17,35 +17,37 @@ const Register = () => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <M.ModalContainer>
-        <M.Content>
-          <M.ModalHeader>
-            <M.ModalTextBox>
-              <div className="ModalText">REGISTER</div>
-            </M.ModalTextBox>
-            <M.ModalButton>
-              <button onClick={() => setComponent("userForm")} className="user">
-                USER
-              </button>
-              <button
-                onClick={() => setComponent("RepositoryForm")}
-                className="repository"
-              >
-                REPOSITORY
-              </button>
-            </M.ModalButton>
-          </M.ModalHeader>
-          <div>
-            <SwitchCase
-              value={component}
-              caseBy={{
-                userForm: <UserForm />,
-                RepositoryForm: <RepositoryForm />,
-              }}
-            />
-          </div>
-        </M.Content>
-      </M.ModalContainer>
+      <M.Content
+        onClick={(e: ChangeEvent<any>) => {
+          e.stopPropagation();
+        }}
+      >
+        <M.ModalHeader>
+          <M.ModalTextBox>
+            <div className="ModalText">REGISTER</div>
+          </M.ModalTextBox>
+          <M.ModalButton>
+            <button onClick={() => setComponent("userForm")} className="user">
+              USER
+            </button>
+            <button
+              onClick={() => setComponent("RepositoryForm")}
+              className="repository"
+            >
+              REPOSITORY
+            </button>
+          </M.ModalButton>
+        </M.ModalHeader>
+        <div>
+          <SwitchCase
+            value={component}
+            caseBy={{
+              userForm: <UserForm />,
+              RepositoryForm: <RepositoryForm />,
+            }}
+          />
+        </div>
+      </M.Content>
     </Modal>
   );
 };

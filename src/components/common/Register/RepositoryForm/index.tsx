@@ -20,6 +20,7 @@ const RepositoryForm = () => {
         <I.UserInput>
           <TextInput
             name="githubId"
+            placeholder="Github 아이디 (example-user)"
             onChange={onChangePostData}
             value={postData.githubId}
           />
@@ -32,6 +33,7 @@ const RepositoryForm = () => {
         <I.RepositoryInput>
           <TextInput
             name="repositoryName"
+            placeholder="Repository 이름"
             onChange={onChangePostData}
             value={postData.repositoryName}
           />
