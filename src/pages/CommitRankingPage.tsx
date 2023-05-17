@@ -1,5 +1,8 @@
+import { Suspense } from "react";
 import RankingList from "../components/common/RankingList";
 import Commit from "../components/Ranking/Commit";
+import { ErrorBoundary } from "react-error-boundary";
+import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
 
 const CommitRankingPage = () => {
   return (
@@ -23,7 +26,11 @@ const CommitRankingPage = () => {
             <RankingList.Table.THead.Th>Intro</RankingList.Table.THead.Th>
             <RankingList.Table.THead.Th>Commits</RankingList.Table.THead.Th>
           </RankingList.Table.THead>
-          <Commit />
+          <ErrorBoundary fallback={<>Error...</>}>
+            <Suspense fallback={<RankingFallbackLoader />}>
+              <Commit />
+            </Suspense>
+          </ErrorBoundary>
         </RankingList.Table>
       </RankingList>
     </div>

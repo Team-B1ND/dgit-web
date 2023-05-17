@@ -4,7 +4,7 @@ import RankingList from "../../common/RankingList";
 import { ProfileImg } from "../Commit/style";
 
 const Repository = () => {
-  const { data } = useGetRepositoryQuery();
+  const { data } = useGetRepositoryQuery({ suspense: true });
   return (
     <RankingList.Table.TBody>
       {data?.data.map((data, idx) => {

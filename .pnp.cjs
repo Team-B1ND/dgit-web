@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-cookie", "npm:3.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:18.2.0"],\
+            ["react-error-boundary", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.0.4"],\
             ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.8.0"],\
             ["react-is", "npm:18.2.0"],\
             ["react-router-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:6.10.0"],\
@@ -8081,6 +8082,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-cookie", "npm:3.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:18.2.0"],\
+            ["react-error-boundary", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.0.4"],\
             ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.8.0"],\
             ["react-is", "npm:18.2.0"],\
             ["react-router-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:6.10.0"],\
@@ -15280,6 +15282,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["loose-envify", "npm:1.4.0"],\
             ["react", "npm:18.2.0"],\
             ["scheduler", "npm:0.23.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-error-boundary", [\
+        ["npm:4.0.4", {\
+          "packageLocation": "./.yarn/cache/react-error-boundary-npm-4.0.4-6b145b0e7d-02f04bdf85.zip/node_modules/react-error-boundary/",\
+          "packageDependencies": [\
+            ["react-error-boundary", "npm:4.0.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.0.4", {\
+          "packageLocation": "./.yarn/__virtual__/react-error-boundary-virtual-548360651a/0/cache/react-error-boundary-npm-4.0.4-6b145b0e7d-02f04bdf85.zip/node_modules/react-error-boundary/",\
+          "packageDependencies": [\
+            ["react-error-boundary", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.0.4"],\
+            ["@babel/runtime", "npm:7.21.0"],\
+            ["@types/react", "npm:18.0.33"],\
+            ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
             "@types/react",\

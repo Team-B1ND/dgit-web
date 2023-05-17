@@ -4,7 +4,7 @@ import RankingList from "../../common/RankingList";
 import { ProfileImg } from "../Commit/style";
 
 const PR = () => {
-  const { data } = useGetPullRequestRank();
+  const { data } = useGetPullRequestRank({ suspense: true });
   return (
     <RankingList.Table.TBody>
       {data?.data.map((data, idx) => {

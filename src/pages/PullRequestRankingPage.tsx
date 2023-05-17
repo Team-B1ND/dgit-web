@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
 import RankingList from "../components/common/RankingList";
 import PR from "../components/Ranking/PR";
 
@@ -23,7 +26,11 @@ const PullRequestRankingPage = () => {
             <RankingList.Table.THead.Th>Intro</RankingList.Table.THead.Th>
             <RankingList.Table.THead.Th>Commits</RankingList.Table.THead.Th>
           </RankingList.Table.THead>
-          <PR />
+          <ErrorBoundary fallback={<>Error...</>}>
+            <Suspense fallback={<RankingFallbackLoader />}>
+              <PR />
+            </Suspense>
+          </ErrorBoundary>
         </RankingList.Table>
       </RankingList>
     </div>

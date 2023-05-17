@@ -13,6 +13,9 @@ import config from "../../../config/config.json";
 import token from "../../../lib/token/token";
 import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
 import GitInfo from "../GitInfo";
+import { ErrorBoundary } from "react-error-boundary";
+import { Suspense } from "react";
+import ProfileFallbackLoader from "../FallBackLoader/Profile";
 const RankingList = ({ children, customStyle }: RankingListProps) => {
   return (
     <S.ListContainer style={{ ...customStyle }}>{children}</S.ListContainer>
@@ -31,7 +34,11 @@ const RankingHero = ({ children }: RankingHeroProps) => {
         </span>
       </S.HeroText>
       {token.getToken(ACCESS_TOKEN_KEY) ? (
-        <GitInfo />
+        <ErrorBoundary fallback={<>error...</>}>
+          <Suspense fallback={<ProfileFallbackLoader />}>
+            <GitInfo />
+          </Suspense>
+        </ErrorBoundary>
       ) : (
         <S.HeroLoginText onClick={() => (window.location.href = authUrl)}>
           도담도담 계정으로 로그인

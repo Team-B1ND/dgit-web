@@ -1,11 +1,10 @@
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
 import RankingList from "../components/common/RankingList";
 import Repository from "../components/Ranking/Repository";
-import Star from "../components/Ranking/Repository";
-import { useGetPullRequestRank } from "../queries/github/github.query";
 
 const RepoStarsRankingPage = () => {
-  const { data } = useGetPullRequestRank();
-
   return (
     <div
       style={{
@@ -28,7 +27,11 @@ const RepoStarsRankingPage = () => {
             </RankingList.Table.THead.Th>
             <RankingList.Table.THead.Th>Total Stars</RankingList.Table.THead.Th>
           </RankingList.Table.THead>
-          <Repository />
+          <ErrorBoundary fallback={<>Error...</>}>
+            <Suspense fallback={<RankingFallbackLoader />}>
+              <Repository />
+            </Suspense>
+          </ErrorBoundary>
         </RankingList.Table>
       </RankingList>
     </div>

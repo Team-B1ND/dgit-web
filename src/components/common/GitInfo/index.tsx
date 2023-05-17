@@ -3,7 +3,7 @@ import Avatar from "../Avatar";
 import * as S from "./style";
 
 const GitInfo = () => {
-  const { data } = useGetMemberQuery();
+  const { data } = useGetMemberQuery({ suspense: true });
   return (
     <S.GitInfoContainer>
       <S.GitInfoAbleContainer>

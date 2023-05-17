@@ -5,7 +5,7 @@ import RankingList from "../../common/RankingList";
 import { ProfileImg } from "./style";
 
 const Commit = () => {
-  const { data } = useGetTotalRankQuery();
+  const { data } = useGetTotalRankQuery({ suspense: true });
 
   return (
     <RankingList.Table.TBody>
