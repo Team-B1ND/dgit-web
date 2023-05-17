@@ -12,10 +12,16 @@ export const ModalContainer = styled.div`
   text-align: center;
 `;
 
-export const Content = styled.div`
+export const ModalBackGround = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+
   display: flex;
-  height: 40%;
-  width: 40%;
-  flex-direction: column;
-  background: #3a3a3a;
+  justify-content: center;
+  align-items: center;
 `;

@@ -13,7 +13,7 @@ import gradation1 from "../../../asset/Common/Header/gradation1.svg";
 import gradation2 from "../../../asset/Common/Header/gradation2.svg";
 import gradation3 from "../../../asset/Common/Header/gradation3.svg";
 import { useNavigate } from "react-router-dom";
-import { HEADER_ITEM } from "../../../constants/header/header.constant";
+import { HEADER_ITEM } from "../../../constants/header/Header.constant";
 import { useRecoilState } from "recoil";
 import { RegisterModalOpenAtom } from "../../../store/common/common.store";
 import Register from "../Register";
@@ -44,11 +44,16 @@ const Header = () => {
       </HeaderMidWrap>
       <HeaderMidWrap>
         등록
-        <HeaderCategoryBox>
-          <AiOutlinePlusSquare size={20} onClick={() => setIsOpen(true)} />
+        <HeaderCategoryBox
+          onClick={() => {
+            setIsOpen(true);
+            console.log("hi");
+          }}
+        >
+          <AiOutlinePlusSquare size={20} onClick={() => console.log("1")} />
           REGISTER
         </HeaderCategoryBox>
-      </HeaderMidWrap>
+      </HeaderMidWrap>{" "}
       <Register />
       <HeaderBottomImg src={gradation1} />
       <HeaderBottomImg src={gradation2} />

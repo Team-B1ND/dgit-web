@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -10,17 +10,19 @@ export const ModalContainer = styled.div`
   left: 0;
   top: 0;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
 export const Content = styled.div`
   display: flex;
-  height: 40%;
-  width: 40%;
+  width: 800px;
+  height: 397px;
   flex-direction: column;
   background: #3a3a3a;
 `;
 
 export const ModalBox = styled.div``;
+
 export const ModalHeader = styled.div`
   display: flex;
   flex-direction: column;

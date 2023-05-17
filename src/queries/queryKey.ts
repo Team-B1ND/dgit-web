@@ -7,4 +7,5 @@ export const QUERY_KEYS = {
       pullrequest: "pullrequestRank/getPullRequestRank",
     },
   },
+  member: "member/getMember",
 };

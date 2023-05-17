@@ -2,7 +2,7 @@ import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { ChangeEvent, useState } from "react";
 import { usePostGithubUserMutation } from "../../queries/github/github.query";
 
-const memberPost = () => {
+const usePostMember = () => {
   const [githubId, setGithubId] = useState("");
   const postGithubUserMutation = usePostGithubUserMutation();
 
@@ -27,4 +27,4 @@ const memberPost = () => {
   return { onSubmitMember, githubId, setGithubId, onChangeGithubId };
 };
 
-export default memberPost;
+export default usePostMember;

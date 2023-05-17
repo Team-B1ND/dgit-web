@@ -10,6 +10,9 @@ import {
 import * as S from "./style";
 import { palette } from "../../../styles/palette";
 import config from "../../../config/config.json";
+import token from "../../../lib/token/token";
+import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
+import GitInfo from "../GitInfo";
 const RankingList = ({ children, customStyle }: RankingListProps) => {
   return (
     <S.ListContainer style={{ ...customStyle }}>{children}</S.ListContainer>
@@ -27,9 +30,13 @@ const RankingHero = ({ children }: RankingHeroProps) => {
           {children}
         </span>
       </S.HeroText>
-      <S.HeroLoginText onClick={() => (window.location.href = authUrl)}>
-        도담도담 계정으로 로그인
-      </S.HeroLoginText>
+      {token.getToken(ACCESS_TOKEN_KEY) ? (
+        <GitInfo />
+      ) : (
+        <S.HeroLoginText onClick={() => (window.location.href = authUrl)}>
+          도담도담 계정으로 로그인
+        </S.HeroLoginText>
+      )}
     </S.HerorTextBox>
   );
 };

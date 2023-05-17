@@ -1,22 +1,20 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { ChangeEvent, useState } from "react";
-import { useQueryClient } from "react-query";
-import { usePostGithubUserMutation } from "../../queries/github/github.query";
+import { usePostRepositoryMutation } from "../../queries/github/github.query";
 
-const memberPost = () => {
-  const queryClient = useQueryClient();
+const usePostRepository = () => {
   const [postData, setPostData] = useState({
     githubId: "",
     repositoryName: "",
   });
-  const postGithubUserMutation = usePostGithubUserMutation();
+  const postGithubUserMutation = usePostRepositoryMutation();
 
-  const onChangeGithubId = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChangePostData = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setPostData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const onSubmitMember = () => {
+  const onSubmitRepository = () => {
     postGithubUserMutation.mutate(postData, {
       onSuccess: () => {
         B1ndToast.showSuccess("레포지토리 등록 성공");
@@ -26,7 +24,7 @@ const memberPost = () => {
       },
     });
   };
-  return { postData, onSubmitMember, onChangeGithubId };
+  return { postData, onSubmitRepository, onChangePostData };
 };
 
-export default memberPost;
+export default usePostRepository;

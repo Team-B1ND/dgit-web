@@ -38,7 +38,7 @@ export const THeadContainer = styled.div`
   height: 50px;
   margin-bottom: 20px;
   position: sticky;
-  z-index: 3;
+  z-index: 0;
   top: 0px;
 `;
 

@@ -5,7 +5,7 @@ export const GitInfoContainer = styled.div`
   flex-direction: row;
 
   float: right;
-  margin: 30px 30px 0 0;
+  margin-top:30px
   justify-content: space-between;
 
   width: 250px;

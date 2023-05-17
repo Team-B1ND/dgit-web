@@ -1,9 +1,5 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import Avatar from "../components/common/Avatar";
-import Medal from "../components/common/Medal";
-import Modal from "../components/common/Modal";
 import RankingList from "../components/common/RankingList";
-import { RegisterModalOpenAtom } from "../store/common/common.store";
+import Commit from "../components/Ranking/Commit";
 
 const CommitRankingPage = () => {
   return (
@@ -20,101 +16,14 @@ const CommitRankingPage = () => {
         <RankingList.Hero>Commit</RankingList.Hero>
         <RankingList.Table>
           <RankingList.Table.THead>
-            <RankingList.Table.THead.Th>asdsd</RankingList.Table.THead.Th>
-            <RankingList.Table.THead.Th>asdsd</RankingList.Table.THead.Th>
-            <RankingList.Table.THead.Th>asdsd</RankingList.Table.THead.Th>
-            <RankingList.Table.THead.Th>asdsd</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Profile</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Github</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Name</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Intro</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Commits</RankingList.Table.THead.Th>
           </RankingList.Table.THead>
-          <RankingList.Table.TBody>
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={1}>1</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={2}>2</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={3}>3</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-            <tr>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={4}>4</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>asddsd</RankingList.Table.TBody.Td>
-            </tr>{" "}
-          </RankingList.Table.TBody>
+          <Commit />
         </RankingList.Table>
       </RankingList>
     </div>

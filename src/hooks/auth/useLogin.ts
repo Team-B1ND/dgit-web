@@ -1,6 +1,6 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { useCallback, useEffect } from "react";
-import { useQueryClient } from "react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   ACCESS_TOKEN_KEY,
@@ -11,20 +11,21 @@ import { usePostLoginMutation } from "../../queries/auth/auth.query";
 import { queryString } from "../../utils/queryString";
 
 const useLogin = () => {
+  const queryClient = useQueryClient();
   const { search } = useLocation();
   const navigate = useNavigate();
   const postLoginMutation = usePostLoginMutation();
 
-  const login = useCallback(() => {
+  const login = () => {
     postLoginMutation.mutateAsync(
       {
         code: queryString(search).code,
       },
       {
-        onSuccess: (data) => {
-          console.log(data);
-          token.setToken(ACCESS_TOKEN_KEY, data.data.acceToken);
-          token.setToken(REFRESH_TOKEN_KEY, data.data.refreshToken);
+        onSuccess: ({ data }) => {
+          token.setToken(ACCESS_TOKEN_KEY, data.accessToken);
+          token.setToken(REFRESH_TOKEN_KEY, data.refreshToken);
+          queryClient.invalidateQueries(["member/getMember"]);
           B1ndToast.showSuccess("로그인 성공");
           navigate("/");
         },
@@ -35,27 +36,11 @@ const useLogin = () => {
         },
       }
     );
-  }, [search]);
-
-  // const login = useCallback(async () => {
-  //   try {
-  //     const { data } = await AuthRepositoryImpl.login({
-  //       code: queryString(search).code,
-  //     });
-  //     console.log(data);
-
-  //     token.setToken(ACCESS_TOKEN_KEY, data.acceToken);
-  //     token.setToken(REFRESH_TOKEN_KEY, data.acceToken);
-  //     navigate("/");
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }, []);
+  };
 
   useEffect(() => {
     login();
-    console.log("login함수 실행");
-  }, [login]);
+  }, []);
 
   return {};
 };

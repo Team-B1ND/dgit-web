@@ -1,16 +1,21 @@
+import { useGetMemberQuery } from "../../../queries/member/member.query";
 import Avatar from "../Avatar";
 import * as S from "./style";
 
 const GitInfo = () => {
-  const data: string = "https://avatars.githubusercontent.com/u/123962815?v=4"; //임시프로필
+  const { data } = useGetMemberQuery();
   return (
     <S.GitInfoContainer>
       <S.GitInfoAbleContainer>
-        <S.GithubName>Sanghyun0505</S.GithubName>
-        <S.StudentInfo>2408 박상현</S.StudentInfo>
+        <S.GithubName>{data?.data.githubId}</S.GithubName>
+        <S.StudentInfo>{data?.data.name}</S.StudentInfo>
       </S.GitInfoAbleContainer>
       <S.ProfileContainer>
-        <Avatar src={data} isHexagonFrame={true}/>
+        <Avatar
+          src={String(data?.data.userImage)}
+          isHexagonFrame={true}
+          name={String(data?.data.githubId)}
+        />
       </S.ProfileContainer>
     </S.GitInfoContainer>
   );

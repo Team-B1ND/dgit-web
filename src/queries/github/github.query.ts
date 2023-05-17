@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../\bqueryKey";
 import {
   GithubUserParam,
@@ -8,7 +8,7 @@ import GitRepositoryImpl from "../../repositories/github/GithubRepositoryImpl";
 
 export const useGetRepositoryQuery = () =>
   useQuery(
-    QUERY_KEYS.github.getRepository,
+    [QUERY_KEYS.github.getRepository],
     () => GitRepositoryImpl.getRepository(),
     {
       staleTime: 1000 * 60 * 5,
@@ -17,14 +17,18 @@ export const useGetRepositoryQuery = () =>
   );
 
 export const useGetWeekRankQuery = () =>
-  useQuery(QUERY_KEYS.github.rank.week, () => GitRepositoryImpl.getWeekRank(), {
-    staleTime: 1000 * 60 * 5,
-    cacheTime: 1000 * 60 * 5,
-  });
+  useQuery(
+    [QUERY_KEYS.github.rank.week],
+    () => GitRepositoryImpl.getWeekRank(),
+    {
+      staleTime: 1000 * 60 * 5,
+      cacheTime: 1000 * 60 * 5,
+    }
+  );
 
 export const useGetTotalRankQuery = () =>
   useQuery(
-    QUERY_KEYS.github.rank.total,
+    [QUERY_KEYS.github.rank.total],
     () => GitRepositoryImpl.getTotalRank(),
     {
       staleTime: 1000 * 60 * 5,
@@ -34,7 +38,7 @@ export const useGetTotalRankQuery = () =>
 
 export const useGetPullRequestRank = () =>
   useQuery(
-    QUERY_KEYS.github.rank.pullrequest,
+    [QUERY_KEYS.github.rank.pullrequest],
     () => GitRepositoryImpl.getPullRequestRank(),
     {
       staleTime: 1000 * 60 * 5,

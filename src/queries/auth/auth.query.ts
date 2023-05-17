@@ -1,6 +1,6 @@
-import { useMutation } from "react-query";
 import AuthRepositoryImpl from "../../repositories/auth/AuthRepositoryImpl";
 import { LoginParam } from "../../repositories/auth/AuthRepository";
+import { useMutation } from "@tanstack/react-query";
 
 export const usePostLoginMutation = () => {
   const mutation = useMutation(({ code }: LoginParam) =>
