@@ -7,9 +7,11 @@ import UserForm from "./UserInputForm/index";
 import { SwitchCase } from "@b1nd/b1nd-react-util";
 import RepositoryForm from "./RepositoryForm/index";
 
+export type colorType = "userForm" | "repositoryForm";
+
 const Register = () => {
   const [isOpen, setIsOpen] = useRecoilState<boolean>(RegisterModalOpenAtom);
-  const [component, setComponent] = useState("userForm");
+  const [component, setComponent] = useState<colorType>("userForm");
 
   const onClose = () => {
     setIsOpen(false);
@@ -26,12 +28,12 @@ const Register = () => {
           <M.ModalTextBox>
             <div className="ModalText">REGISTER</div>
           </M.ModalTextBox>
-          <M.ModalButton>
+          <M.ModalButton colorType={component}>
             <button onClick={() => setComponent("userForm")} className="user">
               USER
             </button>
             <button
-              onClick={() => setComponent("RepositoryForm")}
+              onClick={() => setComponent("repositoryForm")}
               className="repository"
             >
               REPOSITORY
@@ -43,7 +45,7 @@ const Register = () => {
             value={component}
             caseBy={{
               userForm: <UserForm />,
-              RepositoryForm: <RepositoryForm />,
+              repositoryForm: <RepositoryForm />,
             }}
           />
         </div>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colorType } from ".";
 
 export const ModalContainer = styled.div`
   height: 100vh;
@@ -30,30 +31,40 @@ export const ModalHeader = styled.div`
   background-color: #2d2d2d;
   height: 162px;
 `;
-export const ModalButton = styled.div`
+export const ModalButton = styled.div<{ colorType: colorType }>`
   display: flex;
+  font-size: 14px;
+
   .user {
+    width: 110px;
+    height: 40px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     color: white;
-    background: #2d2d2d;
+    border-top-left-radius: 5px;
+    outline: none;
     border: none;
-    font-size: 14px;
-    width: 110px;
-    height: 40px;
-    background-color: gray;
+
+    background: ${({ colorType }) =>
+      colorType === "userForm" ? "rgb(58, 58, 58)" : "#2d2d2d"};
   }
   .repository {
-    display: flex;
-    align-items: center;
-    color: white;
-    background: #2d2d2d;
-    border: none;
-    font-size: 14px;
-    background-color: gray;
     width: 110px;
     height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: ${({ colorType }) =>
+      colorType === "repositoryForm" ? "rgb(58, 58, 58)" : "#2d2d2d"};
+
+    color: white;
+    border: none;
+    border-top-right-radius: 5px;
   }
 `;
 
