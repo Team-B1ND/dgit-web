@@ -74,6 +74,17 @@ const RankingTBodyTD = ({ children, customStyle }: RankingTBodyTDProps) => {
   return <S.TdContainer style={{ ...customStyle }}>{children}</S.TdContainer>;
 };
 
+const RankingStrongTbodyTd = ({
+  children,
+  customStyle,
+}: RankingTBodyTDProps) => {
+  return (
+    <S.TdStrongContainer style={{ ...customStyle }}>
+      {children}
+    </S.TdStrongContainer>
+  );
+};
+
 export default Object.assign(RankingList, {
   Hero: RankingHero,
   Table: Object.assign(RankingTable, {
@@ -82,6 +93,7 @@ export default Object.assign(RankingList, {
     }),
     TBody: Object.assign(RankingTBody, {
       Td: RankingTBodyTD,
+      Strong: RankingStrongTbodyTd,
     }),
   }),
 });

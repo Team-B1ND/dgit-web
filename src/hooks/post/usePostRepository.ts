@@ -23,6 +23,7 @@ const usePostRepository = () => {
       onSuccess: () => {
         B1ndToast.showSuccess("레포지토리 등록 성공");
         queryClient.invalidateQueries(["repository/getRepository"]);
+        setPostData({ githubId: "", repositoryName: "" });
         setClose(false);
       },
       onError: () => {

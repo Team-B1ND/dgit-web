@@ -27,9 +27,9 @@ const PR = () => {
               <RankingList.Table.TBody.Td>
                 {data.bio}
               </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Strong>
                 {data.pullRequest}
-              </RankingList.Table.TBody.Td>
+              </RankingList.Table.TBody.Strong>
             </tr>
           </>
         );

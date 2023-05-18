@@ -75,3 +75,17 @@ export const TdContainer = styled.div`
   justify-content: center;
   font-size: 20px;
 `;
+
+export const TdStrongContainer = styled.div`
+  width: 100%;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: 24px;
+
+  color: #6c93f8;
+`;

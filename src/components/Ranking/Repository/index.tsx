@@ -24,9 +24,9 @@ const Repository = () => {
               <RankingList.Table.TBody.Td>
                 {data.repositoryName}
               </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Strong>
                 {data.totalStars}
-              </RankingList.Table.TBody.Td>
+              </RankingList.Table.TBody.Strong>
             </tr>
           </>
         );

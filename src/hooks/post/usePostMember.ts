@@ -25,6 +25,7 @@ const usePostMember = () => {
           queryClient.invalidateQueries(["totalRank/getTotalRank"]);
           queryClient.invalidateQueries(["weekRank/getWeekRank"]);
           queryClient.invalidateQueries(["pullrequestRank/getPullRequestRank"]);
+          setGithubId("");
           setClose(false);
         },
         onError: () => {

@@ -29,9 +29,9 @@ const Commit = () => {
               <RankingList.Table.TBody.Td>
                 {data.bio}
               </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
+              <RankingList.Table.TBody.Strong>
                 {data.contributions}
-              </RankingList.Table.TBody.Td>
+              </RankingList.Table.TBody.Strong>
             </tr>
           </>
         );

@@ -11,7 +11,6 @@ import { usePostLoginMutation } from "../../queries/auth/auth.query";
 import { queryString } from "../../utils/queryString";
 
 const useLogin = () => {
-  const queryClient = useQueryClient();
   const { search } = useLocation();
   const navigate = useNavigate();
   const postLoginMutation = usePostLoginMutation();
@@ -25,7 +24,6 @@ const useLogin = () => {
         onSuccess: ({ data }) => {
           token.setToken(ACCESS_TOKEN_KEY, data.accessToken);
           token.setToken(REFRESH_TOKEN_KEY, data.refreshToken);
-          queryClient.invalidateQueries(["member/getMember"]);
           B1ndToast.showSuccess("로그인 성공");
           navigate("/");
         },
