@@ -22,7 +22,6 @@ export const GitProfile = styled.img<{ isHexagonFrame: boolean }>`
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 2;
         `
       : css`
           width: 50px;
