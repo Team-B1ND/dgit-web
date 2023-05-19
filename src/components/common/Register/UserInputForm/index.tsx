@@ -1,16 +1,11 @@
 import TextInput from "../../TextInput";
 import Button from "../../Button";
 import * as I from "./style";
-import { useRecoilState } from "recoil";
-import { RegisterModalOpenAtom } from "../../../../store/common/common.store";
 import usePostMember from "../../../../hooks/post/usePostMember";
+import useModal from "../../../../hooks/util/useModal";
 
 const UserForm = () => {
-  const [isOpen, setIsOpen] = useRecoilState(RegisterModalOpenAtom);
-
-  const onClose = () => {
-    setIsOpen(false);
-  };
+  const { close } = useModal();
 
   const { onChangeGithubId, onSubmitMember } = usePostMember();
   return (
@@ -27,11 +22,7 @@ const UserForm = () => {
           </Button>
         </I.UserInput>
         <I.UserButton>
-          <Button
-            buttonType="cancel"
-            onClick={onClose}
-            className="cancelButton"
-          >
+          <Button buttonType="cancel" onClick={close} className="cancelButton">
             취소
           </Button>
           <Button buttonType="submit" onClick={onSubmitMember}>

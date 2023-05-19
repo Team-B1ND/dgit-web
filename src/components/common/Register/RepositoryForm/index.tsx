@@ -1,16 +1,11 @@
 import TextInput from "../../TextInput";
 import Button from "../../Button";
 import * as I from "./style";
-import { useRecoilState } from "recoil";
-import { RegisterModalOpenAtom } from "../../../../store/common/common.store";
 import usePostRepository from "../../../../hooks/post/usePostRepository";
+import useModal from "../../../../hooks/util/useModal";
 
 const RepositoryForm = () => {
-  const [isOpen, setIsOpen] = useRecoilState(RegisterModalOpenAtom);
-  const onClose = () => {
-    setIsOpen(false);
-  };
-
+  const { close } = useModal();
   const { onChangePostData, onSubmitRepository, postData } =
     usePostRepository();
   return (
@@ -39,11 +34,7 @@ const RepositoryForm = () => {
           />
         </I.RepositoryInput>
         <I.RepositoryButton>
-          <Button
-            buttonType="cancel"
-            onClick={onClose}
-            className="cancelButton"
-          >
+          <Button buttonType="cancel" onClick={close} className="cancelButton">
             취소
           </Button>
           <Button buttonType="submit" onClick={onSubmitRepository}>

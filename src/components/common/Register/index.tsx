@@ -1,24 +1,19 @@
 import { ChangeEvent, useState } from "react";
-import { useRecoilState } from "recoil";
-import { RegisterModalOpenAtom } from "../../../store/common/common.store";
 import Modal from "../Modal";
 import * as M from "./style";
 import UserForm from "./UserInputForm/index";
 import { SwitchCase } from "@b1nd/b1nd-react-util";
 import RepositoryForm from "./RepositoryForm/index";
+import useModal from "../../../hooks/util/useModal";
 
 export type colorType = "userForm" | "repositoryForm";
 
 const Register = () => {
-  const [isOpen, setIsOpen] = useRecoilState<boolean>(RegisterModalOpenAtom);
   const [component, setComponent] = useState<colorType>("userForm");
-
-  const onClose = () => {
-    setIsOpen(false);
-  };
+  const { close, isOpen } = useModal();
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={close}>
       <M.Content
         onClick={(e: ChangeEvent<any>) => {
           e.stopPropagation();
