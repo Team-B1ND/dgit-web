@@ -1,5 +1,4 @@
 import {
-  RankingHeroProps,
   RankingListProps,
   RankingTableProps,
   RankingTBodyProps,
@@ -8,43 +7,10 @@ import {
   RankingTHeadTHProps,
 } from "./types";
 import * as S from "./style";
-import { palette } from "../../../styles/palette";
-import config from "../../../config/config.json";
-import token from "../../../lib/token/token";
-import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
-import GitInfo from "../GitInfo";
-import { ErrorBoundary } from "react-error-boundary";
-import { Suspense } from "react";
-import ProfileFallbackLoader from "../FallBackLoader/Profile";
+
 const RankingList = ({ children, customStyle }: RankingListProps) => {
   return (
     <S.ListContainer style={{ ...customStyle }}>{children}</S.ListContainer>
-  );
-};
-
-const RankingHero = ({ children }: RankingHeroProps) => {
-  const authUrl = `https://dauth.b1nd.com/login?client_id=${config.clientId}&redirect_uri=http://localhost:3000/callback`;
-  return (
-    <S.HerorTextBox>
-      <S.HeroText>
-        <span style={{ color: "white" }}>Ranking</span>
-        <span style={{ color: "#A8A8A8" }}>for</span>
-        <span style={{ fontWeight: "bold", color: palette.main }}>
-          {children}
-        </span>
-      </S.HeroText>
-      {token.getToken(ACCESS_TOKEN_KEY) ? (
-        <ErrorBoundary fallback={<>error...</>}>
-          <Suspense fallback={<ProfileFallbackLoader />}>
-            <GitInfo />
-          </Suspense>
-        </ErrorBoundary>
-      ) : (
-        <S.HeroLoginText onClick={() => (window.location.href = authUrl)}>
-          도담도담 계정으로 로그인
-        </S.HeroLoginText>
-      )}
-    </S.HerorTextBox>
   );
 };
 
@@ -86,7 +52,6 @@ const RankingStrongTbodyTd = ({
 };
 
 export default Object.assign(RankingList, {
-  Hero: RankingHero,
   Table: Object.assign(RankingTable, {
     THead: Object.assign(RankingTHead, {
       Th: RankingTHeadTH,

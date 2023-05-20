@@ -8,7 +8,7 @@ import useModal from "../util/useModal";
 const usePostRepository = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const [postData, setPostData] = useState({
+  const [repositoryData, setRepositoryData] = useState({
     githubId: "",
     repositoryName: "",
   });
@@ -17,15 +17,15 @@ const usePostRepository = () => {
 
   const onChangePostData = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setPostData((prev) => ({ ...prev, [name]: value }));
+    setRepositoryData((prev) => ({ ...prev, [name]: value }));
   };
 
   const onSubmitRepository = () => {
-    postGithubUserMutation.mutate(postData, {
+    postGithubUserMutation.mutate(repositoryData, {
       onSuccess: () => {
         B1ndToast.showSuccess("레포지토리 등록 성공");
         queryClient.invalidateQueries(["repository/getRepository"]);
-        setPostData({ githubId: "", repositoryName: "" });
+        setRepositoryData({ githubId: "", repositoryName: "" });
         close();
         navigate("/repostars-ranking");
       },
@@ -34,7 +34,7 @@ const usePostRepository = () => {
       },
     });
   };
-  return { postData, onSubmitRepository, onChangePostData };
+  return { repositoryData, onSubmitRepository, onChangePostData };
 };
 
 export default usePostRepository;

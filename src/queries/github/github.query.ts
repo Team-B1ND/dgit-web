@@ -1,5 +1,6 @@
 import { useMutation, useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { AxiosError } from "axios";
+import { QUERY_KEYS } from "../\bqueryKey";
 import {
   GithubUserParam,
   postRepositoryParam,
@@ -17,11 +18,11 @@ export const useGetRepositoryQuery = (
     RepositoryResponse,
     AxiosError,
     RepositoryResponse,
-    ["repository/getRepository"]
+    [string]
   >
 ) =>
   useQuery(
-    ["repository/getRepository"],
+    [QUERY_KEYS.github.getRepository],
     () => GitRepositoryImpl.getRepository(),
     {
       ...options,
@@ -32,44 +33,42 @@ export const useGetRepositoryQuery = (
 
 export const useGetWeekRankQuery = (
   //주간 커밋 랭킹
-  options?: UseQueryOptions<
-    RankResponse,
-    AxiosError,
-    RankResponse,
-    ["weekRank/getWeekRank"]
-  >
+  options?: UseQueryOptions<RankResponse, AxiosError, RankResponse, [string]>
 ) =>
-  useQuery(["weekRank/getWeekRank"], () => GitRepositoryImpl.getWeekRank(), {
-    ...options,
-    staleTime: 1000 * 60 * 60,
-    cacheTime: 1000 * 60 * 60,
-  });
+  useQuery(
+    [QUERY_KEYS.github.rank.week],
+    () => GitRepositoryImpl.getWeekRank(),
+    {
+      ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
+    }
+  );
 
 export const useGetTotalRankQuery = (
   //전체 커밋랭킹
-  options?: UseQueryOptions<
-    RankResponse,
-    AxiosError,
-    RankResponse,
-    ["totalRank/getTotalRank"]
-  >
+  options?: UseQueryOptions<RankResponse, AxiosError, RankResponse, [string]>
 ) =>
-  useQuery(["totalRank/getTotalRank"], () => GitRepositoryImpl.getTotalRank(), {
-    ...options,
-    staleTime: 1000 * 60 * 5,
-    cacheTime: 1000 * 60 * 5,
-  });
+  useQuery(
+    [QUERY_KEYS.github.rank.total],
+    () => GitRepositoryImpl.getTotalRank(),
+    {
+      ...options,
+      staleTime: 1000 * 60 * 5,
+      cacheTime: 1000 * 60 * 5,
+    }
+  );
 
 export const useGetPullRequestRank = (
   options?: UseQueryOptions<
     PRRankResponse,
     AxiosError,
     PRRankResponse,
-    ["pullrequestRank/getPullRequestRank"]
+    [string]
   >
 ) =>
   useQuery(
-    ["pullrequestRank/getPullRequestRank"],
+    [QUERY_KEYS.github.rank.pullrequest],
     () => GitRepositoryImpl.getPullRequestRank(),
     {
       ...options,

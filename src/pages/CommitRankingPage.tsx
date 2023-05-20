@@ -3,6 +3,7 @@ import RankingList from "../components/common/RankingList";
 import Commit from "../components/Ranking/Commit";
 import { ErrorBoundary } from "react-error-boundary";
 import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
+import Header from "../components/common/Header";
 
 const CommitRankingPage = () => {
   return (
@@ -16,7 +17,7 @@ const CommitRankingPage = () => {
       }}
     >
       <RankingList>
-        <RankingList.Hero>Commit</RankingList.Hero>
+        <Header>Commits</Header>
         <RankingList.Table>
           <RankingList.Table.THead>
             <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>

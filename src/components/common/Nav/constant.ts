@@ -2,7 +2,7 @@ import { HiOutlinePencilAlt } from "react-icons/hi";
 import { AiOutlineStar } from "react-icons/ai";
 import { BiGitPullRequest } from "react-icons/bi";
 
-export const HEADER_ITEM = [
+export const NAV_ITEM = [
   {
     title: "COMMIT",
     link: "/",

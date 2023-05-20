@@ -31,7 +31,10 @@ export const ModalHeader = styled.div`
   background-color: #2d2d2d;
   height: 162px;
 `;
-export const ModalButton = styled.div<{ colorType: colorType }>`
+export const ModalButton = styled.div<{
+  userBackground: string;
+  repositoryBackground: string;
+}>`
   display: flex;
   font-size: 14px;
 
@@ -47,9 +50,7 @@ export const ModalButton = styled.div<{ colorType: colorType }>`
     border-top-left-radius: 5px;
     outline: none;
     border: none;
-
-    background: ${({ colorType }) =>
-      colorType === "userForm" ? "rgb(58, 58, 58)" : "#2d2d2d"};
+    background: ${({ userBackground }) => userBackground};
   }
   .repository {
     width: 110px;
@@ -59,12 +60,10 @@ export const ModalButton = styled.div<{ colorType: colorType }>`
     justify-content: center;
     align-items: center;
 
-    background: ${({ colorType }) =>
-      colorType === "repositoryForm" ? "rgb(58, 58, 58)" : "#2d2d2d"};
-
     color: white;
     border: none;
     border-top-right-radius: 5px;
+    background: ${({ repositoryBackground }) => repositoryBackground};
   }
 `;
 

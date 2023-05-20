@@ -1,57 +1,36 @@
-import {
-  HeaderBottomImg,
-  HeaderCategoryBox,
-  HeaderContainer,
-  HeaderMidWrap,
-  HeaderTitle,
-  HeaderTitleText,
-  HeaderTopWrap,
-} from "./style";
-import Logo from "../../../asset/Logo/Logo.svg";
-import { AiOutlinePlusSquare } from "react-icons/ai";
-import gradation1 from "../../../asset/Common/Header/gradation1.svg";
-import gradation2 from "../../../asset/Common/Header/gradation2.svg";
-import gradation3 from "../../../asset/Common/Header/gradation3.svg";
-import { useNavigate } from "react-router-dom";
-import { HEADER_ITEM } from "../../../constants/header/Header.constant";
-import Register from "../Register";
-import useModal from "../../../hooks/util/useModal";
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
+import token from "../../../lib/token/token";
+import ProfileFallbackLoader from "../FallBackLoader/Profile";
+import GitInfo from "../GitInfo";
+import { authURL } from "./constant";
+import * as S from "./style";
+import { palette } from "../../../styles/palette";
+import { HeaderProps } from "./types";
 
-const Header = () => {
-  const navigate = useNavigate();
-  const { open } = useModal();
+const Header = ({ children }: HeaderProps) => {
   return (
-    <HeaderContainer>
-      <HeaderTopWrap>
-        <HeaderTitle src={Logo} />
-        <HeaderTitleText>DGIT</HeaderTitleText>
-      </HeaderTopWrap>
-      <HeaderMidWrap>
-        순위
-        {HEADER_ITEM.map((item) => {
-          return (
-            <HeaderCategoryBox
-              key={item.link}
-              onClick={() => navigate(item.link)}
-            >
-              <item.icon size={20} />
-              {item.title}
-            </HeaderCategoryBox>
-          );
-        })}
-      </HeaderMidWrap>
-      <HeaderMidWrap>
-        등록
-        <HeaderCategoryBox onClick={open}>
-          <AiOutlinePlusSquare size={20} />
-          REGISTER
-        </HeaderCategoryBox>
-      </HeaderMidWrap>
-      <Register />
-      <HeaderBottomImg src={gradation1} />
-      <HeaderBottomImg src={gradation2} />
-      <HeaderBottomImg src={gradation3} />
-    </HeaderContainer>
+    <S.HeaderTextBox>
+      <S.HeaderText>
+        <span style={{ color: "white" }}>Ranking</span>
+        <span style={{ color: "#A8A8A8" }}>for</span>
+        <span style={{ fontWeight: "bold", color: palette.main }}>
+          {children}
+        </span>
+      </S.HeaderText>
+      {token.getToken(ACCESS_TOKEN_KEY) ? (
+        <ErrorBoundary fallback={<>error...</>}>
+          <Suspense fallback={<ProfileFallbackLoader />}>
+            <GitInfo />
+          </Suspense>
+        </ErrorBoundary>
+      ) : (
+        <S.HeaderLoginText onClick={() => (window.location.href = authURL)}>
+          도담도담 계정으로 로그인
+        </S.HeaderLoginText>
+      )}
+    </S.HeaderTextBox>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { AxiosError } from "axios";
+import { QUERY_KEYS } from "../\bqueryKey";
 import MemberRepositoryImpl from "../../repositories/member/MemberRepositoryImpl";
 import { MemberResponse } from "../../types/member/Member.type";
 
@@ -8,10 +9,10 @@ export const useGetMemberQuery = (
     MemberResponse,
     AxiosError,
     MemberResponse,
-    ["member/getMember"]
+    [string]
   >
 ) =>
-  useQuery(["member/getMember"], () => MemberRepositoryImpl.getMember(), {
+  useQuery([QUERY_KEYS.member], () => MemberRepositoryImpl.getMember(), {
     ...options,
     staleTime: 1000 * 60 * 60,
     cacheTime: 1000 * 60 * 60,

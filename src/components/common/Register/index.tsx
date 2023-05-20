@@ -23,7 +23,14 @@ const Register = () => {
           <M.ModalTextBox>
             <div className="ModalText">REGISTER</div>
           </M.ModalTextBox>
-          <M.ModalButton colorType={component}>
+          <M.ModalButton
+            userBackground={
+              component === "userForm" ? "rgb(58, 58, 58)" : "#2d2d2d"
+            }
+            repositoryBackground={
+              component === "repositoryForm" ? "rgb(58, 58, 58)" : "#2d2d2d"
+            }
+          >
             <button onClick={() => setComponent("userForm")} className="user">
               USER
             </button>
