@@ -16,7 +16,12 @@ const Repository = () => {
                 <Medal rank={rank}>{rank}</Medal>
               </RankingList.Table.TBody.Td>
               <RankingList.Table.TBody.Td>
-                <ProfileImg src={data.githubUserImage} />
+                <ProfileImg
+                  src={data.githubUserImage}
+                  onClick={() =>
+                    (window.location.href = `https://github.com/${data.githubId}/${data.repositoryName}`)
+                  }
+                />
               </RankingList.Table.TBody.Td>{" "}
               <RankingList.Table.TBody.Td>
                 {data.githubId}

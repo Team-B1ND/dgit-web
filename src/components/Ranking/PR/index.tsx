@@ -16,7 +16,12 @@ const PR = () => {
                 <Medal rank={rank}>{rank}</Medal>
               </RankingList.Table.TBody.Td>
               <RankingList.Table.TBody.Td>
-                <ProfileImg src={data.userImage} />
+                <ProfileImg
+                  src={data.userImage}
+                  onClick={() =>
+                    (window.location.href = `https://github.com/${data.githubId}`)
+                  }
+                />
               </RankingList.Table.TBody.Td>{" "}
               <RankingList.Table.TBody.Td>
                 {data.githubId}
