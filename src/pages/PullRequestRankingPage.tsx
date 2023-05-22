@@ -3,7 +3,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
 import Header from "../components/common/Header";
 import RankingList from "../components/common/RankingList";
-import PR from "../components/Ranking/PR";
+import PullRequest from "../components/Ranking/PullRequest";
 
 const PullRequestRankingPage = () => {
   return (
@@ -31,7 +31,7 @@ const PullRequestRankingPage = () => {
           </RankingList.Table.THead>
           <ErrorBoundary fallback={<>Error...</>}>
             <Suspense fallback={<RankingFallbackLoader />}>
-              <PR />
+              <PullRequest />
             </Suspense>
           </ErrorBoundary>
         </RankingList.Table>

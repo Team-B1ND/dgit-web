@@ -3,7 +3,7 @@ import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
 import { ProfileImg } from "../Commit/style";
 
-const PR = () => {
+const PullRequest = () => {
   const { data } = useGetPullRequestRank({ suspense: true });
   return (
     <RankingList.Table.TBody>
@@ -43,4 +43,4 @@ const PR = () => {
   );
 };
 
-export default PR;
+export default PullRequest;
