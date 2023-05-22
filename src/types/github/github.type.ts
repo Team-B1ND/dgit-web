@@ -14,6 +14,19 @@ export interface RepositoryResponse extends Response {
 export interface Rank {
   githubId: string;
   contributions: number;
+  name: string;
+  userImage: string;
+  bio: string;
+}
+
+export interface PRRankResponse {
+  data: PRRank[];
+}
+
+export interface PRRank {
+  githubId: string;
+  name: string;
+  pullRequest: number;
   userImage: string;
   bio: string;
 }

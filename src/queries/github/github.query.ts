@@ -1,42 +1,77 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, UseQueryOptions } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../\bqueryKey";
 import {
   GithubUserParam,
   postRepositoryParam,
 } from "../../repositories/github/GithubRepository";
 import GitRepositoryImpl from "../../repositories/github/GithubRepositoryImpl";
+import {
+  PRRankResponse,
+  RankResponse,
+  RepositoryResponse,
+} from "../../types/github/github.type";
 
-export const useGetRepositoryQuery = () =>
+export const useGetRepositoryQuery = (
+  //레포지토리랭킹
+  options?: UseQueryOptions<
+    RepositoryResponse,
+    AxiosError,
+    RepositoryResponse,
+    [string]
+  >
+) =>
   useQuery(
-    QUERY_KEYS.github.getRepository,
+    [QUERY_KEYS.github.getRepository],
     () => GitRepositoryImpl.getRepository(),
     {
-      staleTime: 1000 * 60 * 5,
-      cacheTime: 1000 * 60 * 5,
+      ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 
-export const useGetWeekRankQuery = () =>
-  useQuery(QUERY_KEYS.github.rank.week, () => GitRepositoryImpl.getWeekRank(), {
-    staleTime: 1000 * 60 * 5,
-    cacheTime: 1000 * 60 * 5,
-  });
-
-export const useGetTotalRankQuery = () =>
+export const useGetWeekRankQuery = (
+  //주간 커밋 랭킹
+  options?: UseQueryOptions<RankResponse, AxiosError, RankResponse, [string]>
+) =>
   useQuery(
-    QUERY_KEYS.github.rank.total,
+    [QUERY_KEYS.github.rank.week],
+    () => GitRepositoryImpl.getWeekRank(),
+    {
+      ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
+    }
+  );
+
+export const useGetTotalRankQuery = (
+  //전체 커밋랭킹
+  options?: UseQueryOptions<RankResponse, AxiosError, RankResponse, [string]>
+) =>
+  useQuery(
+    [QUERY_KEYS.github.rank.total],
     () => GitRepositoryImpl.getTotalRank(),
     {
+      ...options,
       staleTime: 1000 * 60 * 5,
       cacheTime: 1000 * 60 * 5,
     }
   );
 
-export const useGetPullRequestRank = () =>
+export const useGetPullRequestRank = (
+  options?: UseQueryOptions<
+    PRRankResponse,
+    AxiosError,
+    PRRankResponse,
+    [string]
+  >
+) =>
   useQuery(
-    QUERY_KEYS.github.rank.pullrequest,
+    [QUERY_KEYS.github.rank.pullrequest],
     () => GitRepositoryImpl.getPullRequestRank(),
     {
+      ...options,
       staleTime: 1000 * 60 * 5,
       cacheTime: 1000 * 60 * 5,
     }

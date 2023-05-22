@@ -1,6 +1,8 @@
-export interface TokenResponse {
+import { Response } from "../util/Response.type";
+
+export interface TokenResponse extends Response {
   data: {
-    acceToken: string;
+    accessToken: string;
     refreshToken: string;
   };
 }

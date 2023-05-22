@@ -6,16 +6,6 @@ export const ListContainer = styled.div`
   flex-direction: column;
 `;
 
-export const HeroText = styled.p`
-  font-size: 36px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  line-height: 43px;
-  margin-bottom: 40px;
-`;
-
 export const TableContainer = styled.div`
   width: 100%;
   display: flex;
@@ -29,7 +19,7 @@ export const THeadContainer = styled.div`
   height: 50px;
   margin-bottom: 20px;
   position: sticky;
-  z-index: 3;
+  z-index: 0;
   top: 0px;
 `;
 
@@ -65,4 +55,18 @@ export const TdContainer = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 20px;
+`;
+
+export const TdStrongContainer = styled.div`
+  width: 100%;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: 24px;
+
+  color: #6c93f8;
 `;

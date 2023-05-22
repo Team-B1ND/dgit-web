@@ -1,5 +1,4 @@
 import {
-  RankingHeroProps,
   RankingListProps,
   RankingTableProps,
   RankingTBodyProps,
@@ -8,23 +7,10 @@ import {
   RankingTHeadTHProps,
 } from "./types";
 import * as S from "./style";
-import { palette } from "../../../styles/palette";
 
 const RankingList = ({ children, customStyle }: RankingListProps) => {
   return (
     <S.ListContainer style={{ ...customStyle }}>{children}</S.ListContainer>
-  );
-};
-
-const RankingHero = ({ children }: RankingHeroProps) => {
-  return (
-    <S.HeroText>
-      <span style={{ color: "white" }}>Ranking</span>
-      <span style={{ color: "#A8A8A8" }}>for</span>
-      <span style={{ fontWeight: "bold", color: palette.main }}>
-        {children}
-      </span>
-    </S.HeroText>
   );
 };
 
@@ -54,14 +40,25 @@ const RankingTBodyTD = ({ children, customStyle }: RankingTBodyTDProps) => {
   return <S.TdContainer style={{ ...customStyle }}>{children}</S.TdContainer>;
 };
 
+const RankingStrongTbodyTd = ({
+  children,
+  customStyle,
+}: RankingTBodyTDProps) => {
+  return (
+    <S.TdStrongContainer style={{ ...customStyle }}>
+      {children}
+    </S.TdStrongContainer>
+  );
+};
+
 export default Object.assign(RankingList, {
-  Hero: RankingHero,
   Table: Object.assign(RankingTable, {
     THead: Object.assign(RankingTHead, {
       Th: RankingTHeadTH,
     }),
     TBody: Object.assign(RankingTBody, {
       Td: RankingTBodyTD,
+      Strong: RankingStrongTbodyTd,
     }),
   }),
 });

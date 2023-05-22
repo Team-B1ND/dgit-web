@@ -1,6 +1,5 @@
-import GitInfo from "../GitInfo";
 import * as S from "./style";
-import Header from "../Header";
+import Nav from "../Nav";
 
 interface Props {
   children: React.ReactNode;
@@ -9,7 +8,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Header />
+      <Nav />
       <S.Container>{children}</S.Container>
     </>
   );

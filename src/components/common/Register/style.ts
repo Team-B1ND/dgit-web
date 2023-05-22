@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { colorType } from ".";
 
 export const ModalContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,13 +16,14 @@ export const ModalContainer = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  height: 40%;
-  width: 40%;
+  width: 800px;
+  height: 397px;
   flex-direction: column;
   background: #3a3a3a;
 `;
 
 export const ModalBox = styled.div``;
+
 export const ModalHeader = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,30 +31,39 @@ export const ModalHeader = styled.div`
   background-color: #2d2d2d;
   height: 162px;
 `;
-export const ModalButton = styled.div`
+export const ModalButton = styled.div<{
+  userBackground: string;
+  repositoryBackground: string;
+}>`
   display: flex;
+  font-size: 14px;
+
   .user {
+    width: 110px;
+    height: 40px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     color: white;
-    background: #2d2d2d;
+    border-top-left-radius: 5px;
+    outline: none;
     border: none;
-    font-size: 14px;
-    width: 110px;
-    height: 40px;
-    background-color: gray;
+    background: ${({ userBackground }) => userBackground};
   }
   .repository {
-    display: flex;
-    align-items: center;
-    color: white;
-    background: #2d2d2d;
-    border: none;
-    font-size: 14px;
-    background-color: gray;
     width: 110px;
     height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    border: none;
+    border-top-right-radius: 5px;
+    background: ${({ repositoryBackground }) => repositoryBackground};
   }
 `;
 

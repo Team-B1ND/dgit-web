@@ -4,23 +4,27 @@ import { B1ndToastContainer } from "@b1nd/b1nd-toastify";
 import { BrowserRouter } from "react-router-dom";
 import { GlobalStyle } from "../../../styles/GlobalStyle";
 import Layout from "../Layout";
+import { useState } from "react";
 
 interface Props {
   children: React.ReactNode;
 }
 
-const queryClient: QueryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      retryOnMount: false,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false,
-    },
-  },
-});
-
 const Providers = ({ children }: Props) => {
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: false,
+            retryOnMount: false,
+            refetchOnWindowFocus: false,
+            refetchOnReconnect: false,
+          },
+        },
+      })
+  );
+
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
