@@ -1,11 +1,15 @@
 import { Suspense } from "react";
 import RankingList from "../components/common/RankingList";
-import Commit from "../components/Ranking/Commit";
 import { ErrorBoundary } from "react-error-boundary";
 import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
 import Header from "../components/common/Header";
+import { useRecoilValue } from "recoil";
+import { commitRankTypeAtom } from "../store/commit/commit.store";
+import TotalCommit from "../components/Ranking/Commit";
+import WeekCommit from "../components/Ranking/Commit/Week";
 
 const CommitRankingPage = () => {
+  const commitType = useRecoilValue(commitRankTypeAtom);
   return (
     <div
       style={{
@@ -29,7 +33,7 @@ const CommitRankingPage = () => {
           </RankingList.Table.THead>
           <ErrorBoundary fallback={<>Error...</>}>
             <Suspense fallback={<RankingFallbackLoader />}>
-              <Commit />
+              {commitType === "total" ? <TotalCommit /> : <WeekCommit />}
             </Suspense>
           </ErrorBoundary>
         </RankingList.Table>
