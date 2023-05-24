@@ -1,10 +1,10 @@
-import { useGetTotalRankQuery } from "../../../queries/github/github.query";
-import Medal from "../../common/Medal";
-import RankingList from "../../common/RankingList";
-import { ProfileImg } from "./style";
+import { useGetWeekRankQuery } from "../../../../queries/github/github.query";
+import Medal from "../../../common/Medal";
+import RankingList from "../../../common/RankingList";
+import { ProfileImg } from "../style";
 
-const TotalCommit = () => {
-  const { data } = useGetTotalRankQuery({ suspense: true });
+const WeekCommit = () => {
+  const { data } = useGetWeekRankQuery({ suspense: true });
 
   return (
     <RankingList.Table.TBody>
@@ -43,4 +43,4 @@ const TotalCommit = () => {
     </RankingList.Table.TBody>
   );
 };
-export default TotalCommit;
+export default WeekCommit;

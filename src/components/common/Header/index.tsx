@@ -8,8 +8,15 @@ import { authURL } from "./constant";
 import * as S from "./style";
 import { palette } from "../../../styles/palette";
 import { HeaderProps } from "./types";
+import { useLocation } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { commitRankTypeAtom } from "../../../store/commit/commit.store";
 
 const Header = ({ children }: HeaderProps) => {
+  const { pathname } = useLocation();
+  const [commitRankType, setCommitRankType] =
+    useRecoilState(commitRankTypeAtom);
+
   return (
     <S.HeaderTextBox>
       <S.HeaderText>
@@ -18,6 +25,22 @@ const Header = ({ children }: HeaderProps) => {
         <span style={{ fontWeight: "bold", color: palette.main }}>
           {children}
         </span>
+        {pathname === "/" ? (
+          <>
+            <S.CommitOptionButton
+              background={commitRankType === "total" ? "#6C93F8" : "#252525"}
+              onClick={() => setCommitRankType("total")}
+            >
+              Total
+            </S.CommitOptionButton>
+            <S.CommitOptionButton
+              background={commitRankType === "weekly" ? "#6C93F8" : "#252525"}
+              onClick={() => setCommitRankType("weekly")}
+            >
+              Weekly
+            </S.CommitOptionButton>
+          </>
+        ) : null}
       </S.HeaderText>
       {token.getToken(ACCESS_TOKEN_KEY) ? (
         <ErrorBoundary fallback={<>error...</>}>
