@@ -25,7 +25,7 @@ const Header = ({ children }: HeaderProps) => {
         <span style={{ fontWeight: "bold", color: palette.main }}>
           {children}
         </span>
-        {pathname === "/" ? (
+        {pathname === "/" && (
           <>
             <S.CommitOptionButton
               background={commitRankType === "total" ? "#6C93F8" : "#252525"}
@@ -40,7 +40,7 @@ const Header = ({ children }: HeaderProps) => {
               Weekly
             </S.CommitOptionButton>
           </>
-        ) : null}
+        )}
       </S.HeaderText>
       {token.getToken(ACCESS_TOKEN_KEY) ? (
         <ErrorBoundary fallback={<>error...</>}>
