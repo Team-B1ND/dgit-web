@@ -15,7 +15,6 @@ const requestInterceptor = (config: any) => {
       [REQUEST_TOKEN_KEY]: `Bearer ${token.getToken(ACCESS_TOKEN_KEY)}`,
     };
   } else {
-    B1ndToast.showError("토큰이 존재하지 않습니다. 다시 로그인해주세요");
   }
   return config;
 };
