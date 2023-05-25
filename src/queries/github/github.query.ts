@@ -1,15 +1,24 @@
-import { useMutation, useQuery, UseQueryOptions } from "@tanstack/react-query";
+import {
+  useInfiniteQuery,
+  UseInfiniteQueryOptions,
+  useMutation,
+  useQuery,
+  UseQueryOptions,
+} from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../\bqueryKey";
 import {
   GithubUserParam,
   postRepositoryParam,
 } from "../../repositories/github/GithubRepository";
+import GithubRepositoryImpl from "../../repositories/github/GithubRepositoryImpl";
 import GitRepositoryImpl from "../../repositories/github/GithubRepositoryImpl";
 import {
   PRRankResponse,
   RankResponse,
   RepositoryResponse,
+  TopRankResponse,
+  WeeklyRankResponse,
 } from "../../types/github/github.type";
 
 export const useGetRepositoryQuery = (
@@ -98,3 +107,42 @@ export const usePostRepositoryMutation = () => {
   );
   return mutation;
 };
+
+export const useGetWeeklyRankQuery = (
+  options?: UseInfiniteQueryOptions<
+    WeeklyRankResponse,
+    AxiosError,
+    WeeklyRankResponse,
+    WeeklyRankResponse,
+    [string]
+  >
+) =>
+  useInfiniteQuery(
+    [QUERY_KEYS.github.rank.weeklyRank],
+    ({ pageParam = 1 }) =>
+      GithubRepositoryImpl.getWeeklyRank({ page: pageParam }),
+    {
+      ...options,
+      cacheTime: 1000 * 60,
+      staleTime: 1000 * 60 * 60,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
+    }
+  );
+
+export const useGetWeekRankTop = (
+  options?: UseQueryOptions<
+    TopRankResponse,
+    AxiosError,
+    TopRankResponse,
+    [string]
+  >
+) =>
+  useQuery(
+    [QUERY_KEYS.github.rank.weekRankTop3],
+    () => GithubRepositoryImpl.getWeekRankTop(),
+    {
+      ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
+    }
+  );

@@ -3,11 +3,14 @@ import {
   PRRankResponse,
   RankResponse,
   RepositoryResponse,
+  TopRankResponse,
+  WeeklyRankResponse,
 } from "../../types/github/github.type";
 import { Response } from "../../types/util/Response.type";
 import {
   GithubRepository,
   GithubUserParam,
+  getWeeklyRankParam,
   postRepositoryParam,
 } from "./GithubRepository";
 
@@ -58,6 +61,20 @@ class GithubRepositoryImpl implements GithubRepository {
 
   public async getPullRequestRank(): Promise<PRRankResponse> {
     const { data } = await customAxios.get("/github/pull-request");
+    return data;
+  }
+
+  public async getWeeklyRank({
+    page,
+  }: getWeeklyRankParam): Promise<WeeklyRankResponse> {
+    const { data } = await customAxios.get(
+      `/github/week/rank?page=${page}&limit=${10}`
+    );
+    return { ...data, nextPage: page + 1 };
+  }
+
+  public async getWeekRankTop(): Promise<TopRankResponse> {
+    const { data } = await customAxios.get("/github/week/top");
     return data;
   }
 }

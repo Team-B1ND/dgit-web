@@ -3,6 +3,8 @@ export const QUERY_KEYS = {
     getRepository: "repository/getRepository",
     rank: {
       week: "weekRank/getWeekRank",
+      weeklyRank: "weeklyRank/getWeeklyRank",
+      weekRankTop3: "weekRankTop3/getWeekRankTop3",
       total: "totalRank/getTotalRank",
       pullrequest: "pullrequestRank/getPullRequestRank",
     },

@@ -13,7 +13,7 @@ const Commit = () => {
         const rank = idx + 1;
         return (
           <>
-            <tr>
+            <tr key={data.githubId}>
               <RankingList.Table.TBody.Td>
                 <Medal rank={rank}>{rank}</Medal>
               </RankingList.Table.TBody.Td>
