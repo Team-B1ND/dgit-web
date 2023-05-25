@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import ProfileFallbackLoader from "../common/FallBackLoader/Profile";
 import RankingFallbackLoader from "../common/FallBackLoader/Ranking";
+import RankingBoxFallbackLoader from "../common/FallBackLoader/RankingBox";
 import Header from "../common/Header";
 import RankingList from "../common/RankingList";
 import { WeeklyRecordRecordContainer } from "./style";
@@ -13,7 +14,7 @@ const WeeklyRecord = () => {
     <WeeklyRecordRecordContainer>
       <Header>WEEKLY RECORD</Header>
       <ErrorBoundary fallback={<>Error...</>}>
-        <Suspense fallback={<ProfileFallbackLoader />}>
+        <Suspense fallback={<RankingBoxFallbackLoader />}>
           <WeeklyTopRecord />
         </Suspense>
       </ErrorBoundary>

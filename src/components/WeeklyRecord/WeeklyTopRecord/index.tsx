@@ -1,14 +1,9 @@
-import { Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
 import { useGetWeekRankTop } from "../../../queries/github/github.query";
-import {
-  WeeklyTopBigItemBox,
-  WeeklyTopContainer,
-  WeeklyTopItemBox,
-} from "./style";
 import RankingBox from "../../Ranking/Weekly";
+import { WeeklyTopContainer } from "./style";
+
 const WeeklyTopRecord = () => {
-  const { data } = useGetWeekRankTop();
+  const { data } = useGetWeekRankTop({ suspense: true });
 
   return (
     <WeeklyTopContainer>
