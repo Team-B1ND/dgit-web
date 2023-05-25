@@ -1,7 +1,7 @@
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { AiOutlineStar } from "react-icons/ai";
 import { BiGitPullRequest } from "react-icons/bi";
-
+import { AiOutlineCrown } from "react-icons/ai";
 export const NAV_ITEM = [
   {
     title: "COMMIT",
@@ -17,5 +17,10 @@ export const NAV_ITEM = [
     title: "PULL-REQUEST",
     link: "/pr-ranking",
     icon: BiGitPullRequest,
+  },
+  {
+    title: "WEEKKLY-RECORD",
+    link: "/record",
+    icon: AiOutlineCrown,
   },
 ];

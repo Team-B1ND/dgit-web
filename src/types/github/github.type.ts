@@ -34,3 +34,29 @@ export interface PRRank {
 export interface RankResponse extends Response {
   data: Rank[];
 }
+
+export interface WeeklyRank {
+  rankedDate: string;
+  githubId: string;
+  name: string;
+  contributions: number;
+  userImage: string;
+  bio: string;
+}
+
+export interface TopRank {
+  githubId: string;
+  name: string;
+  winCount: number;
+  userImage: string;
+  bio: string;
+}
+
+export interface TopRankResponse {
+  data: TopRank[];
+}
+
+export interface WeeklyRankResponse {
+  data: WeeklyRank[];
+  nextPage: number;
+}

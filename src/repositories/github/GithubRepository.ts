@@ -2,6 +2,8 @@ import {
   PRRankResponse,
   RankResponse,
   RepositoryResponse,
+  TopRankResponse,
+  WeeklyRankResponse,
 } from "../../types/github/github.type";
 import { Response } from "../../types/util/Response.type";
 
@@ -22,6 +24,10 @@ export interface GithubRepository {
   getTotalRank(): Promise<RankResponse>;
 
   getPullRequestRank(): Promise<PRRankResponse>;
+
+  getWeeklyRank({ page }: getWeeklyRankParam): Promise<WeeklyRankResponse>;
+
+  getWeekRankTop(): Promise<TopRankResponse>;
 }
 
 export interface GithubUserParam {
@@ -31,4 +37,8 @@ export interface GithubUserParam {
 export interface postRepositoryParam {
   githubId: string;
   repositoryName: string;
+}
+
+export interface getWeeklyRankParam {
+  page: number;
 }

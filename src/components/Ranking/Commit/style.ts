@@ -7,3 +7,11 @@ export const ProfileImg = styled.img`
   border-radius: 100%;
   object-fit: cover;
 `;
+
+export const BigProfileImg = styled.img`
+  width: 100px;
+  height: 100px;
+
+  border-radius: 100%;
+  object-fit: cover;
+`;
