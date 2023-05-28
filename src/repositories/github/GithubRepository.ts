@@ -19,15 +19,15 @@ export interface GithubRepository {
     repositoryName,
   }: postRepositoryParam): Promise<Response>;
 
-  getWeekRank(): Promise<RankResponse>;
+  getUserWeekRank(): Promise<RankResponse>;
 
-  getTotalRank(): Promise<RankResponse>;
+  getUserTotalRank(): Promise<RankResponse>;
 
-  getPullRequestRank(): Promise<PRRankResponse>;
+  getUserPullRequestRank(): Promise<PRRankResponse>;
 
   getWeeklyRank({ page }: getWeeklyRankParam): Promise<WeeklyRankResponse>;
 
-  getWeekRankTop(): Promise<TopRankResponse>;
+  getWeeklyTopRank(): Promise<TopRankResponse>;
 }
 
 export interface GithubUserParam {

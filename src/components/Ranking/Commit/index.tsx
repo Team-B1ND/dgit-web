@@ -1,10 +1,10 @@
-import { useGetTotalRankQuery } from "../../../queries/github/github.query";
 import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
 import { ProfileImg } from "./style";
+import { useGetUserTotalRankQuery } from "../../../queries/github/github.query";
 
 const TotalCommit = () => {
-  const { data } = useGetTotalRankQuery({ suspense: true });
+  const { data } = useGetUserTotalRankQuery({ suspense: true });
 
   return (
     <RankingList.Table.TBody>

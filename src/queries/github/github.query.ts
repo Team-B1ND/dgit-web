@@ -6,7 +6,7 @@ import {
   UseQueryOptions,
 } from "@tanstack/react-query";
 import { AxiosError } from "axios";
-import { QUERY_KEYS } from "../\bqueryKey";
+import { QUERY_KEYS } from "../queryKey";
 import {
   GithubUserParam,
   postRepositoryParam,
@@ -40,13 +40,13 @@ export const useGetRepositoryQuery = (
     }
   );
 
-export const useGetWeekRankQuery = (
+export const useGetUserWeekRankQuery = (
   //주간 커밋 랭킹
   options?: UseQueryOptions<RankResponse, AxiosError, RankResponse, [string]>
 ) =>
   useQuery(
     [QUERY_KEYS.github.rank.week],
-    () => GitRepositoryImpl.getWeekRank(),
+    () => GitRepositoryImpl.getUserWeekRank(),
     {
       ...options,
       staleTime: 1000 * 60 * 60,
@@ -54,13 +54,13 @@ export const useGetWeekRankQuery = (
     }
   );
 
-export const useGetTotalRankQuery = (
+export const useGetUserTotalRankQuery = (
   //전체 커밋랭킹
   options?: UseQueryOptions<RankResponse, AxiosError, RankResponse, [string]>
 ) =>
   useQuery(
     [QUERY_KEYS.github.rank.total],
-    () => GitRepositoryImpl.getTotalRank(),
+    () => GitRepositoryImpl.getUserTotalRank(),
     {
       ...options,
       staleTime: 1000 * 60 * 5,
@@ -68,7 +68,7 @@ export const useGetTotalRankQuery = (
     }
   );
 
-export const useGetPullRequestRank = (
+export const useGetUserPullRequestRankQuery = (
   options?: UseQueryOptions<
     PRRankResponse,
     AxiosError,
@@ -78,7 +78,7 @@ export const useGetPullRequestRank = (
 ) =>
   useQuery(
     [QUERY_KEYS.github.rank.pullrequest],
-    () => GitRepositoryImpl.getPullRequestRank(),
+    () => GitRepositoryImpl.getUserPullRequestRank(),
     {
       ...options,
       staleTime: 1000 * 60 * 5,
@@ -129,7 +129,7 @@ export const useGetWeeklyRankQuery = (
     }
   );
 
-export const useGetWeekRankTop = (
+export const useGetWeeklyTopRankQuery = (
   options?: UseQueryOptions<
     TopRankResponse,
     AxiosError,
@@ -139,7 +139,7 @@ export const useGetWeekRankTop = (
 ) =>
   useQuery(
     [QUERY_KEYS.github.rank.weekRankTop3],
-    () => GithubRepositoryImpl.getWeekRankTop(),
+    () => GithubRepositoryImpl.getWeeklyTopRank(),
     {
       ...options,
       staleTime: 1000 * 60 * 60,

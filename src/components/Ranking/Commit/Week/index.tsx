@@ -1,10 +1,10 @@
-import { useGetWeekRankQuery } from "../../../../queries/github/github.query";
+import { useGetUserWeekRankQuery } from "../../../../queries/github/github.query";
 import Medal from "../../../common/Medal";
 import RankingList from "../../../common/RankingList";
 import { ProfileImg } from "../style";
 
 const WeekCommit = () => {
-  const { data } = useGetWeekRankQuery({ suspense: true });
+  const { data } = useGetUserWeekRankQuery({ suspense: true });
 
   return (
     <RankingList.Table.TBody>

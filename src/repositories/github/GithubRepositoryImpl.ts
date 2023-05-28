@@ -18,7 +18,7 @@ class GithubRepositoryImpl implements GithubRepository {
   public async postGithubUser({
     githubId,
   }: GithubUserParam): Promise<Response> {
-    const { data } = await customAxios.post("/github/user", {
+    const { data } = await customAxios.post("/github-user", {
       githubId,
     });
     return data;
@@ -27,14 +27,14 @@ class GithubRepositoryImpl implements GithubRepository {
   public async patchGithubUser({
     githubId,
   }: GithubUserParam): Promise<Response> {
-    const { data } = await customAxios.patch("/github/user", {
+    const { data } = await customAxios.patch("/github-user", {
       githubId,
     });
     return data;
   }
 
   public async getRepository(): Promise<RepositoryResponse> {
-    const { data } = await customAxios.get("/github/repository");
+    const { data } = await customAxios.get("/github-repository");
     return data;
   }
 
@@ -42,25 +42,25 @@ class GithubRepositoryImpl implements GithubRepository {
     githubId,
     repositoryName,
   }: postRepositoryParam): Promise<Response> {
-    const { data } = await customAxios.post("/github/repository", {
+    const { data } = await customAxios.post("/github-repository", {
       githubId,
       repositoryName,
     });
     return data;
   }
 
-  public async getWeekRank(): Promise<RankResponse> {
-    const { data } = await customAxios.get("/github/week");
+  public async getUserWeekRank(): Promise<RankResponse> {
+    const { data } = await customAxios.get("/github-week");
     return data;
   }
 
-  public async getTotalRank(): Promise<RankResponse> {
-    const { data } = await customAxios.get("/github/total");
+  public async getUserTotalRank(): Promise<RankResponse> {
+    const { data } = await customAxios.get("/github-user/total");
     return data;
   }
 
-  public async getPullRequestRank(): Promise<PRRankResponse> {
-    const { data } = await customAxios.get("/github/pull-request");
+  public async getUserPullRequestRank(): Promise<PRRankResponse> {
+    const { data } = await customAxios.get("/github-user/pull-request");
     return data;
   }
 
@@ -68,13 +68,13 @@ class GithubRepositoryImpl implements GithubRepository {
     page,
   }: getWeeklyRankParam): Promise<WeeklyRankResponse> {
     const { data } = await customAxios.get(
-      `/github/week/rank?page=${page}&limit=${10}`
+      `/github-week/rank?page=${page}&limit=${10}`
     );
     return { ...data, nextPage: page + 1 };
   }
 
-  public async getWeekRankTop(): Promise<TopRankResponse> {
-    const { data } = await customAxios.get("/github/week/top");
+  public async getWeeklyTopRank(): Promise<TopRankResponse> {
+    const { data } = await customAxios.get("/github-week/top");
     return data;
   }
 }

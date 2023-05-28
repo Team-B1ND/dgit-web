@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import ProfileFallbackLoader from "../common/FallBackLoader/Profile";
 import RankingFallbackLoader from "../common/FallBackLoader/Ranking";
 import RankingBoxFallbackLoader from "../common/FallBackLoader/RankingBox";
 import Header from "../common/Header";

@@ -1,9 +1,9 @@
-import { useGetWeekRankTop } from "../../../queries/github/github.query";
+import { useGetWeeklyTopRankQuery } from "../../../queries/github/github.query";
 import RankingBox from "../../Ranking/Weekly";
 import { WeeklyTopContainer } from "./style";
 
 const WeeklyTopRecord = () => {
-  const { data } = useGetWeekRankTop({ suspense: true });
+  const { data } = useGetWeeklyTopRankQuery({ suspense: true });
 
   return (
     <WeeklyTopContainer>

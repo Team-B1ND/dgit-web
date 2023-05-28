@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { AxiosError } from "axios";
-import { QUERY_KEYS } from "../\bqueryKey";
+import { QUERY_KEYS } from "../queryKey";
 import MemberRepositoryImpl from "../../repositories/member/MemberRepositoryImpl";
 import { MemberResponse } from "../../types/member/Member.type";
 

@@ -1,4 +1,3 @@
-import { B1ndToast } from "@b1nd/b1nd-toastify";
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,

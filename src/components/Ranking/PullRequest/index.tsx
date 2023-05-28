@@ -1,10 +1,10 @@
-import { useGetPullRequestRank } from "../../../queries/github/github.query";
+import { useGetUserPullRequestRankQuery } from "../../../queries/github/github.query";
 import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
 import { ProfileImg } from "../Commit/style";
 
 const PullRequest = () => {
-  const { data } = useGetPullRequestRank({ suspense: true });
+  const { data } = useGetUserPullRequestRankQuery({ suspense: true });
   return (
     <RankingList.Table.TBody>
       {data?.data.map((data, idx) => {
