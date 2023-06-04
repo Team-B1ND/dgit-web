@@ -8,6 +8,7 @@ export const ChangeOption = styled.button<{ background: string }>`
   height: 28px;
   color: white;
   background: ${({ background }) => background};
+  
 `;
 
 export const AdminHeader = styled.div`
@@ -15,6 +16,12 @@ export const AdminHeader = styled.div`
   font-weight: bold;
   color: white;
   height: 80px;
-
+  /* align-items: center; */
+/* display: flex; */
+  
+  
+  
+  
+  /* align-items: center; */
   /* align-items: center; */
 `;
