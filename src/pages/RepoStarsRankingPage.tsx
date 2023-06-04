@@ -30,7 +30,7 @@ const RepoStarsRankingPage = () => {
           </RankingList.Table.THead>
           <ErrorBoundary fallback={<>Error...</>}>
             <Suspense fallback={<RankingFallbackLoader />}>
-              <Repository />
+              <Repository showDeleteButton={false} />
             </Suspense>
           </ErrorBoundary>
         </RankingList.Table>

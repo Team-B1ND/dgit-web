@@ -2,9 +2,16 @@ import { useGetRepositoryQuery } from "../../../queries/github/github.query";
 import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
 import { ProfileImg } from "../Commit/style";
+import { useDeleteRepositroy } from "../../../hooks/delete/useDeleteRepository";
 
-const Repository = () => {
+interface ButtonProps {
+  showDeleteButton: boolean;
+}
+
+const Repository = ({ showDeleteButton }: ButtonProps) => {
   const { data } = useGetRepositoryQuery({ suspense: true });
+  const { onDeleteRepo } = useDeleteRepositroy();
+
   return (
     <RankingList.Table.TBody>
       {data?.data.map((data, idx) => {
@@ -22,7 +29,7 @@ const Repository = () => {
                     (window.location.href = `https://github.com/${data.githubId}/${data.repositoryName}`)
                   }
                 />
-              </RankingList.Table.TBody.Td>{" "}
+              </RankingList.Table.TBody.Td>
               <RankingList.Table.TBody.Td>
                 {data.githubId}
               </RankingList.Table.TBody.Td>
@@ -30,7 +37,13 @@ const Repository = () => {
                 {data.repositoryName}
               </RankingList.Table.TBody.Td>
               <RankingList.Table.TBody.Strong>
-                {data.totalStars}
+                {showDeleteButton ? (
+                  <button onClick={() => onDeleteRepo(data.repositoryId)}>
+                    X
+                  </button>
+                ) : (
+                  data.totalStars
+                )}
               </RankingList.Table.TBody.Strong>
             </tr>
           </>

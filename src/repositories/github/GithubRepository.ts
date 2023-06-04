@@ -42,3 +42,7 @@ export interface postRepositoryParam {
 export interface getWeeklyRankParam {
   page: number;
 }
+
+export interface getRepositoryId {
+  repositoryId: number;
+}
