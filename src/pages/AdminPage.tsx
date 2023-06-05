@@ -1,6 +1,7 @@
 // import Header from "../components/common/Header";
 import { SwitchCase } from "@b1nd/b1nd-react-util";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import AgreeReject from "../components/Admin/AgreeReject";
 import EraseRepo from "../components/Admin/EraseRepo";
@@ -8,6 +9,7 @@ import * as A from "../components/Admin/style";
 
 const AdminPage = () => {
   const [changeform, setChangeForm] = useState("eraseRepo");
+  const { pathname } = useLocation();
   return (
     <div
       style={{
@@ -30,29 +32,26 @@ const AdminPage = () => {
         }}
       >
         ADMIN
-        <A.ChangeOption
-          background={changeform === "eraseRepo" ? "#6C93F8" : "#252525"}
-          onClick={() => setChangeForm("eraseRepo")}
-        >
-          Repository
-        </A.ChangeOption>
-        <A.ChangeOption
-          background={changeform === "agreeReject" ? "#6C93F8" : "#252525"}
-          onClick={() => setChangeForm("agreeReject")}
-        >
-          Pending
-        </A.ChangeOption>
+        {pathname === "/admin" && (
+          <>
+            <A.ChangeOption
+              background={changeform === "eraseRepo" ? "#6C93F8" : "#252525"}
+              onClick={() => setChangeForm("eraseRepo")}
+            >
+              Repository
+            </A.ChangeOption>
+            <A.ChangeOption
+              background={changeform === "agreeReject" ? "#6C93F8" : "#252525"}
+              onClick={() => setChangeForm("agreeReject")}
+            >
+              Pending
+            </A.ChangeOption>
+          </>
+        )}
       </A.AdminHeader>
 
-      <div>
-        <SwitchCase
-          value={changeform}
-          caseBy={{
-            eraseRepo: <EraseRepo />,
-            agreeReject: <AgreeReject />,
-          }}
-        />
-      </div>
+      <div>{changeform === "eraseRepo" ? <EraseRepo /> : <AgreeReject />}</div>
+      {/* <AgreeReject /> */}
     </div>
   );
 };

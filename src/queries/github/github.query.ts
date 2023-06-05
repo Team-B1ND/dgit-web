@@ -53,6 +53,7 @@ export const useDeleteRepositoryQuery = () => {
   );
   return mutation;
 };
+
 export const useGetUserWeekRankQuery = (
   //주간 커밋 랭킹
   options?: UseQueryOptions<RankResponse, AxiosError, RankResponse, [string]>

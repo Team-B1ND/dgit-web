@@ -10,4 +10,5 @@ export const QUERY_KEYS = {
     },
   }),
   member: "member/getMember",
+  pending: "pending/getPendingUser",
 };

@@ -1,15 +1,16 @@
 import { useGetRepositoryQuery } from "../../../queries/github/github.query";
 import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
-import { ProfileImg } from "../Commit/style";
+import { DeleteButton, ProfileImg } from "../Commit/style";
 import { useDeleteRepositroy } from "../../../hooks/delete/useDeleteRepository";
+import { useEffect } from "react";
 
 interface ButtonProps {
   showDeleteButton: boolean;
 }
 
 const Repository = ({ showDeleteButton }: ButtonProps) => {
-  const { data } = useGetRepositoryQuery({ suspense: true });
+  const { data, refetch } = useGetRepositoryQuery({ suspense: true });
   const { onDeleteRepo } = useDeleteRepositroy();
 
   return (
@@ -38,9 +39,9 @@ const Repository = ({ showDeleteButton }: ButtonProps) => {
               </RankingList.Table.TBody.Td>
               <RankingList.Table.TBody.Strong>
                 {showDeleteButton ? (
-                  <button onClick={() => onDeleteRepo(data.repositoryId)}>
+                  <DeleteButton onClick={() => onDeleteRepo(data.repositoryId)}>
                     X
-                  </button>
+                  </DeleteButton>
                 ) : (
                   data.totalStars
                 )}

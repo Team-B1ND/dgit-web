@@ -47,7 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:18.2.0"],\
             ["react-error-boundary", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.0.4"],\
-            ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.8.0"],\
+            ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.9.0"],\
             ["react-intersection-observer", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:9.4.3"],\
             ["react-is", "npm:18.2.0"],\
             ["react-router-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:6.10.0"],\
@@ -10116,7 +10116,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:18.2.0"],\
             ["react-error-boundary", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.0.4"],\
-            ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.8.0"],\
+            ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.9.0"],\
             ["react-intersection-observer", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:9.4.3"],\
             ["react-is", "npm:18.2.0"],\
             ["react-router-dom", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:6.10.0"],\
@@ -17392,17 +17392,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["react-icons", [\
-        ["npm:4.8.0", {\
-          "packageLocation": "./.yarn/cache/react-icons-npm-4.8.0-aa5423cd6c-4dbba7ad98.zip/node_modules/react-icons/",\
+        ["npm:4.9.0", {\
+          "packageLocation": "./.yarn/cache/react-icons-npm-4.9.0-633c387145-69d1000d02.zip/node_modules/react-icons/",\
           "packageDependencies": [\
-            ["react-icons", "npm:4.8.0"]\
+            ["react-icons", "npm:4.9.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/react-icons-virtual-084cd68c6b/0/cache/react-icons-npm-4.8.0-aa5423cd6c-4dbba7ad98.zip/node_modules/react-icons/",\
+        ["virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.9.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-icons-virtual-3af254722d/0/cache/react-icons-npm-4.9.0-633c387145-69d1000d02.zip/node_modules/react-icons/",\
           "packageDependencies": [\
-            ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.8.0"],\
+            ["react-icons", "virtual:1776148acb9ef3a8c308c3b3feb46cb2dc9c5b9efd0c3ed86945fdf14c723d459c52bdb2458105538de6f09668f07e267d6e36a2a7ff207c0eef9fc08f7a74e0#npm:4.9.0"],\
             ["@types/react", "npm:18.0.33"],\
             ["react", "npm:18.2.0"]\
           ],\

@@ -16,12 +16,4 @@ export const AdminHeader = styled.div`
   font-weight: bold;
   color: white;
   height: 80px;
-  /* align-items: center; */
-/* display: flex; */
-  
-  
-  
-  
-  /* align-items: center; */
-  /* align-items: center; */
 `;
