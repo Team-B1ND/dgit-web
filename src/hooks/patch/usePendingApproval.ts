@@ -4,12 +4,12 @@ import { usePatchPendingApprovalMutation } from "../../queries/member/member.que
 import { QUERY_KEYS } from "../../queries/queryKey";
 
 export function usePendingApproval() {
-  const test2 = usePatchPendingApprovalMutation();
+  const patchPendingApprovalMutation = usePatchPendingApprovalMutation();
   const queryClient = new QueryClient();
   const onPatchApproval = useCallback((githubId: string) => {
     const answer = window.confirm("유저를 수락하시겠습니까?");
     if (answer === true) {
-      test2.mutate(
+      patchPendingApprovalMutation.mutate(
         {
           githubId: githubId,
         },

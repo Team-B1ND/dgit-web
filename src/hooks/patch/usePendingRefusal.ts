@@ -3,12 +3,12 @@ import { useCallback } from "react";
 import { usePatchPendingRefusalMutation } from "../../queries/member/member.query";
 
 export function usePendingRefusal() {
-  const test3 = usePatchPendingRefusalMutation();
+  const patchPendingRefusalMutation = usePatchPendingRefusalMutation();
   const queryClient = new QueryClient();
   const onPatchRefusal = useCallback((githubId: string) => {
     const answer = window.confirm("유저를 거절하시겠습니까?");
     if (answer === true) {
-      test3.mutate(
+      patchPendingRefusalMutation.mutate(
         {
           githubId: githubId,
         },

@@ -6,6 +6,7 @@ export interface MemberResponse {
     name: string;
     githubId: string;
     userImage: string;
+    role: MemberRole;
   };
 }
 
@@ -20,3 +21,5 @@ export interface PendingUser {
 export interface PendingUserResponse extends Response {
   data: PendingUser[];
 }
+
+export type MemberRole = "ADMIN" | "STUDENT";
