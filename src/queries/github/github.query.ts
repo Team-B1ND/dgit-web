@@ -8,6 +8,7 @@ import {
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
 import {
+  getRepositoryId,
   GithubUserParam,
   postRepositoryParam,
 } from "../../repositories/github/GithubRepository";
@@ -20,6 +21,7 @@ import {
   TopRankResponse,
   WeeklyRankResponse,
 } from "../../types/github/github.type";
+// import { RepositoryID } from "../../components/common/Register/RepositoryForm/style";
 
 export const useGetRepositoryQuery = (
   //레포지토리랭킹
@@ -39,6 +41,18 @@ export const useGetRepositoryQuery = (
       cacheTime: 1000 * 60 * 60,
     }
   );
+
+// export const useDeleteRepositoryQuery = ({ repositoryId }: getRepositoryId) =>
+//   useQuery([`/github-repository/${repositoryId}`], () =>
+//     GitRepositoryImpl.deleteRepository({ repositoryId })
+//   );
+
+export const useDeleteRepositoryQuery = () => {
+  const mutation = useMutation(({ repositoryId }: getRepositoryId) =>
+    GitRepositoryImpl.deleteRepository({ repositoryId })
+  );
+  return mutation;
+};
 
 export const useGetUserWeekRankQuery = (
   //주간 커밋 랭킹

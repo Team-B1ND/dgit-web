@@ -1,6 +1,7 @@
 import { Response } from "../util/Response.type";
 
 export interface Repository {
+  repositoryId: number;
   repositoryName: string;
   totalStars: number;
   githubId: string;

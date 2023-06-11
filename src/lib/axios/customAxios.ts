@@ -3,7 +3,7 @@ import config from "../../config/config.json";
 import {
   ACCESS_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
-} from "../../constants/token/Token.constant";
+} from "../../constants/token/token.constant";
 import token from "../token/token";
 import requestInterceptor from "./requestHandler";
 

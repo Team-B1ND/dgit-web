@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
+import { ACCESS_TOKEN_KEY } from "../../../constants/token/token.constant";
 import token from "../../../lib/token/token";
 import ProfileFallbackLoader from "../FallBackLoader/Profile";
 import GitInfo from "../GitInfo";

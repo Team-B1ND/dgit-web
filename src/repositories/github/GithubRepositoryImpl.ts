@@ -8,11 +8,17 @@ import {
 } from "../../types/github/github.type";
 import { Response } from "../../types/util/Response.type";
 import {
-  GithubRepository,
   GithubUserParam,
   getWeeklyRankParam,
   postRepositoryParam,
+  getRepositoryId,
 } from "./GithubRepository";
+
+interface GithubRepository {
+  getRepository: ({
+    repositoryId,
+  }: getRepositoryId) => Promise<RepositoryResponse>;
+}
 
 class GithubRepositoryImpl implements GithubRepository {
   public async postGithubUser({
@@ -75,6 +81,15 @@ class GithubRepositoryImpl implements GithubRepository {
 
   public async getWeeklyTopRank(): Promise<TopRankResponse> {
     const { data } = await customAxios.get("/github-week/top");
+    return data;
+  }
+
+  public async deleteRepository({
+    repositoryId,
+  }: getRepositoryId): Promise<void> {
+    const { data } = await customAxios.delete(
+      `/github-repository/${repositoryId}`
+    );
     return data;
   }
 }
