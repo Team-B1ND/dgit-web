@@ -8,7 +8,6 @@ import {
 } from "../../types/github/github.type";
 import { Response } from "../../types/util/Response.type";
 import {
-  // GithubRepository,
   GithubUserParam,
   getWeeklyRankParam,
   postRepositoryParam,
@@ -42,7 +41,6 @@ class GithubRepositoryImpl implements GithubRepository {
 
   public async getRepository(): Promise<RepositoryResponse> {
     const { data } = await customAxios.get("/github-repository");
-    console.log(data);
     return data;
   }
 
@@ -92,7 +90,6 @@ class GithubRepositoryImpl implements GithubRepository {
     const { data } = await customAxios.delete(
       `/github-repository/${repositoryId}`
     );
-    console.log(data);
     return data;
   }
 }

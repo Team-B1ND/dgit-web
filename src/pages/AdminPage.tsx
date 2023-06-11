@@ -1,5 +1,3 @@
-// import Header from "../components/common/Header";
-import { SwitchCase } from "@b1nd/b1nd-react-util";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -18,7 +16,6 @@ const AdminPage = () => {
         backgroundColor: "#252525",
         padding: 40,
         boxSizing: "border-box",
-        // display: "flex",
       }}
     >
       <A.AdminHeader
@@ -51,7 +48,6 @@ const AdminPage = () => {
       </A.AdminHeader>
 
       <div>{changeform === "eraseRepo" ? <EraseRepo /> : <AgreeReject />}</div>
-      {/* <AgreeReject /> */}
     </div>
   );
 };

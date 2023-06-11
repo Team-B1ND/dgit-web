@@ -1,6 +1,8 @@
+import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { QueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
 import { usePatchPendingRefusalMutation } from "../../queries/member/member.query";
+import { QUERY_KEYS } from "../../queries/queryKey";
 
 export function usePendingRefusal() {
   const patchPendingRefusalMutation = usePatchPendingRefusalMutation();
@@ -14,11 +16,11 @@ export function usePendingRefusal() {
         },
         {
           onSuccess: () => {
-            queryClient.invalidateQueries(["/github-user/deny"]);
-            console.log("유저 거절 성공");
+            queryClient.invalidateQueries([QUERY_KEYS.pending]);
+            B1ndToast.showSuccess("유저 거절 성공");
           },
           onError: () => {
-            console.log("유저 거절 실패");
+            B1ndToast.showError("유저 거절 실패");
           },
         }
       );

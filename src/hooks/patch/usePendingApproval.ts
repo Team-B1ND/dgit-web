@@ -15,7 +15,7 @@ export function usePendingApproval() {
         },
         {
           onSuccess: () => {
-            queryClient.invalidateQueries(["/github-user/allow"]);
+            queryClient.invalidateQueries([QUERY_KEYS.pending]);
             console.log("유저 수락 성공");
           },
           onError: () => {

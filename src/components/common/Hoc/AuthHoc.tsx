@@ -11,7 +11,7 @@ const AuthHoc = (AuthComponent: ComponentType, role: MemberRole) => {
 
     const authException = () => {
       window.alert("불가능한 접근입니다");
-      //   console.log("접근불가");
+
       setIsAuthCheck(true);
       navigate("/");
     };
