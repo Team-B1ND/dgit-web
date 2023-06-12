@@ -17,6 +17,7 @@ export const HeaderText = styled.p`
 
 export const HeaderLoginText = styled.p`
   color: white;
+  cursor: pointer;
 `;
 
 export const CommitOptionButton = styled.button<{ background: string }>`

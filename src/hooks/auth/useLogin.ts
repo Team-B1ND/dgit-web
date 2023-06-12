@@ -1,11 +1,10 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
-import { useCallback, useEffect } from "react";
-import { useQueryClient } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
-} from "../../constants/token/token.constant";
+} from "../../constants/token/Token.constant";
 import token from "../../lib/token/token";
 import { usePostLoginMutation } from "../../queries/auth/auth.query";
 import { queryString } from "../../utils/queryString";
