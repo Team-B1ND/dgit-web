@@ -11,12 +11,18 @@ export const NavContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  row-gap: 100px;
+  row-gap: 90px;
 
   background-color: #1e1e1e;
   color: #f6f6f6;
 
   cursor: pointer;
+`;
+
+export const NavLogoutText = styled.span`
+  font-size: 14px;
+
+  margin-top: 20px;
 `;
 
 export const NavTopWrap = styled.div`
