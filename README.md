@@ -1,46 +1,18 @@
-# Getting Started with Create React App
+### DGIT은 대구소프트웨어고등학교 학생들의 Github 기여도를 표시하는 서비스입니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 학생들의 더 나은 개발 문화 및 동기부여의 목적으로 제작되었습니다😊
 
-## Available Scripts
+### 안내사항
 
-In the project directory, you can run:
+> - 대구소프트웨어마이스터고등학교 **재학생** 또는 **졸업생** 대상입니다.
+> - 비공개 저장소를 기여도로 표시하면 모든 기여도를 확인할 수 있습니다 (Github 설정)
+> - 주간 기여도는 **일요일**부터 **토요일**까지의 기여도가 집계된 것입니다
+> - 데이터는 하루 **7번** 동기화됩니다
+> - 유저 등록은 관리자의 수락에 의해 등록됩니다
+> - 자신과 관련없는 레포지토리를 등록 할 시 관리자에 의해 삭제 될 수 있습니다
+> - 에러 또는 개선사항은 해당 저장소의 [이슈](https://github.com/Team-B1ND/DGIT_WEB_V3/issues)에 기재해 주세요
+> - 사용자 정보 삭제는 [제작자](https://www.instagram.com/000seungha/)에게 연락해 주세요
 
-### `npm start`
+### 데이터 동기화
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> 사용자의 기여도, Bio, 주간 순위등의 데이터는 8시, 10시, 12시, 14시, 16시, 18시, 20시에 동기화 됩니다
