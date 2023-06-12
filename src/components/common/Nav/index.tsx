@@ -8,15 +8,25 @@ import { useNavigate } from "react-router-dom";
 import { NAV_ITEM } from "./constant";
 import Register from "../Register";
 import useModal from "../../../hooks/util/useModal";
+import useLogout from "../../../hooks/auth/useLogout";
+import token from "../../../lib/token/token";
+import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
 
 const Nav = () => {
   const navigate = useNavigate();
   const { open } = useModal();
+  const { logOut } = useLogout();
   return (
     <S.NavContainer>
       <S.NavTopWrap>
         <S.NavTitle src={Logo} />
-        <S.NavTitleText>DGIT</S.NavTitleText>
+        <S.NavTitleText
+          onClick={() =>
+            (window.location.href = "https://github.com/Team-B1ND/DGIT_WEB_V3")
+          }
+        >
+          DGIT
+        </S.NavTitleText>
       </S.NavTopWrap>
       <S.NavMidWrap>
         순위
@@ -38,6 +48,9 @@ const Nav = () => {
           <AiOutlinePlusSquare size={20} />
           REGISTER
         </S.NavCategoryBox>
+        {token.getToken(ACCESS_TOKEN_KEY) && (
+          <S.NavLogoutText onClick={logOut}>로그아웃</S.NavLogoutText>
+        )}
       </S.NavMidWrap>
       <Register />
       <S.NavBottomImg src={gradation1} />
