@@ -10,13 +10,12 @@ import { GithubUserParam } from "../github/GithubRepository";
 class MemberRepositoryImpl implements MemberRepository {
   public async getMember(): Promise<MemberResponse> {
     const { data } = await customAxios.get("/user/my");
-    console.log(data);
+
     return data;
   }
 
   public async getPendingUser(): Promise<PendingUserResponse> {
     const { data } = await customAxios.get("/github-user/pending");
-    console.log(data);
     return data;
   }
 
@@ -26,7 +25,6 @@ class MemberRepositoryImpl implements MemberRepository {
     const { data } = await customAxios.patch("/github-user/allow", {
       githubId,
     });
-    console.log(data);
     return data;
   }
 
@@ -36,7 +34,6 @@ class MemberRepositoryImpl implements MemberRepository {
     const { data } = await customAxios.patch("/github-user/deny", {
       githubId,
     });
-    console.log(data);
     return data;
   }
 }
