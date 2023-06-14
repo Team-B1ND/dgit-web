@@ -11,7 +11,7 @@ export const ButtonContainer = styled.button<{
   border-radius: 5px;
   font-weight: 600;
   font-size: 16px;
-
+  cursor: pointer;
   ${({ buttonType }) => colorSet[buttonType]}
 `;
 

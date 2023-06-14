@@ -15,14 +15,21 @@ export const NavContainer = styled.div`
 
   background-color: #1e1e1e;
   color: #f6f6f6;
+`;
 
+export const NavLogoutWrap = styled.div`
+  width: 100px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  column-gap: 5px;
   cursor: pointer;
 `;
 
-export const NavLogoutText = styled.span`
+export const NavLogoutText = styled.p`
   font-size: 14px;
-
-  margin-top: 20px;
 `;
 
 export const NavTopWrap = styled.div`
@@ -58,6 +65,7 @@ export const NavCategoryBox = styled.div`
 
   font-size: 16px;
   column-gap: 14px;
+  cursor: pointer;
 `;
 
 export const NavBottomImg = styled.img`

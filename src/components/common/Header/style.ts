@@ -23,7 +23,7 @@ export const HeaderLoginText = styled.p`
 export const CommitOptionButton = styled.button<{ background: string }>`
   border: 2px solid #6c93f8;
   border-radius: 30px;
-
+  cursor: pointer;
   width: 78px;
   height: 28px;
   color: white;

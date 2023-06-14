@@ -16,8 +16,8 @@ export function usePendingRefusal() {
         },
         {
           onSuccess: () => {
-            queryClient.invalidateQueries([QUERY_KEYS.pending]);
             B1ndToast.showSuccess("유저 거절 성공");
+            queryClient.invalidateQueries([QUERY_KEYS.pending]);
           },
           onError: () => {
             B1ndToast.showError("유저 거절 실패");
