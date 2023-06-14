@@ -6,6 +6,7 @@ const useLogout = () => {
 
   const logOut = () => {
     token.clearToken();
+    window.location.reload();
     navigate("/");
   };
 

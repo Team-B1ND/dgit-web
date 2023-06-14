@@ -6,7 +6,6 @@ import PullRequestRankingPage from "../../pages/PullRequestRankingPage";
 import RecordPage from "../../pages/RecordPage";
 import RepoStarsRankingPage from "../../pages/RepoStarsRankingPage";
 import AuthHoc from "../common/Hoc/AuthHoc";
-import Modal from "../common/Register";
 
 const Router = () => {
   const AuthAdminPage = AuthHoc(AdminPage, "ADMIN");
@@ -17,7 +16,6 @@ const Router = () => {
       <Route path="/callback" element={<AuthLoadingPage />} />
       <Route path="/pr-ranking" element={<PullRequestRankingPage />} />
       <Route path="/repostars-ranking" element={<RepoStarsRankingPage />} />
-      <Route path="/modal" element={<Modal />} />
       <Route path="/record" element={<RecordPage />} />
       <Route path="/admin" element={<AuthAdminPage />} />
     </Routes>

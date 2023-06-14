@@ -1,8 +1,10 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { useQueryClient } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { usePostGithubUserMutation } from "../../queries/github/github.query";
+import useApiError from "../../utils/errorHandler";
 import useModal from "../util/useModal";
 
 const usePostMember = () => {
@@ -22,7 +24,7 @@ const usePostMember = () => {
       { githubId },
       {
         onSuccess: () => {
-          B1ndToast.showSuccess("유저 등록 성공");
+          B1ndToast.showSuccess("유저 등록 성공 관리자의 승인을 기다려주세요");
           queryClient.invalidateQueries(["totalRank/getTotalRank"]);
           queryClient.invalidateQueries(["weekRank/getWeekRank"]);
           queryClient.invalidateQueries(["pullrequestRank/getPullRequestRank"]);
@@ -30,8 +32,8 @@ const usePostMember = () => {
           close();
           navigate("/");
         },
-        onError: () => {
-          B1ndToast.showError("유저 등록 실패");
+        onError: (error: any) => {
+          useApiError(error.response.data.status);
         },
       }
     );

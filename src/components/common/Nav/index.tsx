@@ -11,7 +11,7 @@ import useModal from "../../../hooks/util/useModal";
 import useLogout from "../../../hooks/auth/useLogout";
 import token from "../../../lib/token/token";
 import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
-
+import { FiLogOut } from "react-icons/fi";
 const Nav = () => {
   const navigate = useNavigate();
   const { open } = useModal();
@@ -49,7 +49,10 @@ const Nav = () => {
           REGISTER
         </S.NavCategoryBox>
         {token.getToken(ACCESS_TOKEN_KEY) && (
-          <S.NavLogoutText onClick={logOut}>로그아웃</S.NavLogoutText>
+          <S.NavLogoutWrap onClick={logOut}>
+            <S.NavLogoutText>로그아웃</S.NavLogoutText>
+            <FiLogOut />
+          </S.NavLogoutWrap>
         )}
       </S.NavMidWrap>
       <Register />

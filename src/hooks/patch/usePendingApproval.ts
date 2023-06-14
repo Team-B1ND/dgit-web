@@ -1,3 +1,4 @@
+import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { QueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
 import { usePatchPendingApprovalMutation } from "../../queries/member/member.query";
@@ -15,11 +16,11 @@ export function usePendingApproval() {
         },
         {
           onSuccess: () => {
+            B1ndToast.showSuccess("유저가 수락되었습니다");
             queryClient.invalidateQueries([QUERY_KEYS.pending]);
-            console.log("유저 수락 성공");
           },
           onError: () => {
-            console.log("유저 수락 실패");
+            B1ndToast.showError("유저 수락 실패");
           },
         }
       );
