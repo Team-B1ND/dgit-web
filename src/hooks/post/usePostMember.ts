@@ -25,9 +25,6 @@ const usePostMember = () => {
       {
         onSuccess: () => {
           B1ndToast.showSuccess("유저 등록 성공 관리자의 승인을 기다려주세요");
-          queryClient.invalidateQueries(["totalRank/getTotalRank"]);
-          queryClient.invalidateQueries(["weekRank/getWeekRank"]);
-          queryClient.invalidateQueries(["pullrequestRank/getPullRequestRank"]);
           setGithubId("");
           close();
           navigate("/");

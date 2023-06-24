@@ -1,12 +1,13 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
-import { QueryClient } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
 import { usePatchPendingRefusalMutation } from "../../queries/member/member.query";
 import { QUERY_KEYS } from "../../queries/queryKey";
 
 export function usePendingRefusal() {
   const patchPendingRefusalMutation = usePatchPendingRefusalMutation();
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
+
   const onPatchRefusal = useCallback((githubId: string) => {
     const answer = window.confirm("유저를 거절하시겠습니까?");
     if (answer === true) {

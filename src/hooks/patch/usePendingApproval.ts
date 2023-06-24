@@ -1,12 +1,13 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
-import { QueryClient } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
 import { usePatchPendingApprovalMutation } from "../../queries/member/member.query";
 import { QUERY_KEYS } from "../../queries/queryKey";
 
 export function usePendingApproval() {
   const patchPendingApprovalMutation = usePatchPendingApprovalMutation();
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
+
   const onPatchApproval = useCallback((githubId: string) => {
     const answer = window.confirm("유저를 수락하시겠습니까?");
     if (answer === true) {
