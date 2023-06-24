@@ -12,19 +12,21 @@ import useLogout from "../../../hooks/auth/useLogout";
 import token from "../../../lib/token/token";
 import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
 import { FiLogOut } from "react-icons/fi";
+
 const Nav = () => {
   const navigate = useNavigate();
   const { open } = useModal();
   const { logOut } = useLogout();
+  const dodamURL = "https://dodam.b1nd.com";
+  const dgitURL = "https://github.com/Team-B1ND/DGIT_WEB_V3";
   return (
     <S.NavContainer>
       <S.NavTopWrap>
-        <S.NavTitle src={Logo} />
-        <S.NavTitleText
-          onClick={() =>
-            (window.location.href = "https://github.com/Team-B1ND/DGIT_WEB_V3")
-          }
-        >
+        <S.NavTitle
+          src={Logo}
+          onClick={() => (window.location.href = dodamURL)}
+        />
+        <S.NavTitleText onClick={() => (window.location.href = dgitURL)}>
           DGIT
         </S.NavTitleText>
       </S.NavTopWrap>

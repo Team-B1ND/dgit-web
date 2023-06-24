@@ -20,12 +20,12 @@ export const NavContainer = styled.div`
 export const NavLogoutWrap = styled.div`
   width: 100px;
   height: 50px;
-
+  cursor: pointer;
   display: flex;
   align-items: center;
 
   column-gap: 5px;
-  cursor: pointer;
+  z-index: 1;
 `;
 
 export const NavLogoutText = styled.p`
@@ -40,12 +40,15 @@ export const NavTopWrap = styled.div`
   text-align: center;
 `;
 
-export const NavTitle = styled.img``;
+export const NavTitle = styled.img`
+  cursor: pointer;
+`;
 
 export const NavTitleText = styled.p`
   font-size: 16px;
 
   letter-spacing: 1em;
+  cursor: pointer;
 `;
 
 export const NavMidWrap = styled.div`
