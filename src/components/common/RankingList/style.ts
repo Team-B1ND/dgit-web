@@ -19,7 +19,7 @@ export const THeadContainer = styled.div`
   height: 50px;
   margin-bottom: 20px;
   position: sticky;
-  z-index: 0;
+  z-index: 3;
   top: 0px;
 `;
 
