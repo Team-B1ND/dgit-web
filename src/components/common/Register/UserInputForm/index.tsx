@@ -17,9 +17,6 @@ const UserForm = () => {
             onChange={onChangeGithubId}
             placeholder="Github 아이디 (example-user)"
           />
-          <Button buttonType="submit" className="UserButton">
-            확인
-          </Button>
         </I.UserInput>
         <I.UserButton>
           <Button buttonType="cancel" onClick={close} className="cancelButton">

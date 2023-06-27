@@ -19,9 +19,6 @@ const RepositoryForm = () => {
             onChange={onChangePostData}
             value={repositoryData.githubId}
           />
-          <Button buttonType="submit" className="UserButton">
-            확인
-          </Button>
         </I.UserInput>
 
         <I.RepositoryID>GitHub Repository Name</I.RepositoryID>
