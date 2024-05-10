@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.div`
-  position: relative;
   position: fixed;
   top: 0;
   left: 0;
