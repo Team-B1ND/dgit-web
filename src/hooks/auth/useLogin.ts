@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
-} from "../../constants/token/Token.constant";
+} from "../../constants/token/token.constant";
 import token from "../../lib/token/token";
 import { usePostLoginMutation } from "../../queries/auth/auth.query";
 import { queryString } from "../../utils/queryString";

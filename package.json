@@ -46,12 +46,12 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@3.5.1",
   "devDependencies": {
     "@types/js-cookie": "^3",
     "@types/node": "^18.14.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/styled-components": "^5"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }

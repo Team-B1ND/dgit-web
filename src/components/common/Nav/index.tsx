@@ -10,7 +10,7 @@ import Register from "../Register";
 import useModal from "../../../hooks/util/useModal";
 import useLogout from "../../../hooks/auth/useLogout";
 import token from "../../../lib/token/token";
-import { ACCESS_TOKEN_KEY } from "../../../constants/token/Token.constant";
+import { ACCESS_TOKEN_KEY } from "../../../constants/token/token.constant";
 import { FiLogOut } from "react-icons/fi";
 
 const Nav = () => {
