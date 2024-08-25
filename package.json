@@ -1,6 +1,6 @@
 {
-  "name": "dgitv3",
-  "version": "0.1.0",
+  "name": "dgit",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@b1nd/b1nd-design-core": "^1.0.4",
