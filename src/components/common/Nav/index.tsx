@@ -18,7 +18,6 @@ const Nav = () => {
   const { open } = useModal();
   const { logOut } = useLogout();
   const dodamURL = "https://dodam.b1nd.com";
-  const dgitURL = "https://github.com/Team-B1ND/DGIT_WEB_V3";
   return (
     <S.NavContainer>
       <S.NavTopWrap>
@@ -26,7 +25,7 @@ const Nav = () => {
           src={Logo}
           onClick={() => (window.location.href = dodamURL)}
         />
-        <S.NavTitleText onClick={() => (window.location.href = dgitURL)}>
+        <S.NavTitleText >
           DGIT
         </S.NavTitleText>
       </S.NavTopWrap>
