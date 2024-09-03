@@ -14,7 +14,6 @@ const PullRequestRankingPage = () => {
         backgroundColor: "#252525",
         padding: 40,
         boxSizing: "border-box",
-        paddingLeft : 300,
       }}
     >
       <RankingList>
