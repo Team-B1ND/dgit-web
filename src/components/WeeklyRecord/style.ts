@@ -6,4 +6,5 @@ export const WeeklyRecordRecordContainer = styled.div`
   background: #252525;
   padding: 40px;
   box-sizing: border-box;
+  padding-left:300px;
 `;
