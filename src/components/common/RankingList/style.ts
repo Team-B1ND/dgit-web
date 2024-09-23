@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const ListContainer = styled.div`
+  min-width: 750px;
   display: flex;
   flex-direction: column;
-  
 `;
 
 export const TableContainer = styled.div`

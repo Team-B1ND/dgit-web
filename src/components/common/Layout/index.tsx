@@ -7,10 +7,10 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <>
+    <S.ContainerWrap>
       <Nav />
       <S.Container>{children}</S.Container>
-    </>
+    </S.ContainerWrap>
   );
 };
 

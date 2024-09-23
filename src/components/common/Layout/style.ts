@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const ContainerWrap = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+`;
+
 export const Container = styled.div`
   margin-left: 250px;
 `;
