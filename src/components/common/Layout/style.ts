@@ -7,6 +7,7 @@ export const ContainerWrap = styled.div`
 `;
 
 export const Container = styled.div`
+  width: 100%;
   margin-left: 250px;
 `;
 
