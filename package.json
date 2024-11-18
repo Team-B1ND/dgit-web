@@ -7,6 +7,7 @@
     "@b1nd/b1nd-react-util": "^1.0.2",
     "@b1nd/b1nd-styled-components-util": "^1.0.1",
     "@b1nd/b1nd-toastify": "^1.0.3",
+    "@craco/craco": "^7.1.0",
     "@tanstack/react-query": "^4.29.7",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -14,6 +15,8 @@
     "@types/jest": "^27.5.2",
     "@types/styled-components": "^5.1.34",
     "axios": "^1.3.4",
+    "eslint": "^9.15.0",
+    "husky": "^9.1.6",
     "js-cookie": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,8 +33,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
