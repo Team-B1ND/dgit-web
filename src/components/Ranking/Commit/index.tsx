@@ -1,46 +1,38 @@
-import Medal from "../../common/Medal";
-import RankingList from "../../common/RankingList";
-import { ProfileImg } from "./style";
-import { useGetUserTotalRankQuery } from "../../../queries/github/github.query";
+import * as S from "./style";
+import { Suspense } from "react";
+import { DodamErrorBoundary } from "@b1nd/dds-web";
+import RankingFallbackLoader from "components/common/FallBackLoader/Ranking";
+import RankingList from "components/common/RankingList";
+import TotalCommit from "./Total";
+import WeekCommit from "./Week";
 
-const TotalCommit = () => {
-  const { data } = useGetUserTotalRankQuery({ suspense: true });
+interface Props {
+    commitType: 'total'|'week';
+}
 
-  return (
-    <RankingList.Table.TBody>
-      {data?.data.map((data, idx) => {
-        const rank = idx + 1;
-        return (
-          <>
-            <tr key={data.githubId}>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={rank}>{rank}</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                <ProfileImg
-                  src={data.userImage}
-                  onClick={() =>
-                    (window.location.href = `https://github.com/${data.githubId}`)
-                  }
-                />
-              </RankingList.Table.TBody.Td>{" "}
-              <RankingList.Table.TBody.Td>
-                {data.githubId}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                {data.name}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                {data.bio}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Strong>
-                {data.contributions}
-              </RankingList.Table.TBody.Strong>
-            </tr>
-          </>
-        );
-      })}
-    </RankingList.Table.TBody>
-  );
-};
-export default TotalCommit;
+const CommitPage = ({commitType}:Props) => {
+
+
+    return(
+        <S.CommitBox>
+             <RankingList.Table>
+                <RankingList.Table.THead>
+                    <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Profile</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Github</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Name</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Intro</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Commits</RankingList.Table.THead.Th>
+                </RankingList.Table.THead>
+                <DodamErrorBoundary text="에러발생" showButton={true}>
+                    <Suspense fallback={<RankingFallbackLoader />}>
+                        {commitType === "total" ? <TotalCommit /> : <WeekCommit />}
+                    </Suspense>
+                </DodamErrorBoundary>
+          </RankingList.Table>
+
+        </S.CommitBox>
+    )
+}
+
+export default CommitPage;

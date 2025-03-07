@@ -6,7 +6,7 @@ import {
   WeeklyItemTopWrap,
   WeeklyTopItemBox,
 } from "../../WeeklyRecord/WeeklyTopRecord/style";
-import { BigProfileImg } from "../Commit/style";
+import { BigProfileImg } from "../Commit/Total/style";
 
 interface Props {
   data: TopRank;
