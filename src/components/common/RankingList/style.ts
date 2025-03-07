@@ -1,7 +1,8 @@
+import { DodamTypography } from "@b1nd/dds-web";
 import styled from "styled-components";
 
 export const ListContainer = styled.div`
-  min-width: 750px;
+  min-width: 350px;
   display: flex;
   flex-direction: column;
 `;
@@ -10,27 +11,35 @@ export const TableContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  height: 720px;
+  overflow: hidden;
+  overflow-y: scroll;
+ 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
 `;
 
 export const THeadContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: #1e1e1e;
+  padding-bottom: 10px;
   height: 50px;
-  margin-bottom: 20px;
   position: sticky;
   z-index: 3;
   top: 0px;
+  background-color: ${({theme})=>theme.backgroundNormal};
 `;
 
 export const ThContainer = styled.div`
   width: 100%;
-  color: white;
-  font-size: 16px;
+  ${DodamTypography.Body1.Bold};
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: ${({theme})=>theme.labelNormal};
 `;
 
 export const TBodyContainer = styled.div`
@@ -43,18 +52,17 @@ export const TBodyContainer = styled.div`
     width: 100%;
     height: 80px;
     display: flex;
-    background-color: #2d2d2d;
   }
 `;
 
 export const TdContainer = styled.div`
   width: 100%;
   text-align: center;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  ${DodamTypography.Body1.Regular};
+  color: ${({theme})=>theme.labelNormal};
 `;
 
 export const TdStrongContainer = styled.div`
@@ -65,8 +73,7 @@ export const TdStrongContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  font-weight: 600;
-  font-size: 24px;
+  ${DodamTypography.Heading1.Medium};
 
-  color: #6c93f8;
+  color: ${({theme})=>theme.primaryNormal};
 `;

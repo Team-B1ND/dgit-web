@@ -1,7 +1,7 @@
 import { useGetUserPullRequestRankQuery } from "../../../queries/github/github.query";
 import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
-import { ProfileImg } from "../Commit/style";
+import { ProfileImg } from "../Commit/Total/style";
 
 const PullRequest = () => {
   const { data } = useGetUserPullRequestRankQuery({ suspense: true });

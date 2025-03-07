@@ -2,15 +2,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
 import { B1ndToastContainer } from "@b1nd/b1nd-toastify";
 import { BrowserRouter } from "react-router-dom";
-import { GlobalStyle } from "../../../styles/GlobalStyle";
-import Layout from "../Layout";
+import { GlobalStyle } from "styles/GlobalStyle";
 import { useState } from "react";
+import Router from "../../Router";
+import ThemeProviderContainer from "../ThemeProviderContainer";
 
-interface Props {
-  children: React.ReactNode;
-}
 
-const Providers = ({ children }: Props) => {
+const Providers = () => {
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -28,11 +26,13 @@ const Providers = ({ children }: Props) => {
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <B1ndToastContainer />
-        <GlobalStyle />
-        <BrowserRouter>
-          <Layout>{children}</Layout>
-        </BrowserRouter>
+        <ThemeProviderContainer>
+          <B1ndToastContainer />
+          <GlobalStyle />
+            <BrowserRouter basename="/dgit">
+                <Router/>
+            </BrowserRouter>
+        </ThemeProviderContainer>
       </RecoilRoot>
     </QueryClientProvider>
   );

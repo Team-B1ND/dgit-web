@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
-import Header from "../components/common/Header";
+
 import RankingList from "../components/common/RankingList";
 import Repository from "../components/Ranking/Repository";
 
@@ -17,7 +17,7 @@ const RepoStarsRankingPage = () => {
       }}
     >
       <RankingList>
-        <Header>Repository Star</Header>
+        {/* <Header>Repository Star</Header> */}
         <RankingList.Table>
           <RankingList.Table.THead>
             <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>

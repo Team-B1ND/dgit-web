@@ -1,7 +1,7 @@
 import { useGetRepositoryQuery } from "../../../queries/github/github.query";
 import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
-import { DeleteButton, ProfileImg } from "../Commit/style";
+import { DeleteButton, ProfileImg } from "../Commit/Total/style";
 import { useDeleteRepositroy } from "../../../hooks/delete/useDeleteRepository";
 import { useEffect } from "react";
 

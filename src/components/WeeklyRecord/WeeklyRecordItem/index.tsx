@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useGetWeeklyRankQuery } from "../../../queries/github/github.query";
 import Medal from "../../common/Medal";
 import RankingList from "../../common/RankingList";
-import { ProfileImg } from "../../Ranking/Commit/style";
+import { ProfileImg } from "../../Ranking/Commit/Total/style";
 import { useInView } from "react-intersection-observer";
 
 const WeeklyRecordItem = () => {

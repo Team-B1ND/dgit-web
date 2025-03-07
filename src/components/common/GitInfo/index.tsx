@@ -1,5 +1,5 @@
 import { useGetMemberQuery } from "../../../queries/member/member.query";
-import Avatar from "../Avatar";
+import { Avatar } from "@b1nd/dds-web";
 import * as S from "./style";
 import defaultProfile from "../../../asset/Common/defaultProfile.png";
 const GitInfo = () => {
@@ -11,11 +11,10 @@ const GitInfo = () => {
         <S.StudentInfo>{data?.data.name}</S.StudentInfo>
       </S.GitInfoAbleContainer>
       <S.ProfileContainer>
-        <Avatar
-          src={data?.data.userImage || defaultProfile}
-          isHexagonFrame={true}
-          name={data?.data.githubId!}
-        />
+        {
+          data?.data.userImage ? <img src={data?.data.userImage} alt="" />
+          : <Avatar/>
+        }
       </S.ProfileContainer>
     </S.GitInfoContainer>
   );
