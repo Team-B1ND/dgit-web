@@ -1,29 +1,30 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import RankingFallbackLoader from "../common/FallBackLoader/Ranking";
-import RankingBoxFallbackLoader from "../common/FallBackLoader/RankingBox";
+import RankingFallbackLoader from "components/common/FallBackLoader/Ranking";
+import RankingBoxFallbackLoader from "components/common/FallBackLoader/RankingBox";
 
-import RankingList from "../common/RankingList";
+import RankingList from "components/common/RankingList";
 import { WeeklyRecordRecordContainer } from "./style";
 import WeeklyRecordItem from "./WeeklyRecordItem";
 import WeeklyTopRecord from "./WeeklyTopRecord";
+import { DodamErrorBoundary } from "@b1nd/dds-web";
 
 const WeeklyRecord = () => {
   return (
     <WeeklyRecordRecordContainer>
       
-      <ErrorBoundary fallback={<>Error...</>}>
+      <DodamErrorBoundary text="에러발생">
         <Suspense fallback={<RankingBoxFallbackLoader />}>
           <WeeklyTopRecord />
         </Suspense>
-      </ErrorBoundary>
+      </DodamErrorBoundary>
       <RankingList>
         <RankingList.Table>
-          <ErrorBoundary fallback={<>Error...</>}>
+          <DodamErrorBoundary text="에러발생" showButton={true}>
             <Suspense fallback={<RankingFallbackLoader />}>
               <WeeklyRecordItem />
             </Suspense>
-          </ErrorBoundary>
+          </DodamErrorBoundary>
         </RankingList.Table>
       </RankingList>
     </WeeklyRecordRecordContainer>

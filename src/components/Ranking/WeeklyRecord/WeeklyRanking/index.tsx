@@ -1,12 +1,11 @@
-import { TopRank } from "../../../types/github/github.type";
-import Medal from "../../common/Medal";
-import RankingList from "../../common/RankingList";
+import { TopRank } from "types/github/github.type";
+import Medal from "components/common/Medal";
+import RankingList from "components/common/RankingList";
 import {
-  WeeklyItemText,
   WeeklyItemTopWrap,
   WeeklyTopItemBox,
 } from "../../WeeklyRecord/WeeklyTopRecord/style";
-import { BigProfileImg } from "../Commit/Total/style";
+import { BigProfileImg } from "components/Ranking/Commit/Total/style";
 
 interface Props {
   data: TopRank;
@@ -19,9 +18,9 @@ const RankingBox = ({ data, rank }: Props) => {
       <BigProfileImg src={data.userImage} />
       <WeeklyItemTopWrap>
         <Medal rank={rank}>{rank}</Medal>
-        <WeeklyItemText>{data.name}</WeeklyItemText>
+        <span>{data.name}</span>
       </WeeklyItemTopWrap>
-      <WeeklyItemText>{data.githubId}</WeeklyItemText>
+      <span>{data.githubId}</span>
       <RankingList.Table.TBody.Strong>
         {`🔥 1st Count : ${data.winCount}`}
       </RankingList.Table.TBody.Strong>

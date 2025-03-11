@@ -2,6 +2,7 @@ import { DodamShape, DodamTypography } from "@b1nd/dds-web";
 import styled from "styled-components";
 
 export const HomeBox = styled.div`
+    display: flex;
     width: 100%;
     height: 100%;
     padding: 58px 0px;
@@ -47,4 +48,9 @@ export const DgitDataBox = styled.div`
     flex-direction: column;
     width: 100%;
     min-height: 320px;
+`
+
+export const SideBox = styled.div`
+    width: 30%;
+    height: 100%;
 `

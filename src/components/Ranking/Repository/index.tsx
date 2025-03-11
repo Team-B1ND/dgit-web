@@ -1,4 +1,3 @@
-import * as S from "./style";
 import { Suspense } from "react";
 import { DodamErrorBoundary } from "@b1nd/dds-web";
 import RankingFallbackLoader from "components/common/FallBackLoader/Ranking";
@@ -9,9 +8,8 @@ import RepositoryList from "./RepositoryList";
 
 const RepositoryRankingPage = () => {
 
-
     return(
-        <S.RepositoryBox>
+        <RankingList>
              <RankingList.Table>
                <RankingList.Table.THead>
                     <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>
@@ -28,7 +26,7 @@ const RepositoryRankingPage = () => {
                     </Suspense>
                 </DodamErrorBoundary>
           </RankingList.Table>
-        </S.RepositoryBox>
+        </RankingList>
     )
 }
 

@@ -1,4 +1,3 @@
-import * as S from "./style";
 import { Suspense } from "react";
 import { DodamErrorBoundary } from "@b1nd/dds-web";
 import RankingFallbackLoader from "components/common/FallBackLoader/Ranking";
@@ -13,7 +12,8 @@ interface Props {
 const CommitRankingPage = ({commitType}:Props) => {
     
     return(
-        <S.CommitBox>
+        <>
+        <RankingList>
              <RankingList.Table>
                 <RankingList.Table.THead>
                     <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>
@@ -29,8 +29,8 @@ const CommitRankingPage = ({commitType}:Props) => {
                     </Suspense>
                 </DodamErrorBoundary>
           </RankingList.Table>
-
-        </S.CommitBox>
+          </RankingList>
+        </>
     )
 }
 

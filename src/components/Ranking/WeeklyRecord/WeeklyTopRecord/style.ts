@@ -1,3 +1,4 @@
+import { DodamShape } from "@b1nd/dds-web";
 import styled from "styled-components";
 
 export const WeeklyTopContainer = styled.div`
@@ -13,7 +14,7 @@ export const WeeklyTopContainer = styled.div`
 export const WeeklyTopItemBox = styled.div<{ rank: boolean }>`
   width: ${({ rank }) => (rank ? "400px" : "270px")};
   height: 282px;
-  background-color: #2d2d2d;
+  background-color: ${({theme})=>theme.fillNormal};
 
   display: flex;
   flex-direction: column;
@@ -24,20 +25,12 @@ export const WeeklyTopItemBox = styled.div<{ rank: boolean }>`
 
   margin-top: ${({ rank }) => (rank ? null : "50px")};
 
-  border-radius: 30px;
+  ${DodamShape.ExtraLarge};
+  span{
+    color: ${({theme})=>theme.labelNormal};
+  }
 `;
 
-export const WeeklyTopBigItemBox = styled.div`
-  width: 400px;
-  height: 282px;
-  background-color: #2d2d2d;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  border-radius: 30px;
-`;
 
 export const WeeklyItemTopWrap = styled.div`
   width: 100%;
@@ -47,8 +40,4 @@ export const WeeklyItemTopWrap = styled.div`
   justify-content: center;
 
   column-gap: 10px;
-`;
-
-export const WeeklyItemText = styled.p`
-  font-size: 20px;
 `;

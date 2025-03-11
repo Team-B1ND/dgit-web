@@ -1,5 +1,5 @@
-import { useGetWeeklyTopRankQuery } from "../../../queries/github/github.query";
-import RankingBox from "../../Ranking/Weekly";
+import { useGetWeeklyTopRankQuery } from "queries/github/github.query";
+import RankingBox from "../WeeklyRanking";
 import { WeeklyTopContainer } from "./style";
 
 const WeeklyTopRecord = () => {

@@ -2,9 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import AdminPage from "pages/Admin/AdminPage";
 import AuthLoadingPage from "../../pages/AuthLoadingPage";
 import DgitPage from "pages/DgitHome/page";
-import PullRequestRankingPage from "../Ranking/PullRequest/PullRequestRankingPage";
-import RecordPage from "../../pages/RecordPage";
-import RepoStarsRankingPage from "../../pages/RepoStarsRankingPage";
 import AuthHoc from "../common/Hoc/AuthHoc";
 import PageTemplate from "../common/PageTemplate";
 
