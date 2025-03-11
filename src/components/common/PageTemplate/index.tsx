@@ -1,5 +1,4 @@
 import * as S from "./style";
-import Nav from "../Nav";
 import { Outlet } from "react-router-dom";
 import { DodamNavBar } from "@b1nd/dds-web";
 import { useThemes } from "hooks/Theme/usetheme";
