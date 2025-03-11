@@ -11,7 +11,6 @@ export const TableContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 720px;
   overflow: hidden;
   overflow-y: scroll;
  

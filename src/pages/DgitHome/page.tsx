@@ -1,11 +1,14 @@
 import * as  S from "./style";
 import { DodamSegmentedButton, DodamTag } from "@b1nd/dds-web";
 import { useDgitHome } from "hooks/home/useDgitHome";
-import CommitPage from "components/Ranking/Commit";
+import RepoStarsRankingPage from "pages/RepoStarsRankingPage";
+import CommitRankingPage from "components/Ranking/Commit";
 
 const DgitPage = () => {
   
   const {...dgit} = useDgitHome();
+  console.log(dgit.pageData);
+  
   return (
    <S.HomeBox>
     <S.DgitBox>
@@ -34,7 +37,12 @@ const DgitPage = () => {
           </S.TageBox>
         </S.Header>
         <S.DgitDataBox>
-            <CommitPage commitType={dgit.commitType}/>
+        {dgit.pageData.some(item => item.isAtv===true) ? (
+            <CommitRankingPage commitType={dgit.commitType} />
+          ) : dgit.pageData.some(item => item.text === "레포지토리") ? (
+              <RepoStarsRankingPage/>
+          ) : null}
+
         </S.DgitDataBox>
     </S.DgitBox>
    </S.HomeBox>

@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
+import RankingFallbackLoader from "../../common/FallBackLoader/Ranking";
 
-import RankingList from "../components/common/RankingList";
-import PullRequest from "../components/Ranking/PullRequest";
+import RankingList from "../../common/RankingList";
+import PullRequest from ".";
 
 const PullRequestRankingPage = () => {
   return (
@@ -11,7 +11,6 @@ const PullRequestRankingPage = () => {
       style={{
         width: "100%",
         minHeight: "100vh",
-        backgroundColor: "#252525",
         padding: 40,
         boxSizing: "border-box",
       }}

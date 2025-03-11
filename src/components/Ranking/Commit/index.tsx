@@ -10,9 +10,8 @@ interface Props {
     commitType: 'total'|'week';
 }
 
-const CommitPage = ({commitType}:Props) => {
-
-
+const CommitRankingPage = ({commitType}:Props) => {
+    
     return(
         <S.CommitBox>
              <RankingList.Table>
@@ -35,4 +34,4 @@ const CommitPage = ({commitType}:Props) => {
     )
 }
 
-export default CommitPage;
+export default CommitRankingPage;

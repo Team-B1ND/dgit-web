@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import AgreeReject from "../components/Admin/AgreeReject";
-import EraseRepo from "../components/Admin/EraseRepo";
-import * as A from "../components/Admin/style";
+import AgreeReject from "components/Admin/AgreeReject";
+import EraseRepo from "components/Admin/EraseRepo";
+import * as A from "components/Admin/style";
 
 const AdminPage = () => {
   const [changeform, setChangeForm] = useState("eraseRepo");

@@ -3,7 +3,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import RankingFallbackLoader from "../components/common/FallBackLoader/Ranking";
 
 import RankingList from "../components/common/RankingList";
-import Repository from "../components/Ranking/Repository";
+import Repository from "../components/Ranking/Repository/RepositoryList";
 
 const RepoStarsRankingPage = () => {
   return (

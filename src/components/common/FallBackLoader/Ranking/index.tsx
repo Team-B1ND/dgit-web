@@ -4,7 +4,7 @@ const RankingFallbackLoader = () => {
   return (
     <>
       <Container>
-        {Array.from({ length: 6 }).map((_, idx) => (
+        {Array.from({ length: 10 }).map((_, idx) => (
           <Box key={idx} />
         ))}
       </Container>

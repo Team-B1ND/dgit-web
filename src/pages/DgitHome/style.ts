@@ -11,10 +11,11 @@ export const DgitBox = styled.div`
     display: flex;
     flex-direction: column;
     width: 80%;
+    height: 100%;
     padding: 24px;
     ${DodamShape.Large};
     background-color: ${({theme})=>theme.backgroundNormal};
-
+    overflow: hidden;
 `
 
 export const DgitNameText = styled.div`
