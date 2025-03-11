@@ -1,46 +1,35 @@
-import { useGetUserPullRequestRankQuery } from "../../../queries/github/github.query";
-import Medal from "../../common/Medal";
-import RankingList from "../../common/RankingList";
-import { ProfileImg } from "../Commit/Total/style";
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import RankingFallbackLoader from "../../common/FallBackLoader/Ranking";
 
-const PullRequest = () => {
-  const { data } = useGetUserPullRequestRankQuery({ suspense: true });
+import RankingList from "../../common/RankingList";
+import PullRequest from "./pullRequestList";
+import { DodamErrorBoundary } from "@b1nd/dds-web";
+
+const PullRequestRankingPage = () => {
   return (
-    <RankingList.Table.TBody>
-      {data?.data.map((data, idx) => {
-        const rank = idx + 1;
-        return (
-          <>
-            <tr key={data.githubId}>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={rank}>{rank}</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                <ProfileImg
-                  src={data.userImage}
-                  onClick={() =>
-                    (window.location.href = `https://github.com/${data.githubId}`)
-                  }
-                />
-              </RankingList.Table.TBody.Td>{" "}
-              <RankingList.Table.TBody.Td>
-                {data.githubId}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                {data.name}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                {data.bio}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Strong>
-                {data.pullRequest}
-              </RankingList.Table.TBody.Strong>
-            </tr>
-          </>
-        );
-      })}
-    </RankingList.Table.TBody>
+    <>
+      <RankingList>
+        <RankingList.Table>
+          <RankingList.Table.THead>
+            <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Profile</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Github</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Name</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>Intro</RankingList.Table.THead.Th>
+            <RankingList.Table.THead.Th>
+              Pull-Request
+            </RankingList.Table.THead.Th>
+          </RankingList.Table.THead>
+          <DodamErrorBoundary text="에러 발생" showButton={true}>
+            <Suspense fallback={<RankingFallbackLoader />}>
+              <PullRequest />
+            </Suspense>
+          </DodamErrorBoundary>
+        </RankingList.Table>
+      </RankingList>
+    </>
   );
 };
 
-export default PullRequest;
+export default PullRequestRankingPage;
