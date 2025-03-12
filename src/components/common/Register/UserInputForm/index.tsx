@@ -1,4 +1,3 @@
-import Button from "../../Button";
 import * as I from "./style";
 import usePostMember from "hooks/post/usePostMember";
 import useModal from "hooks/util/useModal";
@@ -18,12 +17,8 @@ const UserForm = () => {
             value={githubId} 
             type="text"
             label="" 
-            placeholder={"Github 아이디 (example-user)"}          
+            placeholder={"Github 아이디"}          
             />
-          {/* <TextInput
-            onChange={onChangeGithubId}
-            placeholder="Github 아이디 (example-user)"
-          /> */}
         </I.UserInput>
         <I.UserButton>
            <DodamFilledButton
@@ -42,7 +37,7 @@ const UserForm = () => {
               onClick={onSubmitMember}
               textTheme="staticWhite"
               >
-              취소
+              확인
             </DodamFilledButton>
         </I.UserButton>
       </I.UserBox>

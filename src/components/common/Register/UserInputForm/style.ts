@@ -5,22 +5,22 @@ export const UserBox = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  padding: 10px;
+  
 `;
 
 export const UserInput = styled.div`
   display: flex;
-  margin-left: 8%;
-  margin-top: 4px;
   align-items: center;
-  
+  padding-left: 8%;
+  width: 100%;
   gap: 10px;
 `;
 
 export const UserId = styled.div`
   display: flex;
-  margin-top: 80px;
-  margin-left: 8%;
-  color: white;
+  padding-left: 8%;
+  color: ${({theme})=>theme.labelNormal};
 `;
 
 export const UserButton = styled.div`

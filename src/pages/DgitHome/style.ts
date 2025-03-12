@@ -51,6 +51,9 @@ export const Header = styled.div`
     width: 100%;
     justify-content: space-between;
     padding: 16px 0;
+    button{
+        z-index: 3;
+    }
 `
 
 export const TageBox = styled.div`

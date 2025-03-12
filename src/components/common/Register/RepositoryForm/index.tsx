@@ -1,4 +1,3 @@
-import Button from "../../Button";
 import * as I from "./style";
 import usePostRepository from "../../../../hooks/post/usePostRepository";
 import useModal from "../../../../hooks/util/useModal";
@@ -11,27 +10,27 @@ const RepositoryForm = () => {
   return (
     <>
       <I.RepositoryBox>
-        <I.RepositoryUserId>GitHub User ID</I.RepositoryUserId>
+        <I.RepositoryText>GitHub User ID</I.RepositoryText>
         <I.UserInput>
         <DodamFilledTextField
             onChange={onChangePostData}
             value={repositoryData.githubId}
             type="text"
             label="" 
-            // name="githubId"
-            placeholder="Github 아이디 (example-user)"
+            name="githubId"
+            placeholder="Github 아이디"
             />
             
         </I.UserInput>
 
-        <I.RepositoryID>GitHub Repository Name</I.RepositoryID>
+        <I.RepositoryText>GitHub Repository Name</I.RepositoryText>
         <I.RepositoryInput>
         <DodamFilledTextField
             onChange={onChangePostData}
             value={repositoryData.repositoryName}
             type="text"
             label="" 
-            // name="repositoryName"
+            name="repositoryName"
             placeholder="Repository 이름"
             />
         </I.RepositoryInput>
@@ -51,7 +50,7 @@ const RepositoryForm = () => {
               onClick={onSubmitRepository}
               textTheme="staticWhite"
               >
-              취소
+              확인
             </DodamFilledButton>
         </I.RepositoryButton>
       </I.RepositoryBox>

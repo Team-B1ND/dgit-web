@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Button from "../../../common/Button";
 
 export const ProfileImg = styled.img`
   cursor: pointer;

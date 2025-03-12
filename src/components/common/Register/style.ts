@@ -8,6 +8,11 @@ export const Content = styled.div`
   flex-direction: column;
   background-color: ${({theme})=>theme.fillNormal};
   padding: 10px;
+  min-width: 240px;
+  ${DodamShape.Large};
+  @media (max-width: 797px) {
+    width: 45%;
+    }
 `;
 
 export const ModalHeader = styled.div`
@@ -16,6 +21,7 @@ export const ModalHeader = styled.div`
   justify-content: center;
   background-color: ${({theme})=>theme.backgroundNormal};
   height: 30%;
+  border-radius: 18px 18px 0 0;
 `;
 export const ModalButton = styled.div<{
   active: boolean;

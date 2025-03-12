@@ -51,6 +51,7 @@ export const RegisterBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
     justify-content: center;
     width: 100%;
     height: 50px;

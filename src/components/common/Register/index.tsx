@@ -17,7 +17,7 @@ const Register = ({isOpen,close}:ModalProps) => {
   const [component, setComponent] = useState<colorType>("userForm");
 
   return (
-    <DodamModal isOpen={isOpen} close={close} >
+    <DodamModal isOpen={isOpen} close={close} background={true}>
       <M.Content
         onClick={(e: ChangeEvent<any>) => {
           e.stopPropagation();
