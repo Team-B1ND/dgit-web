@@ -8,12 +8,17 @@ export const ProfileImg = styled.img`
 
   border-radius: 100%;
   object-fit: cover;
+
+ 
 `;
 
 export const BigProfileImg = styled.img`
   width: 100px;
   height: 100px;
-
+  @media (max-width: 1268px) {
+    width: 40px; 
+    height: 40px;
+    }
   border-radius: 100%;
   object-fit: cover;
 `;

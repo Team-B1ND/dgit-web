@@ -14,7 +14,7 @@ interface Props {
 
 const RankingBox = ({ data, rank }: Props) => {
   return (
-    <WeeklyTopItemBox rank={rank == 1 ? true : false}>
+    <WeeklyTopItemBox rank={rank}>
       <BigProfileImg src={data.userImage} />
       <WeeklyItemTopWrap>
         <Medal rank={rank}>{rank}</Medal>

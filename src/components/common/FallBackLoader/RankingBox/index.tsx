@@ -23,8 +23,8 @@ const Container = styled.div`
 `;
 
 const Item = styled.div`
-  width: 270px;
-  height: 282px;
+  width: 240px;
+  height: 232px;
 
   margin-top: 50px;
   border-radius: 30px;
@@ -33,8 +33,8 @@ const Item = styled.div`
 `;
 
 const BigItem = styled.div`
-  width: 400px;
-  height: 282px;
+  width: 250px;
+  height: 232px;
 
   border-radius: 30px;
 
