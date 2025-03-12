@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const ChangeBox = styled.div`
+    display: flex;
+    gap: 10px;
+    width: 20%;
+    height: 40px;
+`
+
 export const ChangeOption = styled.button<{ background: string }>`
   border: 2px solid #6c93f8;
   border-radius: 30px;
@@ -17,3 +24,10 @@ export const AdminHeader = styled.div`
   color: white;
   height: 80px;
 `;
+
+export const RepositoryBox = styled.div`
+overflow-y: scroll;
+&::-webkit-scrollbar {
+    display: none;
+  }
+`
