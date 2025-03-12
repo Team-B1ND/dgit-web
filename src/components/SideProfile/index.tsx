@@ -1,36 +1,21 @@
-import { useGetMyUserQuery } from "queries/member/member.query";
-import { InfoBox, SideProfileBox, SideProfileInfo } from "./style";
-import { DodamFilledButton, Plus } from "@b1nd/dds-web";
-import { GithubLogo } from "asset/Components/githubLogo";
+import { Suspense } from "react";
+import {  SideProfileBox, SideProfileInfo } from "./style";
+import { DodamErrorBoundary, DodamFilledButton, Plus } from "@b1nd/dds-web";
 import { authURL } from "constants/Dauth/dauth.constant";
+import ProfileItem from "./ProfileItem";
 
 const SideProfile = () => {
-    const {data} = useGetMyUserQuery();
-
-
+   
     return(
         <SideProfileBox>
             <SideProfileInfo>
                 <span>내 정보</span>
-                <InfoBox>
-                    
-                        { data?.githubId !=null ?
-                        data?.githubId ? 
-                        <span>
-                            <GithubLogo />
-                            {data.githubId }
-                        </span>
-                        : 
-                        <span style={{textDecorationLine:"underline",cursor:"pointer"}}
-                        onClick={() => (window.location.href = authURL)}    
-                        >
-                            {/* <Plus size={20} color="labelNormal"/> */}
-                            dauth 계정 로그인 
-                        </span>
-                        : <span>어드민</span>
-                        }
-                    
-                </InfoBox>
+                <DodamErrorBoundary text="에러 발생">
+                    <Suspense fallback={<span>로딩중...</span>}>
+                        <ProfileItem/>
+                    </Suspense>
+               </DodamErrorBoundary>
+            
             </SideProfileInfo>
             <DodamFilledButton 
             size="Large"

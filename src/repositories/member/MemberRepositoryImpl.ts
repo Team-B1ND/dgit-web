@@ -6,7 +6,7 @@ import {
 import { MemberRepository } from "./MemberRepository";
 import { Response } from "../../types/util/Response.type";
 import { GithubUserParam } from "../github/GithubRepository";
-import { UserResponse } from "types/github/github.type";
+
 
 class MemberRepositoryImpl implements MemberRepository {
   public async getMember(): Promise<MemberResponse> {
@@ -18,11 +18,6 @@ class MemberRepositoryImpl implements MemberRepository {
   public async getPendingUser(): Promise<PendingUserResponse> {
     const { data } = await customAxios.get("/github-user/pending");
     return data;
-  }
-  
-  public async getMyUser():Promise<UserResponse> {
-    const {data} = await customAxios.get("/user/my");
-    return data
   }
 
   public async patchUserApproval({

@@ -19,7 +19,6 @@ import {
   RankResponse,
   RepositoryResponse,
   TopRankResponse,
-  UserResponse,
   WeeklyRankResponse,
 } from "../../types/github/github.type";
 // import { RepositoryID } from "../../components/common/Register/RepositoryForm/style";

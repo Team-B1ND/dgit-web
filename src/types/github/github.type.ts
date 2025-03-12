@@ -61,12 +61,3 @@ export interface WeeklyRankResponse {
   data: WeeklyRank[];
   nextPage: number;
 }
-
-
-export interface UserResponse {
-  email: string,
-    name: string,
-    githubId: string,
-    userImage: string,
-    role: 'STUDENT'
-}

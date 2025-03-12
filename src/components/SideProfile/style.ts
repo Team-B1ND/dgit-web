@@ -21,7 +21,7 @@ export const SideProfileBox = styled.div`
 export const SideProfileInfo = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     width: 100%;
     height: 100%;
     span{
@@ -33,7 +33,41 @@ export const InfoBox = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
     span{
         color: ${({theme})=>theme.labelNormal};
+    }
+`
+
+export const AddRegister = styled.div`
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+`
+
+export const RegisterBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    max-width: 300px;
+    background-color: ${({theme})=>theme.backgroundNormal};
+    ${DodamShape.Large};
+    padding: 16px;
+    gap: 16px;
+
+    span{
+        ${DodamTypography.Headline.Bold};
+        color: ${({theme})=>theme.labelNormal};
+    }
+
+    @media (max-width: 797px) {
+     max-width: 300px;
+     width: 100%;
+     height: min-content;
     }
 `
