@@ -25,7 +25,7 @@ export const WeeklyTopItemBox = styled.div<{ rank: number }>`
   height: 282px;
   background-color: ${({ theme }) => theme.fillNormal};
 
-  margin-top: ${({ rank }) => (rank==1 ? null : "50px")};
+  margin-top: ${({ rank }) => (rank===1 ? null : "50px")};
 
   display: flex;
   flex-direction: column;

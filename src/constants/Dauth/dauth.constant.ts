@@ -1,3 +1,3 @@
 import config from "config/config.json";
 
-export const authURL = `https://dauth.b1nd.com/login?client_id=${config.clientId}&redirect_uri=http://localhost:3001/dgit/callback`;
+export const authURL = `https://dauth.b1nd.com/login?client_id=${config.clientId}&redirect_uri=https://dodam.b1nd.comdgit/callback`;
