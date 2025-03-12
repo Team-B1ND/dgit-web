@@ -1,42 +1,29 @@
+import { DodamShape, DodamTypography } from "@b1nd/dds-web";
 import styled from "styled-components";
-import { colorType } from ".";
 
-export const ModalContainer = styled.div`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
-`;
 
 export const Content = styled.div`
   display: flex;
-  width: 800px;
-  height: 397px;
+  width: 40%;
   flex-direction: column;
-  background: #3a3a3a;
+  background-color: ${({theme})=>theme.fillNormal};
+  padding: 10px;
 `;
-
-export const ModalBox = styled.div``;
 
 export const ModalHeader = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #2d2d2d;
-  height: 162px;
+  background-color: ${({theme})=>theme.backgroundNormal};
+  height: 30%;
 `;
 export const ModalButton = styled.div<{
-  userBackground: string;
-  repositoryBackground: string;
+  active: boolean;
 }>`
   display: flex;
-  font-size: 14px;
+  ${DodamTypography.Body2.Medium}
+
+  
 
   .user {
     width: 110px;
@@ -46,11 +33,13 @@ export const ModalButton = styled.div<{
     justify-content: center;
     align-items: center;
 
-    color: white;
+    color: ${({ active, theme })=> active ? theme.staticWhite : theme.labelNormal };
     border-top-left-radius: 5px;
+    
     outline: none;
     border: none;
-    background: ${({ userBackground }) => userBackground};
+    background: ${({ active, theme }) => active ? theme.primaryNormal : theme.fillNeutral};
+    
   }
   .repository {
     width: 110px;
@@ -60,10 +49,10 @@ export const ModalButton = styled.div<{
     justify-content: center;
     align-items: center;
 
-    color: white;
+    color: ${({ active, theme })=> !active ? theme.staticWhite : theme.labelNormal };
     border: none;
     border-top-right-radius: 5px;
-    background: ${({ repositoryBackground }) => repositoryBackground};
+    background: ${({ active, theme }) => !active ? theme.primaryNormal : theme.fillNeutral};
   }
 `;
 
@@ -74,8 +63,8 @@ export const ModalTextBox = styled.div`
   .ModalText {
     display: flex;
     align-items: center;
-    color: white;
-    font-size: 32px;
+    color: ${({theme})=>theme.labelNormal};
+    ${DodamTypography.Heading1.Bold};
     margin-left: 40px;
   }
 `;

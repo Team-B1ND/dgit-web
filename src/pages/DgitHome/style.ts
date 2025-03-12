@@ -6,11 +6,17 @@ export const HomeBox = styled.div`
     width: 100%;
     height: 100%;
     padding: 58px 0px;
+    
+
+    @media (max-width: 1068px) {
+        padding: 28px 20px 10% 20px;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap:10px
+    }
+
     @media (max-width: 797px) {
     padding: 28px 20px 10% 20px;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap:10px
     }
 `
 
@@ -63,12 +69,18 @@ export const DgitDataBox = styled.div`
 export const SideBox = styled.div`
     display: flex;
     width: 30%;
-    height: 100%;
+    height: auto;
     padding: 0 32px;
+    flex-direction: column;
+    gap: 10px;
+
+    
+    @media (max-width: 1068px) {
+        width: 85%;
+    }
+
     @media (max-width: 797px) {
         width: 100%;
-        height: auto;
-        justify-content: flex-end;
         padding: 0;
     }
 `

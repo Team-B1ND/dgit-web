@@ -12,6 +12,7 @@ export const UserInput = styled.div`
   margin-left: 8%;
   margin-top: 4px;
   align-items: center;
+  
   gap: 10px;
 `;
 
@@ -24,10 +25,8 @@ export const UserId = styled.div`
 
 export const UserButton = styled.div`
   display: flex;
+  width: 100%;
   justify-content: flex-end;
-  margin-top: 37px;
-  margin-right: 15px;
-  .cancelButton {
-    margin-right: 8px;
-  }
+  gap: 10px;
+  
 `;

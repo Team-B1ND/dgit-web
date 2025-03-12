@@ -6,6 +6,7 @@ import CommitRankingPage from "components/Ranking/Commit";
 import PullRequestRankingPage from "components/Ranking/PullRequest";
 import WeeklyRecord from "components/Ranking/WeeklyRecord";
 import SideProfile from "components/SideProfile";
+import AddRegisterItem from "components/SideProfile/AddRegister";
 
 const DgitPage = () => {
   
@@ -62,6 +63,7 @@ const DgitPage = () => {
     </S.DgitBox>
     <S.SideBox>
           <SideProfile/>
+          <AddRegisterItem/>
     </S.SideBox>
    </S.HomeBox>
   );
