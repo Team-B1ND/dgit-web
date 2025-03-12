@@ -19,6 +19,7 @@ import {
   RankResponse,
   RepositoryResponse,
   TopRankResponse,
+  UserResponse,
   WeeklyRankResponse,
 } from "../../types/github/github.type";
 // import { RepositoryID } from "../../components/common/Register/RepositoryForm/style";
@@ -42,10 +43,6 @@ export const useGetRepositoryQuery = (
     }
   );
 
-// export const useDeleteRepositoryQuery = ({ repositoryId }: getRepositoryId) =>
-//   useQuery([`/github-repository/${repositoryId}`], () =>
-//     GitRepositoryImpl.deleteRepository({ repositoryId })
-//   );
 
 export const useDeleteRepositoryQuery = () => {
   const mutation = useMutation(({ repositoryId }: getRepositoryId) =>

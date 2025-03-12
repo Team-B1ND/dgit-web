@@ -10,6 +10,7 @@ interface Props {
 }
 
 const CommitRankingPage = ({commitType}:Props) => {
+    console.log("commit");
     
     return(
         <>

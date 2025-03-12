@@ -9,6 +9,10 @@ export const QUERY_KEYS = {
       pullrequest: "pullrequestRank/getPullRequestRank",
     },
   }),
-  member: "member/getMember",
+  
+  member: {
+    getMemer:"member/getMember",
+    getMyUser:"myUser"
+  },
   pending: "pending/getPendingUser",
 };
