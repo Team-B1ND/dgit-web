@@ -7,13 +7,13 @@ export const SideProfileBox = styled.div`
     flex-direction: column;
     width: 100%;
     height: 200px;
-    max-width: 300px;
+    max-width: 400px;
     background-color: ${({theme})=>theme.backgroundNormal};
     ${DodamShape.Large};
     padding: 16px;
     gap: 16px;
     @media (max-width: 797px) {
-     max-width: 300px;
+     max-width: 400px;
      width: 100%;
      height: min-content;
     }
@@ -54,7 +54,7 @@ export const RegisterBox = styled.div`
     justify-content: center;
     width: 100%;
     height: 50px;
-    max-width: 300px;
+    max-width: 400px;
     background-color: ${({theme})=>theme.backgroundNormal};
     ${DodamShape.Large};
     padding: 16px;
@@ -66,7 +66,7 @@ export const RegisterBox = styled.div`
     }
 
     @media (max-width: 797px) {
-     max-width: 300px;
+     max-width: 400px;
      width: 100%;
      height: min-content;
     }

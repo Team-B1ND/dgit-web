@@ -73,9 +73,11 @@ export const SideBox = styled.div`
     padding: 0 32px;
     flex-direction: column;
     gap: 10px;
+    
 
     
     @media (max-width: 1068px) {
+        align-items: flex-end;
         width: 85%;
     }
 
