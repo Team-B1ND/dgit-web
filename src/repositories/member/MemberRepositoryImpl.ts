@@ -7,6 +7,7 @@ import { MemberRepository } from "./MemberRepository";
 import { Response } from "../../types/util/Response.type";
 import { GithubUserParam } from "../github/GithubRepository";
 
+
 class MemberRepositoryImpl implements MemberRepository {
   public async getMember(): Promise<MemberResponse> {
     const { data } = await customAxios.get("/user/my");

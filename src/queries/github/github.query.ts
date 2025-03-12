@@ -42,10 +42,6 @@ export const useGetRepositoryQuery = (
     }
   );
 
-// export const useDeleteRepositoryQuery = ({ repositoryId }: getRepositoryId) =>
-//   useQuery([`/github-repository/${repositoryId}`], () =>
-//     GitRepositoryImpl.deleteRepository({ repositoryId })
-//   );
 
 export const useDeleteRepositoryQuery = () => {
   const mutation = useMutation(({ repositoryId }: getRepositoryId) =>

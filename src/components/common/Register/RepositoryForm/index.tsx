@@ -1,8 +1,7 @@
-import TextInput from "../../TextInput";
-import Button from "../../Button";
 import * as I from "./style";
 import usePostRepository from "../../../../hooks/post/usePostRepository";
 import useModal from "../../../../hooks/util/useModal";
+import { DodamFilledButton, DodamFilledTextField } from "@b1nd/dds-web";
 
 const RepositoryForm = () => {
   const { close } = useModal();
@@ -11,32 +10,48 @@ const RepositoryForm = () => {
   return (
     <>
       <I.RepositoryBox>
-        <I.RepositoryUserId>GitHub User ID</I.RepositoryUserId>
+        <I.RepositoryText>GitHub User ID</I.RepositoryText>
         <I.UserInput>
-          <TextInput
-            name="githubId"
-            placeholder="Github 아이디 (example-user)"
+        <DodamFilledTextField
             onChange={onChangePostData}
             value={repositoryData.githubId}
-          />
+            type="text"
+            label="" 
+            name="githubId"
+            placeholder="Github 아이디"
+            />
+            
         </I.UserInput>
 
-        <I.RepositoryID>GitHub Repository Name</I.RepositoryID>
+        <I.RepositoryText>GitHub Repository Name</I.RepositoryText>
         <I.RepositoryInput>
-          <TextInput
-            name="repositoryName"
-            placeholder="Repository 이름"
+        <DodamFilledTextField
             onChange={onChangePostData}
             value={repositoryData.repositoryName}
-          />
+            type="text"
+            label="" 
+            name="repositoryName"
+            placeholder="Repository 이름"
+            />
         </I.RepositoryInput>
         <I.RepositoryButton>
-          <Button buttonType="cancel" onClick={close} className="cancelButton">
-            취소
-          </Button>
-          <Button buttonType="submit" onClick={onSubmitRepository}>
-            확인
-          </Button>
+        <DodamFilledButton
+              width={100}
+              size="Medium"
+              backgroundColorType="Secondary"
+              onClick={close}
+              >
+              취소
+            </DodamFilledButton>
+            <DodamFilledButton
+              width={100}
+              size="Medium"
+              backgroundColorType="Primary"
+              onClick={onSubmitRepository}
+              textTheme="staticWhite"
+              >
+              확인
+            </DodamFilledButton>
         </I.RepositoryButton>
       </I.RepositoryBox>
     </>

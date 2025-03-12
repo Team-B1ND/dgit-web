@@ -1,5 +1,5 @@
 import RankingList from "../../common/RankingList";
-import Repository from "../../Ranking/Repository";
+import Repository from "../../Ranking/Repository/RepositoryList";
 import { ErrorBoundary } from "react-error-boundary";
 import { Suspense } from "react";
 import RankingFallbackLoader from "../../common/FallBackLoader/Ranking";

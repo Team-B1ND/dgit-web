@@ -1,7 +1,7 @@
 import { useGetUserWeekRankQuery } from "../../../../queries/github/github.query";
 import Medal from "../../../common/Medal";
 import RankingList from "../../../common/RankingList";
-import { ProfileImg } from "../style";
+import { ProfileImg } from "../Total/style";
 
 const WeekCommit = () => {
   const { data } = useGetUserWeekRankQuery({ suspense: true });

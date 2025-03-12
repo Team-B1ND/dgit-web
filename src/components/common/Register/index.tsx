@@ -1,19 +1,23 @@
 import { ChangeEvent, useState } from "react";
-import Modal from "../Modal";
 import * as M from "./style";
 import UserForm from "./UserInputForm/index";
 import { SwitchCase } from "@b1nd/b1nd-react-util";
 import RepositoryForm from "./RepositoryForm/index";
-import useModal from "../../../hooks/util/useModal";
+import useModal from "hooks/util/useModal";
+import { DodamFilledButton, DodamModal } from "@b1nd/dds-web";
 
 export type colorType = "userForm" | "repositoryForm";
 
-const Register = () => {
+interface ModalProps {
+  isOpen: boolean;
+  close:() => void;
+}
+
+const Register = ({isOpen,close}:ModalProps) => {
   const [component, setComponent] = useState<colorType>("userForm");
-  const { close, isOpen } = useModal();
 
   return (
-    <Modal isOpen={isOpen} onClose={close}>
+    <DodamModal isOpen={isOpen} close={close} background={true}>
       <M.Content
         onClick={(e: ChangeEvent<any>) => {
           e.stopPropagation();
@@ -24,12 +28,7 @@ const Register = () => {
             <div className="ModalText">REGISTER</div>
           </M.ModalTextBox>
           <M.ModalButton
-            userBackground={
-              component === "userForm" ? "rgb(58, 58, 58)" : "#2d2d2d"
-            }
-            repositoryBackground={
-              component === "repositoryForm" ? "rgb(58, 58, 58)" : "#2d2d2d"
-            }
+            active={component === "userForm"}
           >
             <button onClick={() => setComponent("userForm")} className="user">
               USER
@@ -52,7 +51,7 @@ const Register = () => {
           />
         </div>
       </M.Content>
-    </Modal>
+    </DodamModal>
   );
 };
 

@@ -1,6 +1,6 @@
 import { ComponentType, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGetMemberQuery } from "../../../queries/member/member.query";
+import { useGetMemberQuery } from "queries/member/member.query";
 import { MemberRole } from "../../../types/member/Member.type";
 
 const AuthHoc = (AuthComponent: ComponentType, role: MemberRole) => {
@@ -17,7 +17,7 @@ const AuthHoc = (AuthComponent: ComponentType, role: MemberRole) => {
     };
 
     useEffect(() => {
-      if (!isLoading && data === undefined) {
+      if (!isLoading && data?.data === undefined) {
         authException();
         return;
       }

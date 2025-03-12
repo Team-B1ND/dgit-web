@@ -1,56 +1,33 @@
-import { useGetRepositoryQuery } from "../../../queries/github/github.query";
-import Medal from "../../common/Medal";
-import RankingList from "../../common/RankingList";
-import { DeleteButton, ProfileImg } from "../Commit/style";
-import { useDeleteRepositroy } from "../../../hooks/delete/useDeleteRepository";
-import { useEffect } from "react";
+import { Suspense } from "react";
+import { DodamErrorBoundary } from "@b1nd/dds-web";
+import RankingFallbackLoader from "components/common/FallBackLoader/Ranking";
+import RankingList from "components/common/RankingList";
+import RepositoryList from "./RepositoryList";
 
-interface ButtonProps {
-  showDeleteButton: boolean;
+
+
+const RepositoryRankingPage = () => {
+
+    return(
+        <RankingList>
+             <RankingList.Table>
+               <RankingList.Table.THead>
+                    <RankingList.Table.THead.Th>Rank</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Profile</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Github</RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>
+                        Repository Name
+                    </RankingList.Table.THead.Th>
+                    <RankingList.Table.THead.Th>Total Stars</RankingList.Table.THead.Th>
+                    </RankingList.Table.THead>
+                <DodamErrorBoundary text="에러발생" showButton={true}>
+                    <Suspense fallback={<RankingFallbackLoader />}>
+                        <RepositoryList showDeleteButton={false} />
+                    </Suspense>
+                </DodamErrorBoundary>
+          </RankingList.Table>
+        </RankingList>
+    )
 }
 
-const Repository = ({ showDeleteButton }: ButtonProps) => {
-  const { data, refetch } = useGetRepositoryQuery({ suspense: true });
-  const { onDeleteRepo } = useDeleteRepositroy();
-
-  return (
-    <RankingList.Table.TBody>
-      {data?.data.map((data, idx) => {
-        const rank = idx + 1;
-        return (
-          <>
-            <tr key={data.githubId}>
-              <RankingList.Table.TBody.Td>
-                <Medal rank={rank}>{rank}</Medal>
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                <ProfileImg
-                  src={data.githubUserImage}
-                  onClick={() =>
-                    (window.location.href = `https://github.com/${data.githubId}/${data.repositoryName}`)
-                  }
-                />
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                {data.githubId}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Td>
-                {data.repositoryName}
-              </RankingList.Table.TBody.Td>
-              <RankingList.Table.TBody.Strong>
-                {showDeleteButton ? (
-                  <DeleteButton onClick={() => onDeleteRepo(data.repositoryId)}>
-                    X
-                  </DeleteButton>
-                ) : (
-                  data.totalStars
-                )}
-              </RankingList.Table.TBody.Strong>
-            </tr>
-          </>
-        );
-      })}
-    </RankingList.Table.TBody>
-  );
-};
-export default Repository;
+export default RepositoryRankingPage;
