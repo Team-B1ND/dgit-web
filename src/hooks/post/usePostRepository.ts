@@ -20,6 +20,10 @@ const usePostRepository = () => {
     setRepositoryData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const clearLoginField = (field: "githubId" | "repositoryName") => {
+    setRepositoryData((prev) => ({ ...prev, [field]: "" }));
+  };
+
   const onSubmitRepository = () => {
     postGithubUserMutation.mutate(repositoryData, {
       onSuccess: () => {
@@ -34,7 +38,7 @@ const usePostRepository = () => {
       },
     });
   };
-  return { repositoryData, onSubmitRepository, onChangePostData };
+  return { repositoryData, onSubmitRepository, onChangePostData, clearLoginField };
 };
 
 export default usePostRepository;

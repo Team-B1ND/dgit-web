@@ -13,11 +13,8 @@ const Router = () => {
       <Route path="/" element={<PageTemplate />}>
         <Route path="/" element={<DgitPage />} />
         <Route path="/admin" element={<AuthAdminPage />} /> 
-        {/* <Route path="/callback" element={<AuthLoadingPage />} />
-        <Route path="/pr-ranking" element={<PullRequestRankingPage />} />
-        <Route path="/repostars-ranking" element={<RepoStarsRankingPage />} />
-        <Route path="/record" element={<RecordPage />} />
-        <Route path="/admin" element={<AuthAdminPage />} /> */}
+       <Route path="/callback" element={<AuthLoadingPage />} />
+      
       </Route>
     </Routes>
   );

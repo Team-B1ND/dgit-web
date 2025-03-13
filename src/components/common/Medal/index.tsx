@@ -1,9 +1,13 @@
 import * as S from "./style";
-import { MedalProps } from "./types";
+import { MedalColor, MedalProps } from "./types";
+import { MedalSvg } from "asset/Components/medal";
 
-const Medal = ({ children, customStyle, rank }: MedalProps) => {
+const Medal = ({ children, rank }: MedalProps) => {
+  
+  
   return (
-    <S.Container rank={rank} style={{ ...customStyle }}>
+    <S.Container>
+      {rank!<4 ? <MedalSvg color={MedalColor[rank]}/>  : ""}
       <S.Wrap>{children}</S.Wrap>
     </S.Container>
   );

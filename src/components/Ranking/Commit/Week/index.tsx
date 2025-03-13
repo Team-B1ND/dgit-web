@@ -20,7 +20,7 @@ const WeekCommit = () => {
                 <ProfileImg
                   src={data.userImage}
                   onClick={() =>
-                    (window.location.href = `https://github.com/${data.githubId}`)
+                    (window.open(`https://github.com/${data.githubId}`))
                   }
                 />
               </RankingList.Table.TBody.Td>{" "}

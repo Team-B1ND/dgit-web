@@ -19,7 +19,7 @@ const SideProfile = () => {
             </SideProfileInfo>
             <DodamFilledButton 
             size="Large"
-            textTheme="staticWhite"
+            backgroundColorType="Assisitive"
             onClick={() => (window.location.href = authURL)}
             >
                 수정

@@ -5,7 +5,7 @@ import { DodamFilledButton, DodamFilledTextField } from "@b1nd/dds-web";
 
 const RepositoryForm = () => {
   const { close } = useModal();
-  const { onChangePostData, onSubmitRepository, repositoryData } =
+  const { onChangePostData, onSubmitRepository, repositoryData, clearLoginField } =
     usePostRepository();
   return (
     <>
@@ -19,6 +19,7 @@ const RepositoryForm = () => {
             label="" 
             name="githubId"
             placeholder="Github 아이디"
+            onRemoveClick={()=>clearLoginField("githubId")}   
             />
             
         </I.UserInput>
@@ -32,6 +33,7 @@ const RepositoryForm = () => {
             label="" 
             name="repositoryName"
             placeholder="Repository 이름"
+            onRemoveClick={()=>clearLoginField("repositoryName")}   
             />
         </I.RepositoryInput>
         <I.RepositoryButton>
