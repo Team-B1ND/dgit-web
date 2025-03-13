@@ -27,7 +27,7 @@ const Repository = ({ showDeleteButton }: ButtonProps) => {
                 <ProfileImg
                   src={data.githubUserImage}
                   onClick={() =>
-                    (window.location.href = `https://github.com/${data.githubId}/${data.repositoryName}`)
+                    (window.open(`https://github.com/${data.githubId}/${data.repositoryName}`))
                   }
                 />
               </RankingList.Table.TBody.Td>
