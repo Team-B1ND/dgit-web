@@ -18,6 +18,9 @@ const usePostMember = () => {
     const { value } = e.target;
     setGithubId(value);
   };
+  const clearLoginField = () => {
+    setGithubId("");
+  };
 
   const onSubmitMember = () => {
     postGithubUserMutation.mutate(
@@ -36,7 +39,7 @@ const usePostMember = () => {
     );
   };
 
-  return { onSubmitMember, githubId, setGithubId, onChangeGithubId };
+  return { onSubmitMember, githubId, setGithubId, onChangeGithubId , clearLoginField};
 };
 
 export default usePostMember;

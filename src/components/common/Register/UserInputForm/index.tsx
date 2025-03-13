@@ -6,7 +6,7 @@ import { DodamFilledButton, DodamFilledTextField } from "@b1nd/dds-web";
 const UserForm = () => {
   const { close } = useModal();
 
-  const { onChangeGithubId, onSubmitMember, githubId } = usePostMember();
+  const { onChangeGithubId, onSubmitMember, githubId, clearLoginField } = usePostMember();
   return (
     <>
       <I.UserBox>
@@ -17,7 +17,8 @@ const UserForm = () => {
             value={githubId} 
             type="text"
             label="" 
-            placeholder={"Github 아이디"}          
+            placeholder={"Github 아이디"}    
+            onRemoveClick={()=>clearLoginField()}      
             />
         </I.UserInput>
         <I.UserButton>

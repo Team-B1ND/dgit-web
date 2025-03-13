@@ -29,9 +29,8 @@ const DgitPage = () => {
           />
           <S.TageBox>
             {
-              dgit.pageData.some(item => item.text === "주간기록" && item.isAtv) ?
-                ""
-              :
+              dgit.pageData.some(item => item.text === "커밋" && item.isAtv) ?
+                
               (
                 <>
                 <DodamTag  text="전체" color={dgit.commitType=='total' ? 'blue' : 'default'} 
@@ -44,6 +43,7 @@ const DgitPage = () => {
                 />
                 </>
               )
+              : ""
             }
           </S.TageBox>
         </S.Header>
