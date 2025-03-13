@@ -35,7 +35,7 @@ export const InfoBox = styled.div`
     gap: 10px;
     cursor: pointer;
     span{
-        color: ${({theme})=>theme.labelNormal};
+        color: ${({theme})=>theme.labelAlternative};
     }
 `
 
