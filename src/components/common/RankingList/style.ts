@@ -1,6 +1,7 @@
 import { DodamTypography } from "@b1nd/dds-web";
 import styled from "styled-components";
 
+
 export const ListContainer = styled.div`
   min-width: 350px;
   display: flex;

@@ -44,7 +44,7 @@ export const ModalButton = styled.div<{
     
     outline: none;
     border: none;
-    background: ${({ active, theme }) => active ? theme.primaryNormal : theme.fillNeutral};
+    background: ${({ active, theme }) => active ?  theme.primaryNormal: theme.fillNeutral};
     
   }
   .repository {
