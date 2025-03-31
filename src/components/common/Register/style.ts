@@ -1,6 +1,6 @@
 import { DodamShape, DodamTypography } from "@b1nd/dds-web";
 import styled from "styled-components";
-
+import { April_Fools_Day_Theme } from "styles/theme";
 
 export const Content = styled.div`
   display: flex;
@@ -44,7 +44,7 @@ export const ModalButton = styled.div<{
     
     outline: none;
     border: none;
-    background: ${({ active, theme }) => active ? theme.primaryNormal : theme.fillNeutral};
+    background: ${({ active, theme }) => active ?  April_Fools_Day_Theme.primaryNormal: theme.fillNeutral};
     
   }
   .repository {
@@ -58,7 +58,7 @@ export const ModalButton = styled.div<{
     color: ${({ active, theme })=> !active ? theme.staticWhite : theme.labelNormal };
     border: none;
     border-top-right-radius: 5px;
-    background: ${({ active, theme }) => !active ? theme.primaryNormal : theme.fillNeutral};
+    background: ${({ active, theme }) => !active ? April_Fools_Day_Theme.primaryNormal : theme.fillNeutral};
   }
 `;
 

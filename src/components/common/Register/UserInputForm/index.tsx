@@ -25,8 +25,8 @@ const UserForm = () => {
            <DodamFilledButton
               width={100}
               size="Medium"
-              backgroundColorType="Secondary"
               onClick={close}
+              customStyle={{backgroundColor:"#F18070",color:"white"}}
               >
               취소
             </DodamFilledButton>
@@ -34,9 +34,9 @@ const UserForm = () => {
             <DodamFilledButton
               width={100}
               size="Medium"
-              backgroundColorType="Primary"
               onClick={onSubmitMember}
               textTheme="staticWhite"
+              customStyle={{backgroundColor:"#E61E2B",color:"white"}}
               >
               확인
             </DodamFilledButton>
