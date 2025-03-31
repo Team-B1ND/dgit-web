@@ -1,6 +1,6 @@
 import { DodamTypography } from "@b1nd/dds-web";
 import styled from "styled-components";
-import { April_Fools_Day_Theme } from "styles/theme";
+
 
 export const ListContainer = styled.div`
   min-width: 350px;
@@ -77,5 +77,5 @@ export const TdStrongContainer = styled.div`
 
   ${DodamTypography.Heading1.Medium};
 
-  color: ${April_Fools_Day_Theme.primaryNormal};
+  color: ${({theme})=>theme.primaryNormal};
 `;
