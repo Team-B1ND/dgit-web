@@ -18,7 +18,6 @@ const PageTemplate = () => {
   
   return (
     <S.ContainerWrap>
-      <S.PageTemplateContainer>
       <DodamNavBar 
       location="dgit"
       currentTheme={currentTheme}
@@ -29,7 +28,6 @@ const PageTemplate = () => {
       <S.Container> 
         <Outlet />
       </S.Container>
-      </S.PageTemplateContainer>
     </S.ContainerWrap>
   );
 };

@@ -33,20 +33,12 @@ const DgitPage = () => {
                 
               (
                 <>
-                <DodamTag  
-                 text="전체" 
-                 color={dgit.commitType === 'total' ? 'blue' : 'default'} 
-                 customStyle={{
-                   cursor: "pointer",
-                   backgroundColor: dgit.commitType === 'total' ? '#E61E2B' : "#F5F5F5"
-                 }}
-                 onClick={() => dgit.setCommitType('total')}
+                <DodamTag  text="전체" color={dgit.commitType=='total' ? 'blue' : 'default'} 
+                customStyle={{cursor:"pointer",}}
+                onClick={()=>dgit.setCommitType('total')}
                 />
                 <DodamTag text="이번주" color={dgit.commitType=='week' ? 'blue' : 'default'}
-                  customStyle={{
-                    cursor: "pointer",
-                    backgroundColor: dgit.commitType === 'total' ? '#F5F5F5' : "#E61E2B"
-                  }}
+                customStyle={{cursor:"pointer"}}
                 onClick={()=>dgit.setCommitType('week')}
                 />
                 </>
